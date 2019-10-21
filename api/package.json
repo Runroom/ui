@@ -1,0 +1,15 @@
+{
+  "name": "api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.3",
+    "twing": "^3.0.2"
+  }
+}
