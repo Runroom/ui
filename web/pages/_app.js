@@ -3,6 +3,8 @@ import App from 'next/app';
 import Head from 'next/head';
 
 import { proxy } from '../package.json';
+import Content from '../core/ui/Content';
+import Nav from '../core/components/Nav';
 
 axios.defaults.baseURL = proxy;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -15,7 +17,12 @@ class MyApp extends App {
         <Head>
           <title>Frontdefenders UI</title>
         </Head>
-        <Component {...pageProps} />
+        <Content>
+          <Nav />
+          <main>
+            <Component {...pageProps} />
+          </main>
+        </Content>
       </>
     );
   }
