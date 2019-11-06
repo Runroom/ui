@@ -11,7 +11,7 @@ out/
 web/build
 
 # express
-api/public/*.html
+api/public
 
 # misc
 .DS_Store
