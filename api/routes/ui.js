@@ -33,19 +33,15 @@ router.get("/:component", async (req, res) => {
   }
 
   try {
-    const output = await twing.render("/layouts/sandbox.twig", {
-      component,
-      styles,
-      scripts
-    });
+    const output = await twing.render('/layouts/sandbox.twig', { component, styles, scripts });
 
     fs.writeFile(`${__dirname}/../public/${component}.html`, output, err => {
       if (err) throw err;
     });
 
     res.sendStatus(200);
-  } catch (err) {
-    console.log(err.message);
+  } catch (error) {
+    console.log(error);
   }
 });
 
