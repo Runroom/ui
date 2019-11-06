@@ -12,15 +12,37 @@ const twing = new TwingEnvironment(loader);
 // @access  Public
 router.get('/:component', async (req, res) => {
   const component = req.params.component;
-  const styles = await fs.readFileSync(
-    `${UI_PATH}/components/${component}/styles.css`,
-    (err, data) => {
-      if (err) console.log(err);
+  const stylesFilePath = `${UI_PATH}/components/${component}/styles.css`;
+  const scriptsFilePath = `${UI_PATH}/components/${component}/scripts.min.js`;
+
+  let styles = false;
+  let scripts = false;
+
+  if (await fs.existsSync(stylesFilePath)) {
+    styles = await fs.readFileSync(stylesFilePath, (err, data) => {
+      if (err) return false;
       return data.toString();
-    }
-  );
-  const output = await twing.render('/layouts/sandbox.twig', { component, styles });
-  res.send(output);
+    });
+  }
+
+  if (await fs.existsSync(scriptsFilePath)) {
+    scripts = await fs.readFileSync(scriptsFilePath, (err, data) => {
+      if (err) return false;
+      return data.toString();
+    });
+  }
+
+  try {
+    const output = await twing.render('/layouts/sandbox.twig', { component, styles, scripts });
+
+    fs.writeFile(`${__dirname}/../public/${component}.html`, output, err => {
+      if (err) throw err;
+    });
+
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 module.exports = router;
