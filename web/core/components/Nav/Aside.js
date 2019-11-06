@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const Aside = styled.aside`
-  background: #e1e1e1;
+  background: ${({ theme }) => theme.colors.primary100};
   max-width: 20rem;
+  padding: 1rem;
   width: 100%;
 `;
 
