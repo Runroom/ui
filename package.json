@@ -2,6 +2,12 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "lerna": "^3.16.4"
+    "lerna": "3.16.4"
+  },
+  "dependencies": {
+    "sass": "1.23.3"
+  },
+  "scripts": {
+    "sass:build": "sass packages/ui/components:packages/ui/components --no-source-map --style=compressed"
   }
 }
