@@ -2,12 +2,23 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "lerna": "3.16.4"
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "babel-loader": "^8.0.6",
+    "glob": "^7.1.5",
+    "lerna": "3.16.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "@runroom/purejs": "^2.1.0",
     "sass": "1.23.3"
   },
   "scripts": {
-    "sass:build": "sass packages/ui/components:packages/ui/components --no-source-map --style=compressed"
+    "clean:compiled": "rm -rf packages/ui/components/**/*.min.js packages/ui/components/**/*.css",
+    "sass:build": "sass packages/ui/components:packages/ui/components --no-source-map --style=compressed",
+    "js:build": "webpack --config webpack.config.js",
+    "build": "yarn sass:build && yarn js:build"
   }
 }
