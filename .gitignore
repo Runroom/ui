@@ -11,11 +11,7 @@ out/
 web/build
 
 # express
-<<<<<<< HEAD
 api/public/*.html
-=======
-api/public
->>>>>>> Fix code rendering with javascript
 
 # misc
 .DS_Store
