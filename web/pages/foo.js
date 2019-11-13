@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 import Code from '../components/Code';
 
-const Home = () => (
+const Foo = () => (
   <>
     <Head>
       <title>Component Foo</title>
@@ -14,4 +14,4 @@ const Home = () => (
   </>
 );
 
-export default Home;
+export default Foo;

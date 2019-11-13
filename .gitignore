@@ -1,1 +1,23 @@
+# dependencies
 node_modules
+.pnp*
+
+# testing
+coverage
+
+# next.js
+.next/
+out/
+web/build
+
+# express
+api/public
+
+# misc
+.DS_Store
+.env*
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
