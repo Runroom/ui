@@ -1,9 +1,13 @@
 import axios from 'axios';
 import App from 'next/app';
 import Head from 'next/head';
+import { ThemeProvider } from 'styled-components';
 
 import { proxy } from '../package.json';
+import { theme } from '../config';
 import Content from '../core/ui/Content';
+import Main from '../core/ui/Main';
+import GlobalStyles from '../core/ui/Globals';
 import Nav from '../core/components/Nav';
 
 axios.defaults.baseURL = proxy;
@@ -17,12 +21,15 @@ class MyApp extends App {
         <Head>
           <title>Frontdefenders UI</title>
         </Head>
-        <Content>
-          <Nav />
-          <main>
-            <Component {...pageProps} />
-          </main>
-        </Content>
+        <ThemeProvider theme={theme}>
+          <Content>
+            <GlobalStyles />
+            <Nav />
+            <Main>
+              <Component {...pageProps} />
+            </Main>
+          </Content>
+        </ThemeProvider>
       </>
     );
   }
