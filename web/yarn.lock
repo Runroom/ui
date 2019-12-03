@@ -787,10 +787,6 @@
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.4.tgz#a87b4b04e5ae14a88d48ebef15015f6b7d1f5677"
 
-"@runroom/purejs@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@runroom/purejs/-/purejs-2.1.0.tgz#615f78fbf0d0d83fe6533bc2f6faed46d0d785d8"
-
 "@types/luxon@^1.4.0":
   version "1.15.2"
   resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-1.15.2.tgz#528f11f7d6dc08cec0445d4bea8065a5bb6989b2"
