@@ -35,6 +35,11 @@ const Nav = () => (
         </Link>
       </li>
       <li>
+        <Link href='/incremental'>
+          <a>Component Incremental</a>
+        </Link>
+      </li>
+      <li>
         <Link href='/button'>
           <a>Component Button</a>
         </Link>
