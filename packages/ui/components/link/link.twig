@@ -1,0 +1,10 @@
+{% set attr = component.attr|default('') %}
+{% set blank = component.blank|default(false) %}
+{% set class = component.class|default('') %}
+{% set content = component.content|default('') %}
+{% set label = component.label|default('') %}
+{% set url = component.url|default('') %}
+
+{% if url %}
+    <a href="{{ url }}" class="link {{ class }}" {{ attr|raw }} {% if blank %}target="_blank" rel="noreferrer noopener"{% endif %} {% if label %}aria-label="{{ label }}"{% endif %}>{{ content|raw }}</a>
+{% endif %}

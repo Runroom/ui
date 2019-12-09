@@ -24,6 +24,11 @@ const Nav = () => (
           <a>Component Foo</a>
         </Link>
       </li>
+      <li>
+        <Link href='/link'>
+          <a>Component Link</a>
+        </Link>
+      </li>
     </NavList>
   </Aside>
 );
