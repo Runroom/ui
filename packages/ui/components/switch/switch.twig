@@ -1,0 +1,13 @@
+{% set labelAfter = labelAfter|default('') %}
+{% set labelBefore = labelBefore|default('') %}
+{% set labelClass = labelClass|default('') %}
+{% set spanClass = spanClass|default('') %}
+
+<div class="switch-group">
+    <span>{{ labelBefore }}</span>
+    <label class="{{ labelClass }}">
+        <input type="checkbox" {{ attributes }}>
+        <span class="{{ spanClass }}"></span>
+    </label>
+    <span>{{ labelAfter }}</span>
+</div>
