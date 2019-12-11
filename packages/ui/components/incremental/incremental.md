@@ -5,7 +5,7 @@ The input from the component is readonly and it only allows `[0-9]+` type of val
 This component needs javascript to work properly.
 
 ## Use
-The basic use of this component in /twig/ is as follows:
+The basic use of this component in *twig* is as follows:
 ```twig
 {% include 'components/incremental/incremental.twig' with {
     component: {
@@ -15,13 +15,13 @@ The basic use of this component in /twig/ is as follows:
 ```
 
 ## Options
-`name`: Input name.
-`id1` & `id2` - *Optional* : Has default values. Used for A11y, sets the id from the buttons as `aria-controls` for the input.
-`max` - *Optional* : Defaults to 100. Maximum value of the increment.
-`min` - *Optional* : Defaults to 0. Mínimum value of the increment.
-`initialValue` - *Optional* : Defaults to 0. Initial value, can be overriden in case the element starts with a value.
-`incrementSize` - *Optional* : Defaults to 1. Increment value that will be applied in each one of the interactions.
-`title` - *Optional* : Defaults to 'Numero de elementos'. Used for Ally, the voice reader will read this title after the value of the input.
++ `name`: Input name.
++ `id1` & `id2` - *Optional* : Has default values. Used for A11y, sets the id from the buttons as `aria-controls` for the input.
++ `max` - *Optional* : Defaults to 100. Maximum value of the increment.
++ `min` - *Optional* : Defaults to 0. Mínimum value of the increment.
++ `initialValue` - *Optional* : Defaults to 0. Initial value, can be overriden in case the element starts with a value.
++ `incrementSize` - *Optional* : Defaults to 1. Increment value that will be applied in each one of the interactions.
++ `title` - *Optional* : Defaults to 'Numero de elementos'. Used for Ally, the voice reader will read this title after the value of the input.
 
 ## A11y
 + The component is defined as `aria-live: polite` so it the voice reader reads the changes each time the component is updated.
@@ -40,6 +40,7 @@ The basic use of this component in /twig/ is as follows:
     }
 } %}
 ```
+
 ### Incremental with `initialValue` and `incrementSize`
 ```twig
 {% include 'components/incremental/incremental.twig' with {
