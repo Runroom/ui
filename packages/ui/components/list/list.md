@@ -1,13 +1,13 @@
-## Macro List
-Este macro permite crear listas ordenadas, desordenadas y anidadas reutilizando el código para evitar repeticiones.
+## Componente List
+El componente list permite crear listas ordenadas, desordenadas y anidadas reutilizando el código para evitar repeticiones.
 
-Los argumentos que se pasan a la macro list son type, class e items y pueden ser opcionales.
+Los argumentos que se pasan al componente list son type, class e items y son opcionales.
 
 ### Uso
-Para hacer uso de la macro debemos importárla de la siguiente manera: 
+Para hacer uso de este componente debemos importárla de la siguiente manera: 
 
 ```
-{% import 'macros/_list.twig' as lists %}
+{% import 'components/list/list.twig' as lists %}
 ```
 
 ### Opciones
@@ -47,7 +47,7 @@ A items podemos pasarle un contenido y, en caso de tener hijos, indicarle su tip
 #### Lista ordenada
 
 ```
-{% import 'macros/_list.twig' as lists %}
+{% import 'components/list/list.twig' as lists %}
 
 {% set type = 'ol' %}
 {% set class = '' %}
@@ -82,7 +82,7 @@ A items podemos pasarle un contenido y, en caso de tener hijos, indicarle su tip
 #### Lista desordenada
 
 ```
-{% import 'macros/_list.twig' as lists %}
+{% import 'components/list/list.twig' as lists %}
 
 {% set type = 'ul' %}
 {% set class = '' %}
@@ -124,6 +124,8 @@ A items podemos pasarle un contenido y, en caso de tener hijos, indicarle su tip
 #### Combinación lista ordenada y desordenada
 
 ```
+{% import 'components/list/list.twig' as lists %}
+
 {% set type = 'ul' %}
 {% set class = '' %}
 {% set tag = '' %}
