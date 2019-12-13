@@ -4,20 +4,11 @@ El elemento input, teniendo el valor "checkbox" en su atributo type, representa 
 
 Etiqueta <label>:  nos permite asociar la casilla de verificación con todos los demás campos que estén dentro del alcance de la etiqueta. 
 
-Atributo "for": Establece una relación entre la etiqueta label y el input, el valor de este atributo debe de ser igual al valor del atributo "id" del control del formulario.
-
-Atributo "value": Al trabajar con casillas de verificación, el atributo value puede ser omitido gracias a la posibilidad de saber el estado de una casilla verificando su presencia/ausencia entre los campos enviados.
-
-Atributo "name": Para que un conjunto de botones de opción pertenezcan al mismo grupo, todos ellos deberían tener el mismo valor en el atributo name.
-
-Atributo "id": Tiene el mismo valor que el atributo "for".
-
 ### Uso
 Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
 ```
 {% include 'components/checkbox.twig' with {
     component: {
-        class: 'checkbox',
         label: 'Option1',
         value: 'valueCheckbox1',
         name: 'name1',
@@ -28,6 +19,14 @@ Para usar el componente se tiene que incluir con /twig/ de la siguie
 ```
 
 ### Opciones
+Atributo "for": Establece una relación entre la etiqueta label y el input, el valor de este atributo debe de ser igual al valor del atributo "id" del control del formulario.
+
+Atributo "value": Al trabajar con casillas de verificación, el atributo value puede ser omitido gracias a la posibilidad de saber el estado de una casilla verificando su presencia/ausencia entre los campos enviados.
+
+Atributo "name": Para que un conjunto de botones de opción pertenezcan al mismo grupo, todos ellos deberían tener el mismo valor en el atributo name.
+
+Atributo "id": Tiene el mismo valor que el atributo "for".
+
 La variable {{ attributes }} nos permite incluir cualquier otro atributo en el componente, por ejemplo la opción 'checked', 'disabled' o 'required'. Por defecto está vacío ( attributes|default('') ).
 
 ### Ejemplos
