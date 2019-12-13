@@ -15,12 +15,14 @@ Atributo "id": Tiene el mismo valor que el atributo "for".
 ### Uso
 Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
 ```
-    {% include 'components/checkbox.twig' with { 
-    class: 'checkbox',
-    label: 'Option1',
-    value: 'valueCheckbox1',
-    name: 'name1',
-    id: 'idCheckbox1',
+{% include 'components/checkbox.twig' with {
+    component: {
+        class: 'checkbox',
+        label: 'Option1',
+        value: 'valueCheckbox1',
+        name: 'name1',
+        id: 'idCheckbox1',
+    }
 }%}
 
 ```
@@ -30,41 +32,49 @@ La variable {{ attributes }} nos permite incluir cualquier otro atributo en el c
 
 ### Ejemplos
 #### Input checkbox básico
-{% include 'components/checkbox.twig' with { 
-    class: 'checkbox',
-    label: 'Option1',
-    value: 'valueCheckbox1',
-    name: 'name1',
-    id: 'idCheckbox1',
+{% include 'components/checkbox.twig' with {
+    component: {
+        class: 'checkbox',
+        label: 'Option1',
+        value: 'valueCheckbox1',
+        name: 'name1',
+        id: 'idCheckbox1',
+    }
 }%}
 
 #### Input checkbox checked
-{% include 'components/checkbox.twig' with { 
-    class: 'checkbox',
-    label: 'Option2-checked',
-    value: 'valueCheckbox2',
-    name: 'name',
-    id: 'idCheckbox2',
-    attributes: 'checked'
+{% include 'components/checkbox.twig' with {
+    component: {
+        class: 'checkbox',
+        label: 'Option2-checked',
+        value: 'valueCheckbox2',
+        name: 'name',
+        id: 'idCheckbox2',
+        attributes: 'checked'
+    }
 }%}
 
 #### Input checkbox disabled
 
-{% include 'components/checkbox.twig' with { 
-    class: 'checkbox',
-    label: 'Option3-disabled',
-    value: 'valueCheckbox3',
-    name: 'name',
-    id: 'idCheckbox3',
-    attributes: 'disabled'
+{% include 'components/checkbox.twig' with {
+    component: {
+        class: 'checkbox',
+        label: 'Option3-disabled',
+        value: 'valueCheckbox3',
+        name: 'name',
+        id: 'idCheckbox3',
+        attributes: 'disabled'
+    }
 }%}
 
 #### Input checkbox required
-{% include 'components/checkbox.twig' with { 
-    class: 'checkbox',
-    label: 'Option4-required',
-    value: 'valueCheckbox4',
-    name: 'name',
-    id: 'idCheckbox4',
-    attributes: 'required'
+{% include 'components/checkbox.twig' with {
+    component: {
+        class: 'checkbox',
+        label: 'Option4-required',
+        value: 'valueCheckbox4',
+        name: 'name',
+        id: 'idCheckbox4',
+        attributes: 'required'
+    }
 }%}
