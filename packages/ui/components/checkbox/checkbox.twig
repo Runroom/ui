@@ -1,9 +1,9 @@
-{% set class = class|default('') %}
-{% set value = value|default('') %}
-{% set id = id|default('') %}
-{% set attributes = attributes|default('') %}
-{% set label = label|default('') %}
-{% set name = name|default('') %}
+{% set class = component.class|default('checkbox') %}
+{% set value = component.value|default('') %}
+{% set id = component.id|default('') %}
+{% set attributes = component.attributes|default('') %}
+{% set label = component.label|default('') %}
+{% set name = component.name|default('') %}
 
 <div class="{{ class }}"> 
     <input type="checkbox" id="{{ id }}" name="{{ name }}" value="{{ value }}" {{ attributes }}>
