@@ -9,7 +9,11 @@ Para usar el componente se tiene que incluir con /twig/ de la siguie
 ```
 {% include 'components/checkbox.twig' with {
     component: {
+<<<<<<< HEAD
         class: 'ExampleClass',
+=======
+        class: 'checkbox',
+>>>>>>> Comments github
         label: 'Option1',
         value: 'valueCheckbox1',
         name: 'name1',
@@ -34,6 +38,10 @@ La variable {{ attributes }} nos permite incluir cualquier otro atributo en el c
 #### Input checkbox básico
 {% include 'components/checkbox.twig' with {
     component: {
+<<<<<<< HEAD
+=======
+        class: 'checkbox',
+>>>>>>> Comments github
         label: 'Option1',
         value: 'valueCheckbox1',
         name: 'name1',
