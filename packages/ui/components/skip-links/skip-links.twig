@@ -1,0 +1,11 @@
+{% set links = links|default([]) %}
+{% set class = class|default('') %}
+{% set ariaLabel = ariaLabel|default('skip links navigation') %}
+
+{% if links|length > 0 %}
+    <div class="skip-links {{ class }}" aria-label="{{ ariaLabel }}">
+        {% for link in links %}
+            <a class="skip-links__link" href="{{ link.anchor }}">{{ link.text }}</a>
+        {% endfor %}
+    </div>
+{% endif %}

@@ -24,6 +24,11 @@ const Nav = () => (
           <a>Component Foo</a>
         </Link>
       </li>
+      <li>
+        <Link href='/skip-links'>
+          <a>Component Skip-links</a>
+        </Link>
+      </li>
     </NavList>
   </Aside>
 );
