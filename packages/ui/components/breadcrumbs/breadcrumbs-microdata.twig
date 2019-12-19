@@ -1,0 +1,22 @@
+{% set breadcrumbs = breadcrumbs|default([]) %}
+
+{% if breadcrumbs is defined and breadcrumbs is iterable %}
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {% for breadcrumb in breadcrumbs %}
+            {
+                "@type": "ListItem",
+                "position": {{ loop.index }},
+                "item": {
+                "@id": "{{ breadcrumb.url }}",
+                "name": "{{ breadcrumb.label }}"
+                }
+            }
+        {% endfor %}
+    ]
+    }
+    </script>
+{% endif %}
