@@ -2,7 +2,6 @@
 
 {% set type = 'ul' %}
 {% set class = '' %}
-{% set tag = '' %}
 {% set items = [
     {
         content: '<a href="http://example.com/">Level 1</a>',
@@ -34,11 +33,10 @@
     }] 
 %}
 
-{{ lists.list(type, class, items, tag) }}
+{{ lists.list(type, class, items) }}
 
 {% set type = 'ol' %}
 {% set class = '' %}
-{% set tag = '' %}
 {% set items = [
     {
         content: '<h3>Level 1</h3>',
@@ -63,11 +61,10 @@
     }] 
 %}
 
-{{ lists.list(type, class, items, tag) }}
+{{ lists.list(type, class, items) }}
 
 {% set type = 'ul' %}
 {% set class = '' %}
-{% set tag = '' %}
 {% set items = [
     {
         content: 'Level 1',
@@ -92,4 +89,42 @@
     }] 
 %}
 
-{{ lists.list(type, class, items, tag) }}
+{{ lists.list(type, class, items) }}
+
+
+{% import 'components/list/list.twig' as lists %}
+
+{% set type = 'ul' %}
+{% set class = '' %}
+{% set items = [
+    {
+        content: '<a href="http://example.com/">Level 1</a>',
+        children: {
+            type: 'ul',
+            items: [{
+                content: 'Level 2',
+                children: {
+                    type: 'ul',
+                    class: '',
+                    items: [
+                        { 
+                            content: 'Level 3',
+                        },
+                        { 
+                            content: 'Level 3',
+                        },
+                    ]
+                }
+            },
+            {
+                content: 'Level 2',
+            }
+            ]
+        }
+    },
+    {
+        content: '<a href="http://example.com/">Level 1</a>',
+    }] 
+%}
+
+{{ lists.list(type, class, items) }}

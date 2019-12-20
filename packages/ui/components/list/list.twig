@@ -1,7 +1,4 @@
-{% macro list(type, class, items) %}
-    {% set items = items|default([]) %}
-    {% set type = type|default('') %}
-    {% set class = class|default('') %}
+{% macro list(type = '', class = '', items = []) %}
     {% set allowedTypes = ['ol', 'ul'] %}
 
     {% import _self as lists %}
