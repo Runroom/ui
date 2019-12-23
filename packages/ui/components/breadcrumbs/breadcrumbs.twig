@@ -3,13 +3,15 @@
 {% set class = class|default('') %}
 
 {% if breadcrumbs|length > 0 %}
-    <ol class="breadcrumbs {{ class }}" role="navigation" aria-label="{{ ariaLabel }}">
-        {% for breadcrumb in breadcrumbs %}
-            {% if breadcrumb.url and breadcrumb.label %}
-                <li class="breadcrumbs__item{% if loop.last and not loop.first %} breadcrumbs__item--last{% endif %}">
-                    <a href="{{ breadcrumb.url }}" {% if loop.last %}aria-current="page"{% endif %}>{{ breadcrumb.label }}</a>
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ol>
+    <nav class="breadcrumbs {{ class }}" aria-label="{{ ariaLabel }}">
+        <ol>
+            {% for breadcrumb in breadcrumbs %}
+                {% if breadcrumb.url and breadcrumb.label %}
+                    <li class="breadcrumbs__item{% if loop.last and not loop.first %} breadcrumbs__item--last{% endif %}">
+                        <a href="{{ breadcrumb.url }}" {% if loop.last %}aria-current="page"{% endif %}>{{ breadcrumb.label }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+    </nav>
 {% endif %}

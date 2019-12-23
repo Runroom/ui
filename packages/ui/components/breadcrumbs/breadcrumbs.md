@@ -50,9 +50,11 @@ Para usar el componente Breadcrumbs se tiene que incluir con /twig/ de la siguie
 ### Opciones
 
 ### Accesibilidad
-Usamos role="navigation" en el ol para indicar que es un elemento de navegación y aria-label="breadcrumbs" para describir el tipo de navegación.
+Usamos aria-label="breadcrumbs" para describir el tipo de navegación.
 
 Añadimos aria-current="page" en el último link, que apunta a la página actual.
+
+Para evitar que el lector de pantalla anuncie los separadores visuales entre enlaces los agregaremos usando css.
 
 ### Ejemplos
 #### Breadcrumbs con tres elementos
