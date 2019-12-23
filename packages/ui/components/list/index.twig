@@ -1,7 +1,5 @@
 {% import 'components/list/list.twig' as lists %}
 
-{% set type = 'ul' %}
-{% set class = '' %}
 {% set items = [
     {
         content: '<a href="http://example.com/">Level 1</a>',
@@ -33,10 +31,8 @@
     }] 
 %}
 
-{{ lists.list(type, class, items) }}
+{{ lists.list('ul', 'example', items) }}
 
-{% set type = 'ol' %}
-{% set class = '' %}
 {% set items = [
     {
         content: '<h3>Level 1</h3>',
@@ -61,10 +57,8 @@
     }] 
 %}
 
-{{ lists.list(type, class, items) }}
+{{ lists.list('ol', '', items) }}
 
-{% set type = 'ul' %}
-{% set class = '' %}
 {% set items = [
     {
         content: 'Level 1',
@@ -89,13 +83,11 @@
     }] 
 %}
 
-{{ lists.list(type, class, items) }}
+{{ lists.list('ul', '', items) }}
 
 
 {% import 'components/list/list.twig' as lists %}
 
-{% set type = 'ul' %}
-{% set class = '' %}
 {% set items = [
     {
         content: '<a href="http://example.com/">Level 1</a>',
@@ -127,4 +119,4 @@
     }] 
 %}
 
-{{ lists.list(type, class, items) }}
+{{ lists.list('ul', '', items) }}
