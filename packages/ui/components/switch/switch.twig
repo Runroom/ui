@@ -1,18 +1,18 @@
-{% set class = component.class|default('switch') %}
-{% set labelAfter = component.labelAfter|default('') %}
-{% set labelBefore = component.labelBefore|default('') %}
-{% set labelClass = component.labelClass|default('') %}
-{% set spanClass = component.spanClass|default('') %}
+{% set postText = component.postText|default('') %}
+{% set preText = component.preText|default('') %}
+{% set labelClass = component.labelClass|default('switch__label') %}
+{% set spanClass = component.spanClass|default('slide round') %}
+{% set attributes = component.attributes|default('') %}
 
-<div class="{{ class }}">
-    {% if labelBefore %}
-        <span>{{ labelBefore }}</span>
+<div class="switch">
+    {% if preText %}
+        <span>{{ preText }}</span>
     {% endif %}
-        <label class="{{ labelClass }}">
-            <input type="checkbox" {{ attributes }}>
-            <span class="{{ spanClass }}"></span>
-        </label>
-    {% if labelAfter %}
-        <span>{{ labelAfter }}</span>
+    <label class="{{ labelClass }}">
+        <input type="checkbox" {{ attributes }}>
+        <span class="{{ spanClass }}"></span>
+    </label>
+    {% if postText %}
+        <span>{{ postText }}</span>
     {% endif %}
 </div>
