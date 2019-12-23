@@ -6,62 +6,55 @@ Etiqueta <label>:  nos permite asociar la casilla de verificación con todos los
 ### Uso
 Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
 ```
-{% include 'components/switch/switch.twig' with { 
-    labelClass: 'switch',
-    spanClass: 'slider round',
-    labelBefore: 'Off'|upper,
-    labelAfter: 'On'|upper,
+{% include 'components/switch/switch.twig' with {
+    component: {
+        preText: 'preText',
+        postText: 'postText'
+    }
 }%}
 
 ```
 
 ### Opciones
-La variable {{ labelBefore }} almacena el valor para la opción de la izquierda o apagada.
+La variable {{ preText }} almacena el valor para la opción de la izquierda o apagada.
 
-La variable {{ labelAfter }} almacena el valor para la opción de la derecha o encendida.
+La variable {{ postText }} almacena el valor para la opción de la derecha o encendida.
 
 La variable {{ attributes }} nos permite incluir cualquier otro atributo en el componente, por ejemplo la opción 'checked', 'disabled' o 'required'. Por defecto está vacío ( attributes|default('') ).
 
 ### Ejemplos
 #### Input checkbox básico
-{% include 'components/switch/switch.twig' with { 
+{% include 'components/switch/switch.twig' with {
     component: {
-        labelClass: 'switch',
-        spanClass: 'slider round',
-        labelBefore: 'Off'|upper,
-        labelAfter: 'On'|upper
+        preText: 'Off'|upper,
+        postText: 'On'|upper
     }
 }%}
 
+
 #### Input checkbox checked
-{% include 'components/switch/switch.twig' with {
+{% include 'components/switch/switch.twig' with { 
     component: {
-        labelClass: 'switch',
-        spanClass: 'slider round',
-        labelBefore: 'Off'|upper,
-        labelAfter: 'On'|upper,
+        preText: '',
+        postText: 'Ok',
         attributes: 'checked'
     }
 }%}
 
 #### Input checkbox disabled
-{% include 'components/switch/switch.twig' with { 
+{% include 'components/switch/switch.twig' with {
     component: {
-        labelClass: 'switch',
-        spanClass: 'slider round',
-        labelBefore: 'Off'|upper,
-        labelAfter: 'On'|upper,
+        preText: "Don't agree ",
+        postText: 'Agree',
         attributes: 'disabled'
     }
 }%}
 
 #### Input checkbox required
-{% include 'components/switch/switch.twig' with {
+{% include 'components/switch/switch.twig' with { 
     component: {
-        labelClass: 'switch',
-        spanClass: 'slider round',
-        labelBefore: 'Off'|upper,
-        labelAfter: 'On'|upper,
+        preText: 'No'|upper,
+        postText: 'Yes'|upper,
         attributes: 'required'
     }
-}%}
+}%} 
