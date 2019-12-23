@@ -31,7 +31,7 @@
     }] 
 %}
 
-{{ lists.list('ul', 'example', items) }}
+{{ lists.list('ul', items, 'exampleClass') }}
 
 {% set items = [
     {
@@ -57,7 +57,7 @@
     }] 
 %}
 
-{{ lists.list('ol', '', items) }}
+{{ lists.list('ol', items) }}
 
 {% set items = [
     {
@@ -83,7 +83,7 @@
     }] 
 %}
 
-{{ lists.list('ul', '', items) }}
+{{ lists.list('ul', items) }}
 
 
 {% import 'components/list/list.twig' as lists %}
@@ -119,4 +119,4 @@
     }] 
 %}
 
-{{ lists.list('ul', '', items) }}
+{{ lists.list('ul',items, 'exampleClass') }}
