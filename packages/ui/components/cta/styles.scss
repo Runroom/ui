@@ -41,20 +41,19 @@ button,
 
     &:not(.button--hollow):not(.button--disabled) { background-color: $c-button300; }
 
-    /* Estados */
+    /* States */
     &:hover:not(.button--disabled) { background-color: $c-button100; }
 
     &:focus:not(.button--disabled),
     &:active:not(.button--disabled) {
         background-color: $c-button500;
-        outline: blue solid 3px;
     }
 
     &:disabled,
     &--disabled {
         background-color: $c-button-disabled;
         cursor: inherit;
-        outline: none;
+        pointer-events: none;
     }
 
     /* Modifiers */
@@ -69,21 +68,4 @@ button,
             border: 1px solid $c-button500;
         }
     }
-
-    &--icon {
-        align-items: center;
-        display: inline-flex;
-        justify-content: center;
-    }
-
-    /* Estilos iconos */
-    &__icon {
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        margin: 0 10px;
-    }
-
-    /* Media */
-    @media print { display: none !important; }
 }
