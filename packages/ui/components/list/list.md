@@ -75,7 +75,8 @@ Y por último realizamos la llamada pasándole como argumentos el tipo de lista,
         content: '<a href="http://example.com/">Level 1</a>',
         children: {
             type: 'ul',
-            items: [{
+            items: [
+                {
                 content: 'Level 2',
                 children: {
                     type: 'ul',
@@ -85,14 +86,12 @@ Y por último realizamos la llamada pasándole como argumentos el tipo de lista,
                         },
                         { 
                             content: 'Level 3',
-                        },
-                    ]
-                }
+                        }
+                    ]}
             },
             {
                 content: 'Level 2',
-            }
-            ]
+            }]
         }
     },
     {
@@ -112,14 +111,14 @@ Y por último realizamos la llamada pasándole como argumentos el tipo de lista,
         class: '',
         children: {
             type: 'ol',
-            items: [{
-                content: 'Level 2',
-            },
-            {
-                content: 'Level 2',
-            }
-            ]
-        }
+            items: [
+                {
+                    content: 'Level 2',
+                },
+                {
+                    content: 'Level 2',
+                }
+            ]}
     },
     {
         content: '<h3>Level 1</h3>',
@@ -140,13 +139,13 @@ Y por último realizamos la llamada pasándole como argumentos el tipo de lista,
         content: 'Level 1',
         children: {
             type: 'ol',
-            items: [{
-                content: '<i>Level 2</i>',
-            },
-            {
-                content: 'Level 2',
-            }
-            ]
+            items: [
+                {
+                    content: '<i>Level 2</i>',
+                },
+                {
+                    content: 'Level 2',
+            }]
         }
     },
     {
