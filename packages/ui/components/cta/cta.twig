@@ -1,25 +1,31 @@
+{% set allowedTags = ['button', 'a'] %}
 {% set tag = component.tag|default('button') %}
 {% set class = component.class|default('') %}
+{% set type = component.type|default('button') %}
+{% set disabled = component.disabled|default(false) %}
 {% set url = component.url|default(false) %}
 {% set blank = component.blank|default(false) %}
-{% set type = component.type|default('button') %}
+{% set ariaLabel = component.ariaLabel|default(component.content) %}
 {% set attr = component.attr|default('') %}
-{% set disabled = component.disabled|default(false) %}
-{% set ariaLabel = component.ariaLabel|default(content) %}
-{% set content = component.content|default('I need content') %}
+{% set content = component.content|default('') %}
 
-<{{ tag == 'button' ? 'button' : 'a' }}
-    class="button {{ class }}{{ disabled ? ' button--disabled' }}"
-    {{ type and tag == 'button' ? ' type="' ~ type ~ '"' }}
-    {{ tag != 'button' ? ' role="button"' }}
-    {{ tag == 'button' and disabled ? ' disabled' }}
-    {{ tag != 'button' and disabled ? ' tabindex="-1"' }}
-    {{ tag != 'button' and url ? ' href="' ~ url ~ '"' }}
+{% if tag in allowedTags %}
+    <{{ tag }}
+    class="cta {{ class }}{{ disabled ? ' cta--disabled' }}"
+    {% if tag == 'button' %}
+        type={{ type }}
+        {{ disabled ? 'disabled' }}
+    {% elseif tag == 'a' %}
+        role="button"
+        {{ disabled ? 'tabindex="-1"' }}
+        {% if url %}
+            href={{ url }}
+            {{ blank ? "target='_blank'" : "target='_self'" ~ '" ' }}
+        {% endif %}
+    {% endif %}
     aria-label="{{ ariaLabel }}"
     {{ attr|raw }}
-    {% if tag != 'button' and url %}
-        {{ blank ? " target='_blank'" : " target='_self'" ~ '" ' }}
-    {% endif %}
->
-    {{ content|raw }}
-</{{ tag == 'button' ? 'button' : 'a' }}>
+    >
+        {{ content|raw }}
+    </{{ tag  }}
+{% endif %}
