@@ -1,7 +1,6 @@
 {% import 'components/list/list.twig' as lists %}
 
-{% set items = [
-    {
+{% set items = [{
         content: '<a href="http://example.com/">Level 1</a>',
         children: {
             type: 'ul',
@@ -9,21 +8,17 @@
                 content: 'Level 2',
                 children: {
                     type: 'ul',
-                    class: '',
-                    items: [
-                        { 
-                            content: 'Level 3',
-                        },
-                        { 
-                            content: 'Level 3',
-                        },
-                    ]
-                }
+                    items: [{ 
+                        content: 'Level 3',
+                    },
+                    { 
+                        content: 'Level 3',
+                    }
+                ]}
             },
             {
                 content: 'Level 2',
-            }
-            ]
+            }]
         }
     },
     {
@@ -33,20 +28,16 @@
 
 {{ lists.list('ul', items, 'exampleClass') }}
 
-{% set items = [
-    {
+{% set items = [{
         content: '<h3>Level 1</h3>',
-        class: '',
         children: {
             type: 'ol',
-            class: '',
             items: [{
                 content: 'Level 2',
             },
             {
                 content: 'Level 2',
-            }
-            ]
+            }]
         }
     },
     {
@@ -59,20 +50,16 @@
 
 {{ lists.list('ol', items) }}
 
-{% set items = [
-    {
+{% set items = [{
         content: 'Level 1',
-        class: '',
         children: {
             type: 'ol',
-            class: '',
             items: [{
                 content: '<i>Level 2</i>',
             },
             {
                 content: 'Level 2',
-            }
-            ]
+            }]
         }
     },
     {
@@ -88,8 +75,7 @@
 
 {% import 'components/list/list.twig' as lists %}
 
-{% set items = [
-    {
+{% set items = [{
         content: '<a href="http://example.com/">Level 1</a>',
         children: {
             type: 'ul',
@@ -97,21 +83,17 @@
                 content: 'Level 2',
                 children: {
                     type: 'ul',
-                    class: '',
-                    items: [
-                        { 
-                            content: 'Level 3',
-                        },
-                        { 
-                            content: 'Level 3',
-                        },
-                    ]
-                }
+                    items: [{ 
+                        content: 'Level 3',
+                    },
+                    { 
+                        content: 'Level 3',
+                    },
+                ]}
             },
             {
                 content: 'Level 2',
-            }
-            ]
+            }]
         }
     },
     {

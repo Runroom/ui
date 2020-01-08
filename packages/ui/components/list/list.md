@@ -1,10 +1,10 @@
 ## Componente List
 El componente list permite crear listas ordenadas, desordenadas y anidadas reutilizando el código para evitar repeticiones.
 
-Los argumentos que se pasan al componente list son type, class e items y son opcionales.
+Los argumentos que se pasan al componente list son type, items y class y son opcionales.
 
 ```
-{% macro list(type = '', class = '', items = []) %}
+{% macro list(type = '', items = [], class = '') %}
     {% set allowedTypes = ['ol', 'ul'] %}
 
     {% import _self as lists %}
@@ -15,7 +15,7 @@ Los argumentos que se pasan al componente list son type, class e items y son opc
                 <li class="{{ item.class }}">
                     {{ item.content|raw }}
                     {% if item.children %}
-                        {{ lists.list(item.children.type, item.children.class, item.children.items) }}
+                        {{ lists.list(item.children.type, item.children.items, item.children.class) }}
                     {% endif %}
                 </li>
             {% endfor %}
@@ -39,26 +39,31 @@ A continuación creamos el array de items y sus anidaciones:
         content: '',
         children: {
             type: '',
-            items: [{
+            items: [
+                {
                 content: '',
                 children: {
                     type: '',
-                    class: '',
                     items: [
                         { 
                             content: '',
                         },
                         { 
                             content: '',
-                        },
-                    ]
-                }
+                        }
+                    ]}
             },
+            {
+                content: '',
+            }]
+        }
+    }] 
+%}
 ```
 
 Y por último realizamos la llamada pasándole como argumentos el tipo de lista, la clase y el array creado.
 ```
-{{ lists.list('type', 'class', items) }}
+{{ lists.list('type', items, 'class') }}
 ```
 
 ### Ejemplos
@@ -74,7 +79,6 @@ Y por último realizamos la llamada pasándole como argumentos el tipo de lista,
                 content: 'Level 2',
                 children: {
                     type: 'ul',
-                    class: '',
                     items: [
                         { 
                             content: 'Level 3',
@@ -96,7 +100,7 @@ Y por último realizamos la llamada pasándole como argumentos el tipo de lista,
     }] 
 %}
 
-{{ lists.list('ul', 'example', items) }}
+{{ lists.list('ul', items, 'example') }}
 ```
 
 #### Lista desordenada
@@ -108,7 +112,6 @@ Y por último realizamos la llamada pasándole como argumentos el tipo de lista,
         class: '',
         children: {
             type: 'ol',
-            class: '',
             items: [{
                 content: 'Level 2',
             },
@@ -126,7 +129,7 @@ Y por último realizamos la llamada pasándole como argumentos el tipo de lista,
     }] 
 %}
 
-{{ lists.list('ol', '', items) }}
+{{ lists.list('ol', items) }}
 ```
 
 #### Combinación lista ordenada y desordenada
@@ -135,10 +138,8 @@ Y por último realizamos la llamada pasándole como argumentos el tipo de lista,
 {% set items = [
     {
         content: 'Level 1',
-        class: '',
         children: {
             type: 'ol',
-            class: '',
             items: [{
                 content: '<i>Level 2</i>',
             },
@@ -156,5 +157,5 @@ Y por último realizamos la llamada pasándole como argumentos el tipo de lista,
     }] 
 %}
 
-{{ lists.list('ul', '', items) }}
+{{ lists.list('ul', items) }}
 ```

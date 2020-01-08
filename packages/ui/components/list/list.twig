@@ -9,7 +9,7 @@
                 <li class="{{ item.class }}">
                     {{ item.content|raw }}
                     {% if item.children %}
-                        {{ lists.list(item.children.type, item.children.class, item.children.items) }}
+                        {{ lists.list(item.children.type, item.children.items, item.children.class) }}
                     {% endif %}
                 </li>
             {% endfor %}
