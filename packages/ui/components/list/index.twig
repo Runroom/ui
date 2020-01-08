@@ -7,27 +7,29 @@
             type: 'ul',
             items: [
                 {
-                content: 'Level 2',
-                children: {
-                    type: 'ul',
-                    items: [
-                        { 
-                        content: 'Level 3',
-                        },
-                        { 
-                            content: 'Level 3',
-                        }
-                    ]}
-            },
-            {
-                content: 'Level 2',
-            }]
+                    content: 'Level 2',
+                    children: {
+                        type: 'ul',
+                        items: [
+                            { 
+                                content: 'Level 3',
+                            },
+                            { 
+                                content: 'Level 3',
+                            }
+                        ]
+                    }
+                },
+                {
+                    content: 'Level 2',
+                }
+            ]
         }
     },
     {
         content: '<a href="http://example.com/">Level 1</a>',
-    }] 
-%}
+    }
+] %}
 
 {{ lists.list('ul', items, 'exampleClass') }}
 
@@ -42,7 +44,8 @@
                 },
                 {
                     content: 'Level 2',
-                }]
+                }
+            ]
         }
     },
     {
@@ -50,12 +53,13 @@
     },
     {
         content: '<h3>Level 1</h3>',
-    }] 
-%}
+    }
+] %}
 
 {{ lists.list('ol', items) }}
 
-{% set items = [{
+{% set items = [
+    {
         content: 'Level 1',
         children: {
             type: 'ol',
@@ -65,7 +69,8 @@
                 },
                 {
                     content: 'Level 2',
-                }]
+                }
+            ]
         }
     },
     {
@@ -73,8 +78,8 @@
     },
     {
         content: '<b>Level 1<b>',
-    }] 
-%}
+    }
+] %}
 
 {{ lists.list('ul', items) }}
 
@@ -91,22 +96,25 @@
                     content: 'Level 2',
                     children: {
                         type: 'ul',
-                        items: [{ 
-                            content: 'Level 3',
-                        },
-                        { 
-                            content: 'Level 3',
-                        },
-                    ]}
+                        items: [
+                            { 
+                                content: 'Level 3',
+                            },
+                            { 
+                                content: 'Level 3',
+                            },                                                              
+                        ]
+                    }
                 },
                 {
                     content: 'Level 2',
-                }]
+                }
+            ]
         }
     },
     {
         content: '<a href="http://example.com/">Level 1</a>',
-    }] 
-%}
+    }
+] %}
 
 {{ lists.list('ul',items, 'exampleClass') }}

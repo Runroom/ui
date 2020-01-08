@@ -41,24 +41,26 @@ A continuación creamos el array de items y sus anidaciones:
             type: '',
             items: [
                 {
-                content: '',
-                children: {
-                    type: '',
-                    items: [
-                        { 
-                            content: '',
-                        },
-                        { 
-                            content: '',
-                        }
-                    ]}
-            },
-            {
-                content: '',
-            }]
+                    content: '',
+                    children: {
+                        type: '',
+                        items: [
+                            { 
+                                content: '',
+                            },
+                            { 
+                                content: '',
+                            }
+                        ]
+                    }
+                },
+                {
+                    content: '',
+                }
+            ]
         }
-    }] 
-%}
+    }
+] %}
 ```
 
 Y por último realizamos la llamada pasándole como argumentos el tipo de lista, la clase y el array creado.
@@ -77,27 +79,29 @@ Y por último realizamos la llamada pasándole como argumentos el tipo de lista,
             type: 'ul',
             items: [
                 {
-                content: 'Level 2',
-                children: {
-                    type: 'ul',
-                    items: [
-                        { 
-                            content: 'Level 3',
-                        },
-                        { 
-                            content: 'Level 3',
-                        }
-                    ]}
-            },
-            {
-                content: 'Level 2',
-            }]
+                    content: 'Level 2',
+                    children: {
+                        type: 'ul',
+                        items: [
+                            { 
+                                content: 'Level 3',
+                            },
+                            { 
+                                content: 'Level 3',
+                            }
+                        ]
+                    }
+                },
+                {
+                    content: 'Level 2',
+                }
+            ]
         }
     },
     {
         content: '<a href="http://example.com/">Level 1</a>',
-    }] 
-%}
+    }
+] %}
 
 {{ lists.list('ul', items, 'example') }}
 ```
@@ -108,7 +112,6 @@ Y por último realizamos la llamada pasándole como argumentos el tipo de lista,
 {% set items = [
     {
         content: '<h3>Level 1</h3>',
-        class: '',
         children: {
             type: 'ol',
             items: [
@@ -118,15 +121,16 @@ Y por último realizamos la llamada pasándole como argumentos el tipo de lista,
                 {
                     content: 'Level 2',
                 }
-            ]}
+            ]
+        }
     },
     {
         content: '<h3>Level 1</h3>',
     },
     {
         content: '<h3>Level 1</h3>',
-    }] 
-%}
+    }
+] %}
 
 {{ lists.list('ol', items) }}
 ```
@@ -145,7 +149,8 @@ Y por último realizamos la llamada pasándole como argumentos el tipo de lista,
                 },
                 {
                     content: 'Level 2',
-            }]
+                }
+            ]
         }
     },
     {
@@ -153,8 +158,8 @@ Y por último realizamos la llamada pasándole como argumentos el tipo de lista,
     },
     {
         content: '<b>Level 1<b>',
-    }] 
-%}
+    }
+] %}
 
 {{ lists.list('ul', items) }}
 ```
