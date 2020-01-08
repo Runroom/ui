@@ -1,6 +1,6 @@
-{% set breadcrumbs = breadcrumbs|default([]) %}
-{% set ariaLabel = ariaLabel|default('breadcrumbs') %}
-{% set class = class|default('') %}
+{% set breadcrumbs = component.breadcrumbs|default([]) %}
+{% set ariaLabel = component.ariaLabel|default('breadcrumbs') %}
+{% set class = component.class|default('') %}
 
 {% if breadcrumbs|length > 0 %}
     <nav class="breadcrumbs {{ class }}" aria-label="{{ ariaLabel }}">
