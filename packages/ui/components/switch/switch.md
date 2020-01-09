@@ -6,19 +6,25 @@ Etiqueta <label>:  nos permite asociar la casilla de verificación con todos los
 ### Uso
 Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
 ```
-{% include 'components/switch/switch.twig' with {
-    component: {
-        preText: 'preText',
-        postText: 'postText'
-    }
-}%}
+{% include 'components/switch/switch.twig' %}
 
 ```
 
 ### Opciones
-La variable {{ preText }} almacena el valor para la opción de la izquierda o apagada.
+Las opciones que se pueden pasar al componente son el texto previo y posterior al checkbox y los atributos, todos ellos son opcionales. Estas opciones se pasan de la siguiente manera: 
+```
+{% include 'components/switch/switch.twig' with {
+    component: {
+        preText: 'preText',
+        postText: 'postText',
+        atributes: ''
+    }
+}%}
 
-La variable {{ postText }} almacena el valor para la opción de la derecha o encendida.
+```
+La variable {{ preText }} almacena el valor para la opción izquierda o apagada.
+
+La variable {{ postText }} almacena el valor para la opción derecha o encendida.
 
 La variable {{ attributes }} nos permite incluir cualquier otro atributo en el componente, por ejemplo la opción 'checked', 'disabled' o 'required'. Por defecto está vacío ( attributes|default('') ).
 
