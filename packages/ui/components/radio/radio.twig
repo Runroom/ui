@@ -1,11 +1,10 @@
-{% set class = component.class|default('radio') %}
 {% set name = component.name|default('') %}
 {% set value = component.value|default('') %}
 {% set id = component.id|default('') %}
 {% set attributes = component.attributes|default('') %}
 {% set label = component.label|default('') %}
 
-<div class="{{ class }}">
+<div class="radio">
     <input type="radio" name="{{ name }}" value="{{ value }}" id="{{ id }}" {{ attributes }}>
     <label for="{{ id }}">{{ label }}</label>
 </div>
