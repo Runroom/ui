@@ -11,10 +11,10 @@
                     children: {
                         type: 'ul',
                         items: [
-                            { 
+                            {
                                 content: 'Level 3',
                             },
-                            { 
+                            {
                                 content: 'Level 3',
                             }
                         ]
@@ -83,8 +83,6 @@
 
 {{ lists.list('ul', items) }}
 
-{% import 'components/list/list.twig' as lists %}
-
 {% set items = [
     {
         content: '<a href="http://example.com/">Level 1</a>',
@@ -96,12 +94,12 @@
                     children: {
                         type: 'ul',
                         items: [
-                            { 
+                            {
                                 content: 'Level 3',
                             },
-                            { 
+                            {
                                 content: 'Level 3',
-                            },                                                              
+                            },
                         ]
                     }
                 },
