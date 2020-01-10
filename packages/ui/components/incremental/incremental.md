@@ -15,13 +15,16 @@ The basic use of this component in *twig* is as follows:
 ```
 
 ## Options
-+ `name`: Input name.
-+ `id1` & `id2` - *Optional*: Has default values. Used for A11y, sets the id from the buttons as `aria-controls` for the input.
++ `name` - *Optional*: Input name. Defaults to incremental.
++ `id1` - *Optional*: Input id. Defaults to incremental. Used for A11y, sets the input id to be referenced in the buttons `aria-controls`.
 + `max` - *Optional*: Defaults to 100. Maximum value of the increment.
 + `min` - *Optional*: Defaults to 0. Mínimum value of the increment.
 + `initialValue` - *Optional*: Defaults to 0. Initial value, can be overriden in case the element starts with a value.
 + `incrementSize` - *Optional*: Defaults to 1. Increment value that will be applied in each one of the interactions.
 + `title` - *Optional*: Defaults to 'Numero de elementos'. Used for Ally, the voice reader will read this title after the value of the input.
++ `attr` - *Optional*: Allows other html attributes to be set to the component. They are printed raw.
++ `contentPlus` - *Optional*: Defaults to +. Sets de content of the plus button. It is printed raw.
++ `contentMinus` - *Optional*: Defaults to -. Sets de content of the minus button. It is printed raw.
 
 ## A11y
 + The component is defined as `aria-live: polite` so the voice reader reads the changes each time the component is updated.
@@ -47,7 +50,9 @@ The basic use of this component in *twig* is as follows:
     component: {
         name: 'incremental',
         initialValue: 20,
-        incrementSize: 5
+        incrementSize: 5,
+        contentPlus: '<b>Add</b>',
+        contentMinus: '<b>Remove</b>'
     }
 } %}
 ```
