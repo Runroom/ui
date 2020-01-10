@@ -25,7 +25,7 @@ The basic use of this component in *twig* is as follows:
 
 ## A11y
 + The component is defined as `aria-live: polite` so the voice reader reads the changes each time the component is updated.
-+ It is also defined as `aria-atomic: true` so the voice reader reads when any changer is applied to the component.
++ It is also defined as `aria-atomic: true` so the voice reader reads when any changes is applied to the component.
 + The buttons are linked with the input through `aria-controls`.
 + The input has `aria-valuemin` and `aria-valuemax` defined.
 
