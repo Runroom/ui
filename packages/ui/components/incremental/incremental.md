@@ -24,8 +24,8 @@ The basic use of this component in *twig* is as follows:
 + `title` - *Optional*: Defaults to 'Numero de elementos'. Used for Ally, the voice reader will read this title after the value of the input.
 
 ## A11y
-+ The component is defined as `aria-live: polite` so it the voice reader reads the changes each time the component is updated.
-+ It is also defined as `aria-atomic: true` so it the voice reader reads when any changer is applied to the component.
++ The component is defined as `aria-live: polite` so the voice reader reads the changes each time the component is updated.
++ It is also defined as `aria-atomic: true` so the voice reader reads when any changer is applied to the component.
 + The buttons are linked with the input through `aria-controls`.
 + The input has `aria-valuemin` and `aria-valuemax` defined.
 
