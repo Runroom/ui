@@ -14,7 +14,8 @@ Para usar el componente se tiene que incluir con /twig/ de la siguie
             value: '',
             name: '',
             id: '',
-            attributes: ''
+            attributes: '',
+            class: ''
         }
     } %}
 ```
@@ -29,6 +30,8 @@ Atributo "value": Debe de ser único en el grupo y será enviado junto con el fo
 Atributo "name": Para que un conjunto de botones de opción pertenezcan al mismo grupo, todos ellos deberían tener el mismo valor en el atributo name.
 
 Atributo "id": Tiene el mismo valor que el atributo "for".
+
+La variable {{ class }} permite añadir otra clase que pudieramos necesitar para crear estilos o trabajar comportamientos.
 
 ### Ejemplos
 #### Radio button básico
@@ -63,4 +66,13 @@ Atributo "id": Tiene el mismo valor que el atributo "for".
     }
 } %}
 
-
+#### Radio button con clase
+{% include 'components/radio/radio.twig' with { 
+    component: {
+        label: 'Opción4',
+        value: 'valueRadio4',
+        name: 'name',
+        id: 'idRadio4',
+        class: 'radio-class'
+    }
+} %}
