@@ -15,9 +15,11 @@ Las opciones que se pueden pasar al componente son el texto previo y posterior a
 ```
 {% include 'components/switch/switch.twig' with {
     component: {
-        preText: 'preText',
-        postText: 'postText',
-        atributes: ''
+        preText: '',
+        postText: '',
+        attributes: '',
+        name: '',
+        value: ''
     }
 }%}
 
@@ -28,39 +30,60 @@ La variable {{ postText }} almacena el valor para la opción derecha o encendida
 
 La variable {{ attributes }} nos permite incluir cualquier otro atributo en el componente, por ejemplo la opción 'checked', 'disabled' o 'required'. Por defecto está vacío ( attributes|default('') ).
 
+La variable {{ name }} almacena el name del checkbox.
+
+La variable {{ class }} permite añadir otra clase que pudieramos necesitar para crear estilos o trabajar comportamientos.
+
 ### Ejemplos
 #### Input checkbox básico
 {% include 'components/switch/switch.twig' with {
     component: {
         preText: 'Off'|upper,
-        postText: 'On'|upper
+        postText: 'On'|upper,
+        name: '',
+        value: ''
     }
 }%}
 
 
-#### Input checkbox checked
+#### Input checkbox con atributo checked
 {% include 'components/switch/switch.twig' with { 
     component: {
         preText: '',
         postText: 'Ok',
-        attributes: 'checked'
+        attributes: 'checked',
+        name: '',
+        value: ''
     }
 }%}
 
-#### Input checkbox disabled
+#### Input checkbox con atributo disabled
 {% include 'components/switch/switch.twig' with {
     component: {
         preText: "Don't agree ",
         postText: 'Agree',
-        attributes: 'disabled'
+        attributes: 'disabled',
+        name: '',
+        value: ''
     }
 }%}
 
-#### Input checkbox required
+#### Input checkbox con atributo required
 {% include 'components/switch/switch.twig' with { 
     component: {
         preText: 'No'|upper,
         postText: 'Yes'|upper,
-        attributes: 'required'
+        attributes: 'required',
+        name: '',
+        value: ''
+    }
+}%} 
+
+#### Input checkbox con clase
+{% include 'components/switch/switch.twig' with { 
+    component: {
+        name: 'name5',
+        value: 'value5',
+        class: 'extra-class'
     }
 }%} 
