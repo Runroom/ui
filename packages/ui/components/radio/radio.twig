@@ -3,8 +3,9 @@
 {% set id = component.id|default('') %}
 {% set attributes = component.attributes|default('') %}
 {% set label = component.label|default('') %}
+{% set class = component.class|default('') %}
 
-<div class="radio">
+<div class="radio {{ class }}">
     <input type="radio" name="{{ name }}" value="{{ value }}" id="{{ id }}" {{ attributes }}>
     <label for="{{ id }}">{{ label }}</label>
 </div>
