@@ -1,8 +1,8 @@
 ## Componente Checkbox
 Este componente permite al usuario hacer selecciones múltiples de un conjunto de opciones.
-El elemento input, teniendo el valor "checkbox" en su atributo type, representa un control de dos estados que permite a los usuarios marcarlo como seleccionado o deseleccionado. 
+El elemento input, teniendo el valor "checkbox" en su atributo type, representa un control de dos estados que permite a los usuarios marcarlo como seleccionado o deseleccionado.
 
-Etiqueta <label>:  nos permite asociar la casilla de verificación con todos los demás campos que estén dentro del alcance de la etiqueta. 
+Etiqueta <label>:  nos permite asociar la casilla de verificación con todos los demás campos que estén dentro del alcance de la etiqueta.
 
 ### Uso
 Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
@@ -33,7 +33,7 @@ La variable {{ attributes }} nos permite incluir cualquier otro atributo en el c
 #### Input checkbox básico
 {% include 'components/checkbox.twig' with {
     component: {
-        class: 'checkbox',
+        class: '',
         label: 'Option1',
         value: 'valueCheckbox1',
         name: 'name1',
@@ -44,7 +44,7 @@ La variable {{ attributes }} nos permite incluir cualquier otro atributo en el c
 #### Input checkbox checked
 {% include 'components/checkbox.twig' with {
     component: {
-        class: 'checkbox',
+        class: '',
         label: 'Option2-checked',
         value: 'valueCheckbox2',
         name: 'name',
@@ -57,7 +57,7 @@ La variable {{ attributes }} nos permite incluir cualquier otro atributo en el c
 
 {% include 'components/checkbox.twig' with {
     component: {
-        class: 'checkbox',
+        class: '',
         label: 'Option3-disabled',
         value: 'valueCheckbox3',
         name: 'name',
@@ -69,7 +69,7 @@ La variable {{ attributes }} nos permite incluir cualquier otro atributo en el c
 #### Input checkbox required
 {% include 'components/checkbox.twig' with {
     component: {
-        class: 'checkbox',
+        class: '',
         label: 'Option4-required',
         value: 'valueCheckbox4',
         name: 'name',
