@@ -9,6 +9,7 @@ Para usar el componente se tiene que incluir con /twig/ de la siguie
 ```
 {% include 'components/checkbox.twig' with {
     component: {
+        class: 'ExampleClass',
         label: 'Option1',
         value: 'valueCheckbox1',
         name: 'name1',
