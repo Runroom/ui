@@ -25,6 +25,11 @@ const Nav = () => (
         </Link>
       </li>
       <li>
+        <Link href='/checkbox'>
+          <a>Component Checkbox</a>
+        </Link>
+      </li>
+      <li>
         <Link href='/list'>
           <a>Component List</a>
         </Link>

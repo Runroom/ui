@@ -1,0 +1,38 @@
+.checkbox {
+    input[type="checkbox"] {
+        display: none;
+
+        + label {
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        + label::before {
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 20%;
+            content: '';
+            display: block;
+            float: left;
+            height: 15px;
+            margin-left: 20px;
+            text-align: center;
+            width: 15px;
+        }
+
+        &:checked + label::before {
+            background-color: black;
+            box-shadow: inset 0 0 0 3px white;
+        }
+
+        &:disabled + label {
+            color: lightgray;
+            pointer-events: none;
+        }
+
+        &:disabled + label::before {
+            border: 1px solid lightgray;
+            pointer-events: none;
+        }
+    }
+}
