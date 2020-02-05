@@ -11,21 +11,21 @@
 
 {% if tag in allowedTags %}
     <{{ tag }}
-    class="cta {{ class }}{{ disabled ? ' cta--disabled' }}"
-    {% if tag == 'button' %}
-        type={{ type }}
-        {{ disabled ? 'disabled' }}
-    {% elseif tag == 'a' %}
-        role="button"
-        {{ disabled ? 'tabindex="-1"' }}
-        {% if url %}
-            href={{ url }}
-            {{ blank ? "target='_blank'" : "target='_self'" ~ '" ' }}
+        class="cta{{ disabled ? ' cta--disabled' }} {{ class }}"
+        aria-label="{{ ariaLabel }}"
+        {% if tag == 'button' %}
+            type={{ type }}
+            {{ disabled ? 'disabled' }}
+        {% elseif tag == 'a' %}
+            role="button"
+            {{ disabled ? 'tabindex="-1"' }}
+            {% if url %}
+                href={{ url }}
+                {{ blank ? 'target="_blank"' }}
+            {% endif %}
         {% endif %}
-    {% endif %}
-    aria-label="{{ ariaLabel }}"
-    {{ attr|raw }}
+        {{ attr|raw }}
     >
         {{ content|raw }}
-    </{{ tag  }}
+    </{{ tag  }}>
 {% endif %}

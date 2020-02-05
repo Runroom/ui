@@ -1,8 +1,7 @@
-<div class="component">
-    {% include 'components/cta/cta.twig' with {
-        component: {
-            tag: 'button',
-            content: "I'm a button",
-        }
-    } %}
-</div>
+{% include 'components/cta/cta.twig' with {
+    component: {
+        tag: 'a',
+        content: 'Button',
+        url: 'https://www.google.es'
+    }
+} %}

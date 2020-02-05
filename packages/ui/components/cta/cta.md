@@ -34,10 +34,6 @@ Para usar el componente con el mínimo se tiene que incluir con /twig/ de la sig
 `blank`: indicar `true|false` para incluir el atributo `target="_blank"`. Por defecto es `false`. Requiere `url`.
 
 ## Ejemplos
-### Incorrect button call, will render but warn that needs a content to be passed
-```
-    {% include '../components/button.twig' %}
-```
 ### Button with minimal button call
 ```
     {% include '../components/button.twig' with {
@@ -59,12 +55,12 @@ Para usar el componente con el mínimo se tiene que incluir con /twig/ de la sig
 ```
     {% include '../components/button.twig' with {
         component: {
-            content: "I'm disabled",
+            content: 'Disabled button',
             disabled: true
         }
     } %}
 ```
-### a with minimal button call
+### <a> with minimal button call
 ```
     {% include '../components/button.twig' with {
         component: {
@@ -73,7 +69,7 @@ Para usar el componente con el mínimo se tiene que incluir con /twig/ de la sig
         }
     } %}
 ```
-### a with class hollow
+### <a> with class hollow
 ```
     {% include '../components/button.twig' with {
         component: {
