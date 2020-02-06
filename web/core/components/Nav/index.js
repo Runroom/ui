@@ -25,6 +25,7 @@ const Nav = () => (
         </Link>
       </li>
       <li>
+<<<<<<< HEAD
         <Link href='/checkbox'>
           <a>Component Checkbox</a>
         </Link>
@@ -32,6 +33,13 @@ const Nav = () => (
       <li>
         <Link href='/list'>
           <a>Component List</a>
+        </Link>
+      </li>
+      <li>
+=======
+>>>>>>> 82e0f3e... Renames Cta to Button
+        <Link href='/button'>
+          <a>Component Button</a>
         </Link>
       </li>
     </NavList>
