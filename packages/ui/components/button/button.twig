@@ -1,0 +1,30 @@
+{% set tag = component.tag|default('button') %}
+{% set class = component.class|default('') %}
+{% set url = component.url|default(false) %}
+{% set blank = component.blank|default(false) %}
+{% set type = component.type|default('button') %}
+{% set attr = component.attr|default('') %}
+{% set disabled = component.disabled|default(false) %}
+{% set ariaLabel = component.ariaLabel|default(content) %}
+{% set tabIndex = component.tabIndex|default('0') %}
+{% set content = component.content|default('I need content') %}
+{% set icon = component.icon|default(false) %}
+{% set iconPosition = component.iconPosition|default('left') %}
+
+<{{ tag == 'button' ? 'button' : 'a' }}
+    class="button {{ class }}{{ icon ? ' button--icon' }}{{ disabled ? ' button--disabled' }}"
+    {{ type and tag == 'button' ? ' type="' ~ type ~ '"' }}
+    {{ tag != 'button' ? ' role="button"' }}
+    {{ tag == 'button' and disabled ? ' disabled' }}
+    {{ tag != 'button' and not disabled ? ' tabindex="' ~ tabIndex ~ '"' }}
+    {{ tag == 'button' and not disabled and tabIndex != 0 ? ' tabindex="' ~ tabIndex ~ '"' }}
+    {{ tag != 'button' and url ? ' href="' ~ url ~ '"' }}
+    {% if tag != 'button' and url %}
+        {{ blank ? " target='_blank'" : " target='_self'" ~ '" ' }}
+    {% endif %}
+    {{ attr|raw }}
+    aria-label="{{ ariaLabel }}">
+    {{ icon and iconPosition in ['left', 'start'] ? icon|raw }}
+    {{ content|raw }}
+    {{ icon and iconPosition in ['right', 'end'] ? icon|raw }}
+</{{ tag == 'button' ? 'button' : 'a' }}>

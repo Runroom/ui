@@ -1,0 +1,89 @@
+/* Color vars */
+$c-white: #fff;
+$c-button-disabled: #ccc;
+$c-button100: #999;
+$c-button300: #777;
+$c-button500: #555;
+$c-button700: #000;
+
+/* Reset */
+button,
+[role="button"],
+.button {
+    appearance: none;
+    background: none;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: 1;
+    line-height: 1;
+    overflow: visible;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: top;
+    width: auto;
+
+    span, svg { pointer-events: none; }
+}
+
+/* Button generic styles */
+.button {
+    border-radius: 25px;
+    color: $c-button700;
+    display: inline-block;
+    padding: 10px 20px;
+    transition: background-color .2s ease-out;
+    user-select: none;
+
+    &:not(.button--hollow):not(.button--disabled) { background-color: $c-button300; }
+
+    /* Estados */
+    &:hover:not(.button--disabled) { background-color: $c-button100; }
+
+    &:focus:not(.button--disabled),
+    &:active:not(.button--disabled) {
+        background-color: $c-button500;
+        outline: blue solid 3px;
+    }
+
+    &:disabled,
+    &--disabled {
+        background-color: $c-button-disabled;
+        cursor: inherit;
+        outline: none;
+    }
+
+    /* Modifiers */
+    &--hollow {
+        border: 1px solid $c-button700;
+        color: $c-button700;
+
+        &:hover { border: 1px solid $c-button100; }
+
+        &:focus:not(.button--disabled),
+        &:active:not(.button--disabled) {
+            border: 1px solid $c-button500;
+        }
+    }
+
+    &--icon {
+        align-items: center;
+        display: inline-flex;
+        justify-content: center;
+    }
+
+    /* Estilos iconos */
+    &__icon {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin: 0 10px;
+    }
+
+    /* Media */
+    @media print { display: none !important; }
+}
