@@ -11,7 +11,7 @@
 
 {% if tag in allowedTags %}
     <{{ tag }}
-        class="cta{{ disabled ? ' cta--disabled' }} {{ class }}"
+        class="button{{ disabled ? ' button--disabled' }} {{ class }}"
         aria-label="{{ ariaLabel }}"
         {% if tag == 'button' %}
             type={{ type }}
