@@ -12,7 +12,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "@runroom/purejs": "^2.1.0",
+    "@runroom/purejs": "^3.0.1",
     "sass": "1.23.3"
   },
   "scripts": {
