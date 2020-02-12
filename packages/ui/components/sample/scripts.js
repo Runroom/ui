@@ -1,5 +1,11 @@
-import events from '@runroom/purejs/lib/events';
+const SELECTOR = 'button';
 
-events.onDocumentReady(() => {
-  document.querySelector('button').addEventListener('click', () => alert('Oh yeah!'));
-});
+const sample = () => {
+  const button = document.querySelector(SELECTOR);
+
+  button.addEventListener('click', () => alert('Oh yeah!'));
+}
+
+(function () {
+  sample();
+})();
