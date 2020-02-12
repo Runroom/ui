@@ -1,6 +1,39 @@
 {% include 'components/link/link.twig' with {
     component: {
-        content: 'Example link',
+        content: 'Link básico',
+        url: 'https://example.com',
+    }
+} %}
+
+{% include 'components/link/link.twig' with {
+    component: {
+        content: 'Link con estilos básicos',
+        url: 'https://example.com',
+        blank: true,
+        class: 'link__example',
+        label: 'link text - new window',
+        attr: 'hreflang="en" download',
+    }
+} %}
+
+{% include 'components/link/link.twig' with {
+    component: {
+        content: '<img src="https://picsum.photos/id/184/100/100" alt=""> Imagen link',
+        url: 'https://example.com'
+    }
+} %}
+
+{% include 'components/link/link.twig' with {
+    component: {
+        label: 'Imagen link con label',
+        content: '<img src="https://picsum.photos/id/184/100/100" alt="">Imagen link con label',
+        url: 'https://example.com'
+    }
+} %}
+
+{% include 'components/link/link.twig' with {
+    component: {
+        content: '<img src="https://picsum.photos/id/184/100/100" alt=""><span class="u-sr-only">Imagen link con texto de soporte</span>',
         url: 'https://example.com'
     }
 } %}

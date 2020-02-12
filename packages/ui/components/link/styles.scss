@@ -1,0 +1,12 @@
+.link {
+    display: block;
+
+    &__example {
+        color: black;
+        text-decoration: none;
+
+        &:hover {
+            color: #cccccc;
+        }
+    }
+}

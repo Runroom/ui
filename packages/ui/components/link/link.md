@@ -12,12 +12,13 @@ Se puede incluir cualquier clase usando la variable `class`.
 ### Uso
 Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
 ```
-    {% include 'components/link.twig' with {
+    {% include 'components/link/link.twig' with {
         component: {
-            attr: '',
-            class: '',
             content: '',
             url: 'https://example.com'
+            class: '',
+            label: '',
+            attr: '',
         }
     } %}
 ```
@@ -28,7 +29,7 @@ Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
 ### Ejemplos
 #### Enlace con texto y url
 ```
-    {% include 'components/link.twig' with {
+    {% include 'components/link/link.twig' with {
         component: {
             content: 'Haz click aquí para descargar el informe de previsión de ventas para el año 2019',
             url: 'https://example.com'
@@ -38,7 +39,7 @@ Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
 
 #### Enlace con texto, imagen y url
 ```
-    {% include 'components/link.twig' with {
+    {% include 'components/link/link.twig' with {
         component: {
             content: '<img src="https://picsum.photos/id/184/100/100" alt=""> Haz click aquí para descargar el informe de previsión de ventas para el año 2019',
             url: 'https://example.com'
@@ -48,9 +49,9 @@ Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
 
 #### Enlace con imagen, label y url
 ```
-    {% include 'components/link.twig' with {
+    {% include 'components/link/link.twig' with {
         component: {
-            label: 'Haz click aquí para descargar el informe de previsión de ventas para el año 2019'
+            label: 'Haz click aquí para descargar el informe de previsión de ventas para el año 2019',
             content: '<img src="https://picsum.photos/id/184/100/100" alt="">',
             url: 'https://example.com'
         }
@@ -59,7 +60,7 @@ Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
 
 #### Enlace con imagen, texto de soporte y url
 ```
-    {% include 'components/link.twig' with {
+    {% include 'components/link/link.twig' with {
         component: {
             content: '<img src="https://picsum.photos/id/184/100/100" alt=""><span class="u-sr-only">Haz click aquí para descargar el informe de previsión de ventas para el año 2019</span>',
             url: 'https://example.com'
@@ -69,9 +70,9 @@ Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
 
 #### Enlace download: con texto, url y atributos
 ```
-    {% include 'components/link.twig' with {
+    {% include 'components/link/link.twig' with {
         component: {
-            attr: 'hreflang="en" download'
+            attr: 'hreflang="en" download',
             content: 'Haz click aquí para descargar el informe de previsión de ventas para el año 2019',
             url: 'https://informe-en.pdf'
         }
