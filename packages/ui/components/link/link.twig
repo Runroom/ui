@@ -1,17 +1,18 @@
 {% set url = component.url|default('') %}
 {% set class = component.class|default('') %}
-{% set attr = component.attr|default('') %}
 {% set blank = component.blank|default(false) %}
 {% set label = component.label|default('') %}
 {% set content = component.content|default('') %}
+{% set attr = component.attr|default('') %}
 
 {% if url %}
     <a 
-    href="{{ url }}" 
-    class="link {{ class }}" 
-    {{ attr|raw }} 
-    {% if blank %}target="_blank" rel="noreferrer noopener"{% endif %} 
-    {% if label %}aria-label="{{ label }}"{% endif %}>
-    {{ content|raw }}
+        href="{{ url }}" 
+        class="link {{ class }}" 
+        {% if blank %}target="_blank" rel="noreferrer noopener"{% endif %} 
+        {% if label %}aria-label="{{ label }}"{% endif %}
+        {{ attr|raw }} 
+    >
+            {{ content|raw }}
     </a>
 {% endif %}
