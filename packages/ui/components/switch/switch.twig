@@ -10,7 +10,7 @@
         <span class="switch__preText">{{ preText }}</span>
     {% endif %}
     <label class="switch__label">
-        <input type="checkbox" name="{{ name }}" value="{{ value }}" {{ attributes }}>
+        <input type="checkbox" name="{{ name }}" value="{{ value }}" {{ attributes|raw }}>
         <span class="switch__slide"></span>
     </label>
     {% if postText %}
