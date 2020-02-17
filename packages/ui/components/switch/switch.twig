@@ -3,14 +3,14 @@
 {% set postText = component.postText|default('') %}
 {% set name = component.name|default('') %}
 {% set value = component.value|default('') %}
-{% set attributes = component.attributes|default('') %}
+{% set attr = component.attr|default('') %}
 
 <div class="switch {{ class }}">
     {% if preText %}
         <span class="switch__preText">{{ preText }}</span>
     {% endif %}
     <label class="switch__label">
-        <input type="checkbox" name="{{ name }}" value="{{ value }}" {{ attributes|raw }}>
+        <input type="checkbox" name="{{ name }}" value="{{ value }}" {{ attr|raw }}>
         <span class="switch__slide"></span>
     </label>
     {% if postText %}
