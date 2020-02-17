@@ -1,9 +1,9 @@
+{% set class = component.class|default('') %}
 {% set preText = component.preText|default('') %}
 {% set postText = component.postText|default('') %}
-{% set attributes = component.attributes|default('') %}
 {% set name = component.name|default('') %}
 {% set value = component.value|default('') %}
-{% set class = component.class|default('') %}
+{% set attributes = component.attributes|default('') %}
 
 <div class="switch {{ class }}">
     {% if preText %}
