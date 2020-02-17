@@ -13,7 +13,7 @@
             display:none;
         
             &:checked {
-                +.switch__slide {
+                + .switch__slide {
                     background-color: black;
                     padding-left: 40px;
 
@@ -42,7 +42,7 @@
         transition: .4s;
         -webkit-transition: .4s;
 
-        &:before {
+        &::before {
             background-color: white;
             border-radius: 50%;
             bottom: 5px;
