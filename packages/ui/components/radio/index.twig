@@ -1,0 +1,39 @@
+
+{% include 'components/radio/radio.twig' with { 
+    component: {
+        label: 'Opción1',
+        value: 'valueRadio1',
+        name: 'name1',
+        id: 'idRadio1',
+        attr: 'checked'
+    }
+} %}
+
+{% include 'components/radio/radio.twig' with { 
+    component: {
+        label: 'Opción2',
+        value: 'valueRadio2',
+        name: 'name2',
+        id: 'idRadio2'
+    }
+} %}
+
+{% include 'components/radio/radio.twig' with {
+    component: {
+        label: 'Opción3',
+        value: 'valueRadio3',
+        name: 'name3',
+        id: 'idRadio3',
+        attr: 'disabled'
+    }
+} %}
+
+{% include 'components/radio/radio.twig' with { 
+    component: {
+        label: 'Opción4',
+        value: 'valueRadio4',
+        name: 'name4',
+        id: 'idRadio4',
+        class: 'radio-class'
+    }
+} %}

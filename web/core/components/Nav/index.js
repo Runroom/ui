@@ -39,6 +39,11 @@ const Nav = () => (
           <a>Component Button</a>
         </Link>
       </li>
+      <li>
+        <Link href='/radio'>
+          <a>Component Radio</a>
+        </Link>
+      </li>
     </NavList>
   </Aside>
 );
