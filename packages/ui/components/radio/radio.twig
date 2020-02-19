@@ -1,0 +1,11 @@
+{% set class = class|default('') %}
+{% set name = name|default('') %}
+{% set value = value|default('') %}
+{% set id = id|default('') %}
+{% set attributes = attributes|default('') %}
+{% set label = label|default('') %}
+
+<div class="{{ class }}">
+    <input type="radio" name="{{ name }}" value="{{ value }}" id="{{ id }}" {{ attributes }}>
+    <label for="{{ id }}">{{ label }}</label>
+</div>
