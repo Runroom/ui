@@ -1,5 +1,5 @@
 {% set breadcrumbs = component.breadcrumbs|default([]) %}
-{% set ariaLabel = component.ariaLabel|default('breadcrumbs') %}
+{% set ariaLabel = component.ariaLabel|default('Breadcrumb') %}
 {% set class = component.class|default('') %}
 
 {% if breadcrumbs|length > 0 %}
@@ -7,7 +7,7 @@
         <ol>
             {% for breadcrumb in breadcrumbs %}
                 {% if breadcrumb.url and breadcrumb.label %}
-                    <li class="breadcrumbs__item{% if loop.last and not loop.first %} breadcrumbs__item--last{% endif %}">
+                    <li class="breadcrumbs__item">
                         <a href="{{ breadcrumb.url }}" {% if loop.last %}aria-current="page"{% endif %}>{{ breadcrumb.label }}</a>
                     </li>
                 {% endif %}

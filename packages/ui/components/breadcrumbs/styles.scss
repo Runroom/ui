@@ -7,7 +7,7 @@
         content: "/";
     }
 
-    &__item--last a {
+    &__item:last-child a {
         cursor: default;
         pointer-events: none;
         text-decoration: none;
