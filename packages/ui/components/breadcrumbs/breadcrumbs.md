@@ -2,14 +2,6 @@
 El componente Breadcrumbs consiste en un elemento de navegación que indican al usuario su posición en la jerarquía de un sitio web. Se trata de un listado de elementos que contienen links donde el último, que apunta ala página actual, aparecerá disabled.
 
 El mínimo contenido que necesita es un array que contenga al menos un elemento, que tenga un label y una url.
-breadcrumbs: [
-    {
-        "label": "Home",
-        "url": "#"
-    }
-]
-
-Se puede incluir cualquier clase usando la variable `class`.
 
 Debemos incluir justo después del componente Breadcrumbs el componente breadcrumbs-microdata.
 
@@ -24,21 +16,12 @@ Para usar el componente Breadcrumbs se tiene que incluir con /twig/ de la siguie
             {
                 "label": "",
                 "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
             }
-        ],
-        ariaLabel: 'migas de pan'
+        ]
     } %}
 
     {% include 'components/breadcrumbs-microdata.twig' with {
         breadcrumbs: [
-            {
-                "label": "",
-                "url": ""
-            },
             {
                 "label": "",
                 "url": ""
@@ -48,6 +31,8 @@ Para usar el componente Breadcrumbs se tiene que incluir con /twig/ de la siguie
 ```
 
 ### Opciones
+`class` - *opcional* Se puede incluir cualquier clase.
+`ariaLabel` - *opcional* Si no se incluye el aria-label por defecto será 'Breadcrumb'.
 
 ### Accesibilidad
 Usamos aria-label="breadcrumbs" para describir el tipo de navegación.
