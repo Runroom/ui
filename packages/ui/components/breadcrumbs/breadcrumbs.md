@@ -1,4 +1,4 @@
-## Componente Breadcrumbs
+## Componente Breadcrumbs
 El componente Breadcrumbs consiste en un elemento de navegación que indican al usuario su posición en la jerarquía de un sitio web. Se trata de un listado de elementos que contienen links donde el último, que apunta ala página actual, aparecerá disabled.
 
 El mínimo contenido que necesita es un array que contenga al menos un elemento, que tenga un label y una url.
@@ -41,7 +41,7 @@ Añadimos aria-current="page" en el último link, que apunta a la página actual
 
 Para evitar que el lector de pantalla anuncie los separadores visuales entre enlaces los agregaremos usando css.
 
-### Ejemplos
+### Ejemplos
 #### Breadcrumbs con tres elementos
 ```
     {% include 'components/breadcrumbs.twig' with {
