@@ -45,7 +45,7 @@ button,
     &:hover:not(.button--disabled) { background-color: $c-button100; }
 
     &:focus:not(.button--disabled),
-    &:active:not(.button--disabled) {
+    &:is-active:not(.button--disabled) {
         background-color: $c-button500;
     }
 
@@ -64,7 +64,7 @@ button,
         &:hover { border: 1px solid $c-button100; }
 
         &:focus:not(.button--disabled),
-        &:active:not(.button--disabled) {
+        &:is-active:not(.button--disabled) {
             border: 1px solid $c-button500;
         }
     }
