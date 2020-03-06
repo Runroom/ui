@@ -1,9 +1,9 @@
 import theme from './theme';
-import * as ROUTES from './routes';
+import structure from './structure';
 import * as SITE from './site';
 
 export {
   theme,
-  ROUTES,
+  structure,
   SITE
 };

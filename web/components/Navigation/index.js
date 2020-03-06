@@ -1,21 +1,11 @@
 import React from 'react';
 import { Link } from 'react-scroll'
 
-import { Aside, NavList } from './styles';
 import { Title2 } from '../../styles/Titles';
 
-const sections = [
-  {
-    id: 'elements',
-    label: 'Elements'
-  }, {
-    id: 'structures',
-    label: 'Structures'
-  }, {
-    id: 'form',
-    label: 'Form'
-  }
-];
+import { structure } from '../../config';
+import { capitalize } from '../../utils/helpers';
+import { Aside, NavList } from './styles';
 
 class Navigation extends React.Component {
   render() {
@@ -24,17 +14,17 @@ class Navigation extends React.Component {
       <Aside>
         <Title2 as='div'>Sections</Title2>
         <NavList>
-          {sections.map(section => (
-            <li key={`${section.id}-key`}>
+          {structure.map(section => (
+            <li key={`${section.name}-key`}>
               <Link
-                to={section.id}
+                to={section.name}
                 spy={true}
                 smooth={true}
                 duration={350}
                 offset={-50}
                 activeClass='active'
               >
-                {section.label}
+                {capitalize(section.name)}
               </Link>
             </li>
           ))}
