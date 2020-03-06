@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-import PageWrapper from './styles';
+import PageWrapper, { CardsList } from './styles';
 
 class Page extends React.Component {
   render() {
@@ -21,3 +21,4 @@ class Page extends React.Component {
 };
 
 export default Page;
+export { CardsList };

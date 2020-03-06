@@ -2,9 +2,11 @@ import styled from 'styled-components';
 
 import { theme } from '../../config';
 import { hover } from '../../styles/helpers';
+import { space } from '../../styles/rhythm';
 
 const CardStyled = styled.div`
   a {
+    display: block;
     text-decoration: none;
 
     ${hover`
@@ -13,9 +15,12 @@ const CardStyled = styled.div`
   }
 
   img {
+    background-color: black;
     object-fit: cover;
-    padding-bottom: calc(100 * 9 / 16);
+    padding-bottom: calc(100% * 9 / 16);
   }
+
+  p { margin-top: ${space(.5)}; }
 `;
 
 export default CardStyled;

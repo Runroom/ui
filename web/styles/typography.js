@@ -27,7 +27,7 @@ const typography = `
     }
 
     .p-small {
-        font-size: ${modular(-3)};
+        font-size: ${modular(-1)};
         line-height: ${space(.75)};
     }
 

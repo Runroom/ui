@@ -10,7 +10,10 @@ class Card extends React.Component {
     return (
       <CardStyled>
         <Link href={slug}>
-          <a>{name}</a>
+          <a>
+            <img src="" alt={`${name} component`} />
+            <p className="p-small">{name}</p>
+          </a>
         </Link>
       </CardStyled>
     );

@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import { pixelate } from '.';
+import { pixelate } from './rhythm';
 
 const breakpoints = {
   desktop: 992,

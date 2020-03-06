@@ -1,5 +1,7 @@
 import { css } from 'styled-components';
 
+import { space } from './rhythm';
+
 const hover = (...args) => css`
   &:hover {
     html.non-touch &:hover {
@@ -34,9 +36,6 @@ const rgbToHex = (r, g, b) => {
     .join('');
 };
 
-const bgGradient = (rotation, color1, color2) =>
-  `linear-gradient(${rotation}, ${color1} 0%, ${color2} 100%)`;
-
 const getRatio = (
   originalWidth,
   originalHeight,
@@ -59,4 +58,11 @@ const getRatio = (
   `;
 };
 
-export { bgGradient, getRatio, hexToRgb, hover, rgbToHex };
+const columns = (number, spaces = 1) => `
+  width: calc((100% - ${space(spaces * (number - 1))}) / ${number});
+
+  &:nth-child(n) { margin-right: ${space(spaces)}; }
+  &:nth-child(${number}n) { margin-right: 0; }
+`;
+
+export { columns, getRatio, hexToRgb, hover, rgbToHex };

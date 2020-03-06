@@ -3,7 +3,7 @@ import { Element } from 'react-scroll'
 
 import Card from '../components/Card';
 import Navigation from '../components/Navigation';
-import Page from '../components/Page';
+import Page, { CardsList } from '../components/Page';
 
 import { structure } from '../config';
 import { capitalize } from '../utils/helpers';
@@ -24,13 +24,13 @@ class Home extends React.Component {
             className="section"
           >
             <h2 className="title2">{capitalize(section.name)}</h2>
-            <ul>
+            <CardsList>
               {section.components.map(component => (
                 <li key={`component-${component.name}`}>
                   <Card slug={component.slug} name={component.name} />
                 </li>
               ))}
-            </ul>
+            </CardsList>
           </Element>
         ))}
       </Page>
