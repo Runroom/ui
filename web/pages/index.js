@@ -1,7 +1,7 @@
 import React from 'react';
-import Link from 'next/link';
 import { Element } from 'react-scroll'
 
+import Card from '../components/Card';
 import Navigation from '../components/Navigation';
 import Page from '../components/Page';
 
@@ -27,9 +27,7 @@ class Home extends React.Component {
             <ul>
               {section.components.map(component => (
                 <li key={`component-${component.name}`}>
-                  <Link href={component.slug}>
-                    <a>{component.name}</a>
-                  </Link>
+                  <Card slug={component.slug} name={component.name} />
                 </li>
               ))}
             </ul>

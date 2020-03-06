@@ -9,7 +9,6 @@ const PageWrapper = styled.div`
     &.sidebar { padding-left: 21rem; }
 
     main {
-        display: flex;
         min-height: 100%;
         width: 100%;
 
@@ -17,6 +16,8 @@ const PageWrapper = styled.div`
           border-bottom: 1px solid ${theme.colors.neutro200};
           margin: 3rem 0;
           padding-bottom: 3rem;
+
+          &:last-child { border-bottom: 0; }
         }
     }
 `;

@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 const hover = (...args) => css`
   &:hover {
-    html.non-touch & {
+    html.non-touch &:hover {
       ${css.call(null, ...args)};
     }
   }
