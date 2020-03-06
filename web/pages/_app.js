@@ -2,11 +2,11 @@ import axios from 'axios';
 import App from 'next/app';
 import { ThemeProvider } from 'styled-components';
 
-import { proxy } from '../package.json';
-import { theme } from '../config';
-import Content from '../styles/Content';
-import GlobalStyles from '../styles/Globals';
 import Page from '../components/Page';
+import GlobalStyles from '../styles/globals';
+
+import { theme } from '../config';
+import { proxy } from '../package.json';
 
 axios.defaults.baseURL = proxy;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -18,12 +18,10 @@ class MyApp extends App {
     return (
       <Page title="Frontdefenders UI">
         <ThemeProvider theme={theme}>
-          <Content>
-            <GlobalStyles />
-            <main>
-              <Component {...pageProps} />
-            </main>
-          </Content>
+          <GlobalStyles />
+          <main>
+            <Component {...pageProps} />
+          </main>
         </ThemeProvider>
       </Page>
     );

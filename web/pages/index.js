@@ -15,13 +15,18 @@ class Home extends React.Component {
     return (
       <Page title={pageTitle} variant="sidebar">
         <Navigation />
-        <h1>{pageTitle}</h1>
+        <h1 className="title1">{pageTitle}</h1>
         {structure.map(section => (
-          <Element name={section.name} id={section.name} className="section">
-            <h2>{capitalize(section.name)}</h2>
+          <Element
+            key={`section-${section.name}`}
+            name={section.name}
+            id={section.name}
+            className="section"
+          >
+            <h2 className="title2">{capitalize(section.name)}</h2>
             <ul>
               {section.components.map(component => (
-                <li>
+                <li key={`component-${component.name}`}>
                   <Link href={component.slug}>
                     <a>{component.name}</a>
                   </Link>

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll'
 
-import { Title2 } from '../../styles/Titles';
-
 import { structure } from '../../config';
 import { capitalize } from '../../utils/helpers';
 import { Aside, NavList } from './styles';
@@ -12,7 +10,7 @@ class Navigation extends React.Component {
 
     return (
       <Aside>
-        <Title2 as='div'>Sections</Title2>
+        <div className="title2">Sections</div>
         <NavList>
           {structure.map(section => (
             <li key={`${section.name}-key`}>
