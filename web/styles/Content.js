@@ -7,9 +7,9 @@ const Content = styled.div`
   main { width: 100%; }
 
   .section {
-    background: red;
-    margin-top: 5vh;
-    padding-top: 45vh;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.neutro200};
+    margin: 3rem 0;
+    padding-bottom: 3rem;
   }
 `;
 
