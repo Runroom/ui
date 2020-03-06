@@ -1,16 +1,15 @@
 import React from 'react';
-import Head from 'next/head';
 
-import Code from '../Iframe';
+import Page from '../components/Page';
+import Iframe from '../components/Iframe';
+
+const pageTitle = "Button component"
 
 const Button = () => (
-  <>
-    <Head>
-      <title>Component Button</title>
-    </Head>
-    <h1>Button component</h1>
+  <Page title={pageTitle}>
+    <h1>{pageTitle}</h1>
     <Iframe component='button' />
-  </>
+  </Page>
 );
 
 export default Button;

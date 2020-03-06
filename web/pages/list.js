@@ -1,16 +1,15 @@
 import React from 'react';
-import Head from 'next/head';
 
-import Code from '../Iframe';
+import Page from '../components/Page';
+import Iframe from '../components/Iframe';
+
+const pageTitle = "List component";
 
 const List = () => (
-  <>
-    <Head>
-      <title>Component List</title>
-    </Head>
-    <h1>List component</h1>
+  <Page title={pageTitle}>
+    <h1>{pageTitle}</h1>
     <Iframe component='list' />
-  </>
+  </Page>
 );
 
 export default List;

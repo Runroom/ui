@@ -1,16 +1,15 @@
 import React from 'react';
-import Head from 'next/head';
 
-import Code from '../Iframe';
+import Page from '../components/Page';
+import Iframe from '../components/Iframe';
+
+const pageTitle = "Radio component";
 
 const Radio = () => (
-  <>
-    <Head>
-      <title>Component Radio</title>
-    </Head>
-    <h1>Radio component</h1>
+  <Page title={pageTitle}>
+    <h1>{pageTitle}</h1>
     <Iframe component='radio' />
-  </>
+  </Page>
 );
 
 export default Radio;
