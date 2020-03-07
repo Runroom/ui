@@ -45,7 +45,6 @@ const GlobalStyle = createGlobalStyle`
   html, body {height:100%;}
 
   body {
-    color: ${theme.colors.primary900}
     line-height: 1.5;
     letter-spacing: .3px;
     scroll-behavior: smooth;

@@ -31,7 +31,6 @@ const CardsList = styled.ul`
   flex-wrap: wrap;
 
   li {
-
     ${media.min('tablet')`
       ${columns(2)}
     `}
