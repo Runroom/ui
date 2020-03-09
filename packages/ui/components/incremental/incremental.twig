@@ -1,0 +1,45 @@
+{% set id = component.id|default('incremental') %}
+{% set name = component.name|default('incremental') %}
+{% set max = component.max|default(100) %}
+{% set min = component.min|default(0) %}
+{% set initialValue = component.initialValue|default(0) %}
+{% set incrementSize = component.incrementSize|default(1) %}
+{% set title = component.title|default('Numero de elementos') %}
+{% set contentPlus = component.contentPlus|default('+') %}
+{% set contentMinus = component.contentMinus|default('-') %}
+{% set attr = component.attr|default('') %}
+
+<div class="incremental js-incremental" data-max="{{ max }}" data-min="{{ min }}" {{ attr|raw }}>
+    <button
+        class="incremental__button js-incremental-button"
+        data-minus
+        data-increment="-{{ incrementSize }}"
+        aria-controls="{{ id }}"
+        {{ initialValue <= min ? 'disabled' }}
+    >
+        {{ contentMinus|raw }}
+    </button>
+    <input
+        class="incremental__input"
+        type="text"
+        id="{{ id }}"
+        name="{{ name }}"
+        value="{{ initialValue }}"
+        pattern="[0-9]+"
+        aria-label="{{ title }}"
+        aria-live="polite"
+        aria-atomic="true"
+        aria-valuemin="{{ min }}"
+        aria-valuemax="{{ max }}"
+        readonly
+    />
+    <button
+        class="incremental__button js-incremental-button"
+        data-increment="{{ incrementSize }}"
+        data-plus
+        aria-controls="{{ id }}"
+        {{ initialValue >= max ? 'disabled' }}
+    >
+       {{ contentPlus|raw }}
+    </button>
+</div>
