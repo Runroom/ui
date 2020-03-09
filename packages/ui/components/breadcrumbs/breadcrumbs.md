@@ -12,27 +12,50 @@ Para usar el componente Breadcrumbs se tiene que incluir con /twig/ de la siguie
 
 ```
     {% include 'components/breadcrumbs.twig' with {
-        breadcrumbs: [
-            {
-                "label": "",
-                "url": ""
-            }
-        ]
-    } %}
+        component: {
+            breadcrumbs: [
+                {
+                    "label": "",
+                    "url": ""
+                }
+            ],
+            ariaLabel: 'migas de pan',
+            class: 'brea'
+        }
+    }%}
 
     {% include 'components/breadcrumbs-microdata.twig' with {
-        breadcrumbs: [
-            {
-                "label": "",
-                "url": ""
-            }
-        ]
-    } %}
+        component: {
+            breadcrumbs: [
+                {
+                    "label": "",
+                    "url": ""
+                }
+            ]
+        }
+    }%}
 ```
 
 ### Opciones
+Las opciones que se pueden pasar al componente son la clase y el aria-label.
+
 `class` - *opcional* Se puede incluir cualquier clase.
 `ariaLabel` - *opcional* Si no se incluye el aria-label por defecto será 'Breadcrumb'.
+
+Estas opciones se pasan de la siguiente manera:
+
+{% include 'components/breadcrumbs.twig' with {
+    component: {
+        breadcrumbs: [
+            {
+                "label": "",
+                "url": ""
+            }
+        ],
+        ariaLabel: '',
+        class: ''
+    }
+}%}
 
 ### Accesibilidad
 Usamos aria-label="breadcrumbs" para describir el tipo de navegación.
@@ -45,41 +68,46 @@ Para evitar que el lector de pantalla anuncie los separadores visuales entre enl
 #### Breadcrumbs con tres elementos
 ```
     {% include 'components/breadcrumbs.twig' with {
-        breadcrumbs: [
-            {
-                "label": "Home",
-                "url": "#"
-            },
-            {
-                "label": "Breadcrumb 1",
-                "url": "#"
-            },
-            {
-                "label": "Breadcrumb 2",
-                "url": "#",
-            }
-        ],
-        ariaLabel: 'migas de pan'
-    } %}
+        component: {
+            breadcrumbs: [
+                {
+                    "label": "Home",
+                    "url": "#"
+                },
+                {
+                    "label": "Breadcrumb 1",
+                    "url": "#"
+                },
+                {
+                    "label": "Breadcrumb 2",
+                    "url": "#",
+                }
+            ],
+            ariaLabel: 'migas de pan',
+            class: 'extra-class'
+        }
+    }%}
 
     {% include 'components/breadcrumbs-microdata.twig' with {
-        breadcrumbs: [
-            {
-                "label": "Home",
-                "url": "#"
-            },
-            {
-                "label": "Breadcrumb 1",
-                "url": "#"
-            },
-            {
-                "label": "Breadcrumb 2",
-                "url": "#",
-            },
-            {
-                "label": "Breadcrumb 3",
-                "url": "#"
-            }
-        ]
+        component: {
+            breadcrumbs: [
+                {
+                    "label": "Home",
+                    "url": "#"
+                },
+                {
+                    "label": "Breadcrumb 1",
+                    "url": "#"
+                },
+                {
+                    "label": "Breadcrumb 2",
+                    "url": "#",
+                },
+                {
+                    "label": "Breadcrumb 3",
+                    "url": "#"
+                }
+            ]
+        }
     } %}
 ```
