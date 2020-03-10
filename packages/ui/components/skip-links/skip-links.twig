@@ -1,11 +1,18 @@
-{% set links = links|default([]) %}
-{% set class = class|default('') %}
-{% set ariaLabel = ariaLabel|default('skip links navigation') %}
+{% set links = component.links|default([]) %}
+{% set class = component.class|default('') %}
+{% set title = component.title|default('navegación') %}
 
 {% if links|length > 0 %}
-    <div class="skip-links {{ class }}" aria-label="{{ ariaLabel }}">
-        {% for link in links %}
-            <a class="skip-links__link" href="{{ link.anchor }}">{{ link.text }}</a>
-        {% endfor %}
-    </div>
+    <section>
+        <div class="skip-links {{ class }}">
+            <h2 class="skip-links__title" id="skip-links-list">{{ title }}</h2>
+            <ul aria-labelledby="skip-links-list">
+                {% for link in links %}
+                    <li>
+                        <a class="skip-links__link" href="{{ link.anchor }}">{{ link.text }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
 {% endif %}

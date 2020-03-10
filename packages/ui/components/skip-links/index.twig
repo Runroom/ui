@@ -1,13 +1,17 @@
     {% include 'components/skip-links/skip-links.twig' with {
-        links: [
-            {
-                anchor: '#content',
-                text: 'Skip to main content',
-            },
-            {
-                anchor: '#section',
-                text: 'Skip to main navigation',
-            },
-        ],
-        ariaLabel: 'skip links'
+        component: {
+            links: [
+                {
+                    anchor: '#content',
+                    text: 'Skip to main content',
+                },
+                {
+                    anchor: '#section',
+                    text: 'Skip to main navigation',
+                },
+            ],
+            class: '',
+            title: 'skip navigation'
+
+        }
     } %}
