@@ -49,6 +49,11 @@ const Nav = () => (
           <a>Component Radio</a>
         </Link>
       </li>
+      <li>
+        <Link href='/breadcrumbs'>
+          <a>Component Breadcrumbs</a>
+        </Link>
+      </li>
     </NavList>
   </Aside>
 );
