@@ -5,10 +5,9 @@ import { ThemeProvider } from 'styled-components';
 
 import { proxy } from '../package.json';
 import { theme } from '../config';
-import Content from '../core/ui/Content';
-import Main from '../core/ui/Main';
-import GlobalStyles from '../core/ui/Globals';
-import Nav from '../core/components/Nav';
+import Content from '../styles/Content';
+import GlobalStyles from '../styles/Globals';
+import Nav from '../components/Nav';
 
 axios.defaults.baseURL = proxy;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -25,9 +24,9 @@ class MyApp extends App {
           <Content>
             <GlobalStyles />
             <Nav />
-            <Main>
+            <main>
               <Component {...pageProps} />
-            </Main>
+            </main>
           </Content>
         </ThemeProvider>
       </>

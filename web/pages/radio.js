@@ -1,16 +1,15 @@
 import React from 'react';
 import Head from 'next/head';
 
-import Code from '../components/Code';
+import Code from '../Iframe';
 
 const Radio = () => (
   <>
     <Head>
       <title>Component Radio</title>
     </Head>
-
     <h1>Radio component</h1>
-    <Code component='radio' />
+    <Iframe component='radio' />
   </>
 );
 
