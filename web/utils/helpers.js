@@ -8,4 +8,6 @@ const capitalize = string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-export { formatDateTime, capitalize };
+const pixelate = n => `${n}px`;
+
+export { pixelate, formatDateTime, capitalize };

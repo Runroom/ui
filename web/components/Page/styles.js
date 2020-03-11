@@ -4,12 +4,13 @@ import { theme } from '../../config';
 import { columns } from '../../styles/helpers';
 import { media } from '../../styles/media-queries';
 import { space } from '../../styles/rhythm';
+import { pixelate } from '../../utils/helpers';
 
 const PageWrapper = styled.div`
-  padding: ${space()};
+  padding: ${space()} 0;
   width: 100%;
 
-  &.sidebar { padding-left: 21rem; }
+  &.sidebar { padding-left: 20rem; }
 
   main {
     min-height: 100%;
@@ -23,6 +24,18 @@ const PageWrapper = styled.div`
       &:last-child { border-bottom: 0; }
     }
   }
+`;
+
+const Wrapper = styled.div`
+  height: 100%;
+  margin: 0 auto;
+  max-width: ${pixelate(theme.layout.maxContentWidth)};
+  padding: 0 ${space()};
+  width: 100%;
+
+  ${media.min('tablet')`
+    padding: 0 ${space(2)};
+  `};
 `;
 
 const CardsList = styled.ul`
@@ -43,4 +56,4 @@ const CardsList = styled.ul`
 `;
 
 export default PageWrapper;
-export { CardsList };
+export { CardsList, Wrapper };

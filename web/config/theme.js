@@ -14,6 +14,9 @@ const theme = {
     minSize: '18px',
     lineHeight: 1.5,
     fontRatio: 1.125
+  },
+  layout: {
+    maxContentWidth: 1440
   }
 };
 

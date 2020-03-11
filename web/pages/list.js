@@ -1,14 +1,16 @@
 import React from 'react';
 
-import Page from '../components/Page';
+import Page, { Wrapper } from '../components/Page';
 import Iframe from '../components/Iframe';
 
 const pageTitle = "List component";
 
 const List = () => (
   <Page title={pageTitle}>
-    <h1>{pageTitle}</h1>
-    <Iframe component='list' />
+    <Wrapper>
+      <h1>{pageTitle}</h1>
+      <Iframe component='list' />
+    </Wrapper>
   </Page>
 );
 
