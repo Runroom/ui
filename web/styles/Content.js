@@ -9,6 +9,12 @@ const Content = styled.div`
     padding-left: 21rem;
     width: 100%;
   }
+
+  .section {
+    background: red;
+    margin-top: 5vh;
+    padding-top: 45vh;
+  }
 `;
 
 export default Content;

@@ -17,6 +17,8 @@ const NavList = styled.ul`
   li {
     margin: 0 0 0.5rem;
   }
+
+  a.active { text-decoration: underline; }
 `;
 
 export { Aside, NavList };
