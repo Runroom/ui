@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import { theme } from '../../config';
 import { columns } from '../../styles/helpers';
 import { media } from '../../styles/media-queries';
+import { space } from '../../styles/rhythm';
 
 const PageWrapper = styled.div`
-  padding: 1rem;
+  padding: ${space()};
   width: 100%;
 
   &.sidebar { padding-left: 21rem; }
@@ -15,9 +16,9 @@ const PageWrapper = styled.div`
     width: 100%;
 
     .section {
-      border-bottom: 1px solid ${theme.colors.neutro200};
-      margin: 3rem 0;
-      padding-bottom: 3rem;
+      border-bottom: 1px solid ${theme.colors.neutro300};
+      margin: ${space(2)} 0;
+      padding-bottom: ${space()};
 
       &:last-child { border-bottom: 0; }
     }

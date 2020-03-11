@@ -78,9 +78,11 @@ const GlobalStyle = createGlobalStyle`
     text-decoration-skip-ink: auto;
   }
 
-  img {
-    max-width: 100%;
+  img,
+  video {
     display: block;
+    height: auto;
+    max-width: 100%;
   }
 
   article > * + * {

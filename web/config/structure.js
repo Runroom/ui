@@ -14,6 +14,19 @@ const structure = [
       {
         name: 'List',
         slug: '/list'
+      },
+      {
+        name: 'Responsive table',
+        slug: '/responsive-table'
+      }
+    ]
+  },
+  {
+    name: 'navigation',
+    components: [
+      {
+        name: 'Breadcrumbs',
+        slug: '/breadcrumbs'
       }
     ]
   },
@@ -27,6 +40,10 @@ const structure = [
       {
         name: 'Radio',
         slug: '/radio'
+      },
+      {
+        name: 'Incremental input',
+        slug: '/incremental-input'
       }
     ]
   }

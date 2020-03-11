@@ -1,18 +1,19 @@
 import React from 'react';
 import Link from 'next/Link';
 
+import placeholder from '../../assets/img/placeholder.jpg';
 import CardStyled from './styles';
 
 class Card extends React.Component {
   render() {
-    const { slug, name } = this.props;
+    const { slug, name, img } = this.props;
 
     return (
       <CardStyled>
         <Link href={slug}>
           <a>
-            <img src="" alt={`${name} component`} />
-            <p className="p-small">{name}</p>
+            <img src={placeholder} alt={`${name} component`} />
+            <p>{name}</p>
           </a>
         </Link>
       </CardStyled>

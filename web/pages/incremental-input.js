@@ -3,13 +3,13 @@ import React from 'react';
 import Page from '../components/Page';
 import Iframe from '../components/Iframe';
 
-const pageTitle = "Breadcrumbs component"
+const pageTitle = "Component Incremental"
 
-const Breadcrumbs = () => (
+const Incremental = () => (
   <Page title={pageTitle}>
     <h1>{pageTitle}</h1>
-    <Iframe component='breadcrumbs' />
+    <Iframe component='incremental' />
   </Page>
 );
 
-export default Breadcrumbs;
+export default Incremental;
