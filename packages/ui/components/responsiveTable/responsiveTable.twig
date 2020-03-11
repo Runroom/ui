@@ -1,0 +1,22 @@
+{% set class = component.class|default('') %}
+{% set heading = component.heading|default([]) %}
+{% set body = component.body|default([]) %}
+
+{% if heading|length > 0 and body|length > 0 %}
+    <table class="responsive-table js-responsive-table {{ class }}">
+        <thead>
+            {% for item in heading %}
+                <th>{{ item|raw }}</th>
+            {% endfor %}
+        </thead>
+        <tbody>
+            {% for row in body %}
+                <tr>
+                    {% for column in row %}
+                        <td>{{ column|raw }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
