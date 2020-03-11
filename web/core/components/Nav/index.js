@@ -52,6 +52,11 @@ const Nav = () => (
       <li>
         <Link href='/breadcrumbs'>
           <a>Component Breadcrumbs</a>
+          </Link>
+      </li>
+      <li>
+        <Link href='/responsive-table'>
+          <a>Component Responsive Table</a>
         </Link>
       </li>
     </NavList>
