@@ -1,23 +1,25 @@
 const ELEMENT_ID = 'scroll-top';
 const scrollTopBtn = document.getElementById(ELEMENT_ID);
-let offset = 0;
+let visibilityOffset = 0;
 
 const safeScrollTop = () => {
-    return 10;
-}
+    return window.pageYOffset !== undefined
+        ? window.pageYOffset
+        : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+};
 
 const hideShowButton = () => {
-    const shouldBeVisible = safeScrollTop() > offset;
+    const shouldBeVisible = safeScrollTop() > showOffset;
     scrollTopBtn.classList[shouldBeVisible ? 'add' : 'remove']('active');
 };
 
-const init = (offset = 300) => {
+const init = (showOffset = 0, scrollOffset = 0) => {
     if (scrollTopBtn) {
-        offset = offset;
+        visibilityOffset = showOffset;
         hideShowButton();
-        scrollTopBtn.addEventListener('click', () => window.scrollTo(0));
+        scrollTopBtn.addEventListener('click', () => window.scrollTo(0, scrollOffset));
         window.addEventListener('scroll', () => hideShowButton());
     }
 };
 
-init();
+init(100);
