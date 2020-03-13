@@ -1,3 +1,5 @@
+import animateTo from '@runroom/purejs/lib/animateTo';
+
 const ELEMENT_ID = 'scroll-top';
 const scrollTopBtn = document.getElementById(ELEMENT_ID);
 let visibilityOffset = 0;
@@ -17,7 +19,7 @@ const init = (showOffset = 0, scrollOffset = 0) => {
     if (scrollTopBtn) {
         visibilityOffset = showOffset;
         hideShowButton();
-        scrollTopBtn.addEventListener('click', () => window.scrollTo(0, scrollOffset));
+        scrollTopBtn.addEventListener('click', () => animateTo({ element: scrollOffset }));
         window.addEventListener('scroll', () => hideShowButton());
     }
 };
