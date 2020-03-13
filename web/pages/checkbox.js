@@ -1,17 +1,17 @@
 import React from 'react';
-import Head from 'next/head';
 
-import Code from '../components/Code';
+import Page, { Wrapper } from '../components/Page';
+import Iframe from '../components/Iframe';
+
+const pageTitle = "Checkbox component";
 
 const Checkbox = () => (
-  <>
-    <Head>
-      <title>Component Checkbox</title>
-    </Head>
-
-    <h1>Checkbox component</h1>
-    <Code component='checkbox' />
-  </>
+  <Page title={pageTitle}>
+    <Wrapper>
+      <h1>{pageTitle}</h1>
+      <Iframe component='checkbox' />
+    </Wrapper>
+  </Page>
 );
 
 export default Checkbox;

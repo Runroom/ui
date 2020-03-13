@@ -1,17 +1,17 @@
 import React from 'react';
-import Head from 'next/head';
 
-import Code from '../components/Code';
+import Page, { Wrapper } from '../components/Page';
+import Iframe from '../components/Iframe';
+
+const pageTitle = "Button component"
 
 const Button = () => (
-  <>
-    <Head>
-      <title>Component Button</title>
-    </Head>
-
-    <h1>Button component</h1>
-    <Code component='button' />
-  </>
+  <Page title={pageTitle}>
+    <Wrapper>
+      <h1>{pageTitle}</h1>
+      <Iframe component='button' />
+    </Wrapper>
+  </Page>
 );
 
 export default Button;

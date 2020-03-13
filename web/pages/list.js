@@ -1,17 +1,17 @@
 import React from 'react';
-import Head from 'next/head';
 
-import Code from '../components/Code';
+import Page, { Wrapper } from '../components/Page';
+import Iframe from '../components/Iframe';
+
+const pageTitle = "List component";
 
 const List = () => (
-  <>
-    <Head>
-      <title>Component List</title>
-    </Head>
-
-    <h1>List component</h1>
-    <Code component='list' />
-  </>
+  <Page title={pageTitle}>
+    <Wrapper>
+      <h1>{pageTitle}</h1>
+      <Iframe component='list' />
+    </Wrapper>
+  </Page>
 );
 
 export default List;

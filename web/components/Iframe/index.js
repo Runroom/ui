@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
-import Iframe from './Iframe';
+import Iframe from './styles';
 
 const Code = ({ component }) => {
   const [isLoading, setIsLoading] = useState(false);
