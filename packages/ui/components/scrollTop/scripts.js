@@ -9,8 +9,8 @@ const safeScrollTop = () => {
 };
 
 const hideShowButton = () => {
-    const shouldBeVisible = safeScrollTop() > showOffset;
-    scrollTopBtn.classList[shouldBeVisible ? 'add' : 'remove']('active');
+    const shouldBeVisible = safeScrollTop() > visibilityOffset;
+    scrollTopBtn.classList[shouldBeVisible ? 'add' : 'remove']('is-active');
 };
 
 const init = (showOffset = 0, scrollOffset = 0) => {
