@@ -6,13 +6,13 @@ import CardStyled from './styles';
 
 class Card extends React.Component {
   render() {
-    const { slug, name, img } = this.props;
+    const { slug, name, img = placeholder } = this.props;
 
     return (
       <CardStyled>
         <Link href={slug}>
           <a>
-            <img src={placeholder} alt={`${name} component`} />
+            <img src={img} alt={`${name} component`} />
             <p>{name}</p>
           </a>
         </Link>
