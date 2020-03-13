@@ -19,6 +19,7 @@ The basic use of this component in *twig* is as follows:
 ## Options (JS)
 + `showOffset` - *Optional*: Defaults to 0. Offset from which the button will be toggled visible / not visible.
 + `scrollOffset` - *Optional*: Defaults to 0. Offset added to the scrolling top position.
++ `speed` - *Optional*: Defaults to 300. Time in _milliseconds_ to perform the animation.
 
 ## Examples
 ### Basic example
@@ -29,6 +30,9 @@ The basic use of this component in *twig* is as follows:
   }
 } %}
 ```
+
+## Dependencies
+This component uses as a dependency the vanillajs library for animating the scroll position [purejs](https://github.com/Runroom/purejs)
 
 ### HTML content inside the button
 ```twig
