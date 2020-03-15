@@ -40,9 +40,7 @@ The basic use of this component in *twig* is as follows:
         id: '',
         title: '',
         titleWrapper: '',
-        titleWrapper:Class '',
         titleWrapperClass: ''
-        titleWrapperClass:Class ''
     }
 } %}
 ```
@@ -54,7 +52,7 @@ The basic use of this component in *twig* is as follows:
         component: {
             title: 'Toggle me',
             titleWrapper: 'h2',
-            titleWrapper:Class 'h2',
+            titleWrapperClass: 'title3',
             id: 'id2'
         }
     } %}
