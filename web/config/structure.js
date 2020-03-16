@@ -44,6 +44,10 @@ const structure = [
       {
         name: 'Incremental input',
         slug: '/incremental-input'
+      },
+      {
+        name: 'Select',
+        slug: '/select'
       }
     ]
   }

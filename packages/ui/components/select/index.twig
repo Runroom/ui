@@ -1,0 +1,69 @@
+{% include 'components/select/select.twig' with {
+    component: {
+        name: 'select-name1',
+        id: 'select-id1',
+        options: [
+            { 'text': 'Select option', 'value': '' },
+            { 'text': 'Option1', 'value': 'Option1' }
+        ]
+    }
+}%}
+
+{% include 'components/select/select.twig' with {
+    component: {
+        label: 'Select description:',
+        name: 'select-name2',
+        id: 'select-id2',
+        options: [
+            { 'text': 'Select option', 'value': '' },
+            { 'text': 'Option1', 'value': 'Option1' },
+            { 'text': 'Option2', 'value': 'Option2' },
+            { 'text': 'Option3', 'value': 'Option3' },
+            { 'text': 'Option4', 'value': 'Option4' },
+            { 'selected': 'selected','text': 'Option5', 'value': 'Option5' }
+        ]
+    }
+}%}
+
+{% include 'components/select/select.twig' with {
+    component: {
+        label: 'Lorem Ipsum is simply dummy text:',
+        name: 'select-name3',
+        id: 'select-id3',
+        attributes: 'required',
+        options: [
+            { 'text': 'Select option', 'value': '' },
+            { 'text': 'Option1', 'value': 'Option1' },
+            { 'text': 'Option2', 'value': 'Option2' },
+            { 'text': 'Option3', 'value': 'Option3' },
+            { 'text': 'Option4', 'value': 'Option4' },
+            { 'text': 'Option5', 'value': 'Option5' }
+        ]
+    }
+}%}
+
+{% include 'components/select/select.twig' with {
+    component: {
+        label: 'Lorem Ipsum is simply dummy text of the printing and typesetting:',
+        name: 'select-name4',
+        id: 'select-id4',
+        attributes: 'disabled',
+        options: [
+            { 'text': 'Select option', 'value': '' },
+            { 'text': 'Option1', 'value': 'Option1' },
+            { 'text': 'Option2', 'value': 'Option2' },
+            { 'text': 'Option3', 'value': 'Option3' },
+            { 'text': 'Option4', 'value': 'Option4' },
+            { 'text': 'Option5', 'value': 'Option5' }
+        ]
+    }
+}%}
+
+{% include 'components/select/select.twig' with {
+    component: {
+        label: 'Lorem Ipsum is simply dummy text of the printing and typesetting:',
+        name: 'select-name5',
+        id: 'select-id5'
+    }
+}%}
+
