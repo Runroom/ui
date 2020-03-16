@@ -24,6 +24,11 @@ const Nav = () => (
           <a>Component Foo</a>
         </Link>
       </li>
+      <li>
+        <Link href='/textarea'>
+          <a>Component Textarea</a>
+        </Link>
+      </li>
     </NavList>
   </Aside>
 );

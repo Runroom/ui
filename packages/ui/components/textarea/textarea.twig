@@ -1,0 +1,22 @@
+{% set class = component.class|default('') %}
+{% set disabled = component.disabled|default(false) %}
+{% set id = component.id|default('') %}
+{% set maxlength = component.maxlength|default('') %}
+{% set name = component.name|default('') %}
+{% set numberRows = component.numberRows|default('') %}
+{% set label = component.label|default('') %}
+{% set required = component.required|default(false) %}
+{% set textPlaceholder = component.textPlaceholder|default('') %}
+
+{% if name %}
+    {% if label %}
+        <label for="{{ id }}">{{ label }}</label>
+    {% endif %}
+    <textarea class="textarea {{ class }}"
+    id="{{ id }}"
+    {% if disabled %} disabled{% endif %}
+    {% if maxlength %} maxlength="{{ maxlength }}"{% endif %}
+    {% if numberRows %} rows="{{ numberRows }}"{% endif %}
+    name="{{ name }}"
+    {% if textPlaceholder %} placeholder="{{ textPlaceholder }}"{% endif %}></textarea>
+{% endif %}
