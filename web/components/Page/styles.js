@@ -50,6 +50,10 @@ const CardsList = styled.ul`
     `}
 
     ${media.min('desktop')`
+      ${columns(3)}
+    `}
+
+    ${media.min('maxWidth')`
       ${columns(3, 2)}
     `}
   }
