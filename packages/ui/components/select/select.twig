@@ -7,7 +7,7 @@
 
 {% if options is not empty %}
     <div class="select {{ class }}">
-        {% if label is defined %}
+        {% if label %}
             <label for="{{ id }}">{{ label }}</label>
         {% endif %}
         <select name="{{ name }}" id="{{ id }}" {{ attributes }}>

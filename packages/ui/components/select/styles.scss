@@ -1,6 +1,7 @@
 .select {
     margin: 20px;
-    position: relative;       
+    position: relative;
+    width: 200px;     
 
     label {
         display: block;
@@ -15,7 +16,7 @@
         border: 1px solid #ccc;
         box-shadow: none;
         padding: 5px 8px;
-        width: 170px;
+        width: 100%;
 
         &:disabled {
             background-color: #eaeaea;
@@ -30,7 +31,7 @@
         bottom: 10px;
         content: '';
         height: 0;
-        left: 150px;
+        right: 10px;
         position: absolute;
         width: 0;
         z-index: 5;
