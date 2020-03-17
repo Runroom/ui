@@ -15,7 +15,7 @@ const toggle = () => {
         element.setAttribute('aria-expanded', attr === 'true' ? 'false' : 'true');
     };
 
-    for(i = 0; i < toggles.length; i++ ) {
+    for (i = 0; i < toggles.length; i++ ) {
         var toggle = toggles[i];
 
         toggle.addEventListener('click', () => {
