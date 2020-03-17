@@ -29,17 +29,20 @@ The basic use of this component in *twig* is as follows:
 
 ## Options
 + `titleWrapper` String of html tag to wrap the trigger button with.
++ `titleWrapperClass` String with optional class to be added to titleWrapper.
 + `content` Any type of content to show inside the toggled element.
 
 ## Examples
-### Toggle with all options
 ```twig
 {% include 'components/toggle/toggle.twig' with {
     component: {
-        content: 'This is the content',
-        id: 'id1',
-        title: 'Toggle me',
-        titleWrapper: 'h2'
+        content: '',
+        id: '',
+        title: '',
+        titleWrapper: '',
+        titleWrapper:Class '',
+        titleWrapperClass: ''
+        titleWrapperClass:Class ''
     }
 } %}
 ```
@@ -51,6 +54,7 @@ The basic use of this component in *twig* is as follows:
         component: {
             title: 'Toggle me',
             titleWrapper: 'h2',
+            titleWrapper:Class 'h2',
             id: 'id2'
         }
     } %}
