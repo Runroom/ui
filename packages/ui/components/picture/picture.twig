@@ -1,30 +1,89 @@
 {% set path = component.path|default(null) %}
-{% set webp = component.webp|default(null) %}
+{% set sources = component.sources|default(null) %}
 {% set class = component.class|default('') %}
 {% set alt = component.alt|default('') %}
 
-{% if webp is null and path %}
-    {% set changeExtension = path|split('.')|default('') %}
-    {% set webp = changeExtension|slice(0, changeExtension|length - 1)|join('.') ~ '.webp' %}
-{% endif %}
 
 {% if path %}
     <picture
         {{ class ? 'class=' ~ class }}
+        {% if alt %}
+            title="{{ alt }}"
+        {% endif %}
     >
-        <source 
-            srcset="{{ webp }}"
-            alt="{{ alt }}"
-            type="image/webp"
-        > 
+    {% if sources is iterable %}
+        {% for source in sources %}
+            {% if source.path %}
+                <source 
+                    srcset=
+                    {% if source.path is iterable %}
+                        {% for path in source.path %}
+                            {{ loop.first ? '"' }}{{ path }}{{ loop.last == false ? ',' : '"' }}
+                        {% endfor %}
+                    {% else %}
+                        "{{ source.path }}"
+                    {% endif %}
+                    {% if source.media %}
+                        media="(max-width: {{ source.media }}px)"
+                    {% endif %}
+                    {% if source.sizes %}
+                        sizes=
+                        {% if source.sizes is iterable %}
+                            {% for size in source.sizes %}
+                                {{ loop.first ? '"' }}{{ size }}{{ loop.last == false ? ',' : '"' }}
+                            {% endfor %}
+                        {% else %}
+                            {{ source.size }}
+                        {% endif %}
+                    {% endif %}
+                    {% if source.type %}
+                        type="{{ source.type }}"
+                    {% endif %}
+                >            
+            {% endif %}
+        {% endfor %}
+    {% else %}
+            {% if source.path %}
+                <source 
+                    srcset=
+                    {% if source.path is iterable %}
+                        {% for path in source.path %}
+                            {{ loop.first ? '"' }}{{ path }}{{ loop.last == false ? ',' : '"' }}
+                        {% endfor %}
+                    {% else %}
+                        "{{ source.path }}"
+                    {% endif %}
+                    {% if source.media %}
+                        media="(max-width: {{ source.media }}px)"
+                    {% endif %}
+                    {% if source.sizes %}
+                        sizes=
+                        {% if source.sizes is iterable %}
+                            {% for size in source.sizes %}
+                                {{ loop.first ? '"' }}{{ size }}{{ loop.last == false ? ',' : '"' }}
+                            {% endfor %}
+                        {% else %}
+                            {{ source.size }}
+                        {% endif %}
+                    {% endif %}
+                    {% if source.type %}
+                        type="{{ source.type }}"
+                    {% endif %}
+                >            
+            {% endif %}
+    {% endif %}
         <img 
             src="{{ path }}"
-            alt="{{ alt }}"
+            {% if alt %}
+                alt="{{ alt }}"
+            {% endif %}
         >
         <noscript>
             <img 
                 src="{{ path }}" 
-                alt="{{ alt }}"
+                {% if alt %}
+                    alt="{{ alt }}"
+                {% endif %}
             >
         </noscript>
     </picture>
