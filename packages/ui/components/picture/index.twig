@@ -8,25 +8,12 @@
                 media: 480
             },
             {
-                path: 'https://picsum.photos/id/202/768.webp',
-                media: 768
+                path: 'https://picsum.photos/id/202/960.webp',
+                media: 960
             },
             {
-                path: 'https://picsum.photos/id/203/1024.webp',
+                path: 'https://picsum.photos/id/203/1280.webp'
             }
         ]
-    }
-} %}
-
-{% include 'components/picture/picture.twig' with {
-    component: {
-        path: 'https://picsum.photos/id/100/1024.jpg',
-        alt: 'I will load the image that matches my sizes attribute on page load, and only once'
-        sources: [ 
-            {
-                path: 'https://picsum.photos/id/301/480.webp 480w, https://picsum.photos/id/301/768.webp 768w, https://picsum.photos/id/301/1024.webp 1024w',
-                sizes: '(max-width: 480px) 480px, (max-width: 768px) 768px, (min-width: 768px) 1024px',
-            } 
-        ],
     }
 } %}

@@ -18,9 +18,6 @@
                 {% if source.media %}
                     media="(max-width: {{ source.media }}px)"
                 {% endif %}
-                {% if source.sizes %}
-                    sizes="{{ source.sizes }}"
-                {% endif %}
                 type="{{ source.type ? source.type : 'image/webp' }}"
             >            
         {% endfor %}
