@@ -4,7 +4,6 @@
 {% set alt = component.alt|default('') %}
 {% set attr = component.attr|default('') %}
 
-
 {% if path %}
     <picture
         {% if class %}
@@ -13,43 +12,21 @@
         title="{{ alt }}"
         {{ attr ? attr|raw }}
     >
-        {% for source in sources %}
-            {% if source.path %}
-                <source 
-                    srcset=
-                    {% if source.path is iterable %}
-                        {% for path in source.path %}
-                            {{ loop.first ? '"' }}{{ path }}{{ loop.last == false ? ',' : '"' }}
-                        {% endfor %}
-                    {% else %}
-                        "{{ source.path }}"
-                    {% endif %}
-                    {% if source.media %}
-                        media="(max-width: {{ source.media }}px)"
-                    {% endif %}
-                    {% if source.sizes %}
-                        sizes=
-                        {% if source.sizes is iterable %}
-                            {% for size in source.sizes %}
-                                {{ loop.first ? '"' }}{{ size }}{{ loop.last == false ? ',' : '"' }}
-                            {% endfor %}
-                        {% else %}
-                            {{ source.size }}
-                        {% endif %}
-                    {% endif %}
-                    type="{{ source.type ? source.type : 'image/webp' }}"
-                >            
-            {% endif %}
+        {% for source in sources|filter(source => source.path is defined) %}
+            <source 
+                srcset="{{ source.path }}"
+                {% if source.media %}
+                    media="(max-width: {{ source.media }}px)"
+                {% endif %}
+                {% if source.sizes %}
+                    sizes="{{ source.sizes }}"
+                {% endif %}
+                type="{{ source.type ? source.type : 'image/webp' }}"
+            >            
         {% endfor %}
-        <img 
-            src="{{ path }}"
-            alt="{{ alt }}"
-        >
+        <img src="{{ path }}" alt="{{ alt }}">
         <noscript>
-            <img 
-                src="{{ path }}" 
-                alt="{{ alt }}"
-            >
+            <img src="{{ path }}" alt="{{ alt }}">
         </noscript>
     </picture>
 {% endif %}
