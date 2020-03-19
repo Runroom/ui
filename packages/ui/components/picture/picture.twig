@@ -1,0 +1,22 @@
+{% set defaultPath = '/assets/img/' %} {# Setear con el path por defecto del proyecto, o si hay una variable global concatenarla en el condicional #}
+
+{% if component.path|split('/')|length == 1 %} {# Esto facilita el añadido de assets locales si apuntan directamente a defaultPath #}
+    {% set path = defaultPath ~ component.path %}
+{% else %}
+    {% set path = component.path %}
+{% endif %}
+
+{% set splittedPath = path|split('.')|default('') %} {# Esto permite añadir como un sólo parámetro el nombre y extensión del archivo, sin tener que separarlo en dos variables manualmente #}
+{% set filename = splittedPath|slice(0, splittedPath|length - 1)|join('.')|default(null) %}
+{% set extension = path|split('.')|last|default('jpg') %}
+{% set alt = component.alt|default('') %}
+
+{% if filename %}
+    <picture {% if class %}class="{{ class }}"{% endif %}>
+        <source srcset="{{ filename }}.webp" type="image/webp">
+        <img src="{{ filename }}.{{ extension }}" {% if alt %}alt="{{alt}}" {{ alt ? 'alt="' ~ alt ~ '"' }}>
+        <noscript>
+            <img src="{{ filename }}.{{ extension }}" {{ alt ? 'alt="' ~ alt ~ '"' }}>
+        </noscript>
+    </picture>
+{% endif %}
