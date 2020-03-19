@@ -2,16 +2,17 @@
 {% set sources = component.sources|default(null) %}
 {% set class = component.class|default('') %}
 {% set alt = component.alt|default('') %}
+{% set attr = component.attr|default('') %}
 
 
 {% if path %}
     <picture
-        {{ class ? 'class=' ~ class }}
-        {% if alt %}
-            title="{{ alt }}"
+        {% if class %}
+            class="{{ class }}"
         {% endif %}
+        title="{{ alt }}"
+        {{ attr ? attr|raw }}
     >
-    {% if sources is iterable %}
         {% for source in sources %}
             {% if source.path %}
                 <source 
@@ -36,54 +37,18 @@
                             {{ source.size }}
                         {% endif %}
                     {% endif %}
-                    {% if source.type %}
-                        type="{{ source.type }}"
-                    {% endif %}
+                    type="{{ source.type ? source.type : 'image/webp' }}"
                 >            
             {% endif %}
         {% endfor %}
-    {% else %}
-            {% if source.path %}
-                <source 
-                    srcset=
-                    {% if source.path is iterable %}
-                        {% for path in source.path %}
-                            {{ loop.first ? '"' }}{{ path }}{{ loop.last == false ? ',' : '"' }}
-                        {% endfor %}
-                    {% else %}
-                        "{{ source.path }}"
-                    {% endif %}
-                    {% if source.media %}
-                        media="(max-width: {{ source.media }}px)"
-                    {% endif %}
-                    {% if source.sizes %}
-                        sizes=
-                        {% if source.sizes is iterable %}
-                            {% for size in source.sizes %}
-                                {{ loop.first ? '"' }}{{ size }}{{ loop.last == false ? ',' : '"' }}
-                            {% endfor %}
-                        {% else %}
-                            {{ source.size }}
-                        {% endif %}
-                    {% endif %}
-                    {% if source.type %}
-                        type="{{ source.type }}"
-                    {% endif %}
-                >            
-            {% endif %}
-    {% endif %}
         <img 
             src="{{ path }}"
-            {% if alt %}
-                alt="{{ alt }}"
-            {% endif %}
+            alt="{{ alt }}"
         >
         <noscript>
             <img 
                 src="{{ path }}" 
-                {% if alt %}
-                    alt="{{ alt }}"
-                {% endif %}
+                alt="{{ alt }}"
             >
         </noscript>
     </picture>

@@ -1,36 +1,19 @@
 {% include 'components/picture/picture.twig' with {
     component: {
-        path: 'https://picsum.photos/id/100/1024.jpg',
+        path: 'https://picsum.photos/id/203/1024.jpg',
+        alt: 'I show different images depending on screen width',
         sources: [
-                {
-                    path: 'https://picsum.photos/id/201/480.webp',
-                    media: 480,
-                    type: 'image/webp'
-                },
-                {
-                    path: 'https://picsum.photos/id/202/640.webp',
-                    media: 640,
-                    type: 'image/webp'
-                },
-                {
-                    path: 'https://picsum.photos/id/203/1024.webp',
-                    type: 'image/webp'
-                }
-            ],
-        alt: 'Test image',
-        class: 'picture'
-    }
-} %}
-
-{% include 'components/picture/picture.twig' with {
-    component: {
-        path: 'https://picsum.photos/id/100/1024.jpg',
-        sources: {
-                    path: ['https://picsum.photos/id/201/480.webp 480w', 'https://picsum.photos/id/202/640.webp 640w', 'https://picsum.photos/id/203/800.webp 800w'],
-                    sizes: ['(max-width: 500px) 480px', '(max-width: 720px) 640px', '800px'],
-                    type: 'image/webp'
-                },
-        alt: 'Test image',
-        class: 'picture'
+            {
+                path: 'https://picsum.photos/id/201/480.webp',
+                media: 480
+            },
+            {
+                path: 'https://picsum.photos/id/202/768.webp',
+                media: 768
+            },
+            {
+                path: 'https://picsum.photos/id/203/1024.webp',
+            }
+        ]
     }
 } %}
