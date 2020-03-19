@@ -1,38 +1,31 @@
 {% set path = component.path|default(null) %}
+{% set webp = component.webp|default(null) %}
 {% set class = component.class|default('') %}
 {% set alt = component.alt|default('') %}
 
-{# Automatismo opcional - Valorar utilidad #}
-{# Esto nos evita tener que pasar dos variables separadas (una para el nombre de archivo, y otra para la extensión), 
-pero da problemas si apuntamos a un servicio web como picsum (por que la imagen es una url sin extensión).
-Por ejemplo, sin esto deberíamos pasarle al componente filename(foo) y extension(jpg), mientras que con esto se setean automáticamente(foo.jpg).
-Esto sólo tiene sentido si se acuerda que la imagen en webp y en su formato fallback tengan el mismo nombre.
-
-Opción B es pasar de este autimatismo y pasarle dos variables al componente, una con el path del webp, y otra para el formato fallback #}
-{% set getFilename = path|split('.')|default('') %}
-{% set filename = getFilename|slice(0, getFilename|length - 1)|join('.')|default('') %}
-{% set extension = path|split('.')|last|default('') %}
-{# Fin automatismo #}
+{% if webp is null and path %}
+    {% set changeExtension = path|split('.')|default('') %}
+    {% set webp = changeExtension|slice(0, changeExtension|length - 1)|join('.') ~ '.webp' %}
+{% endif %}
 
 {% if path %}
     <picture
         {{ class ? 'class=' ~ class }}
     >
         <source 
-            srcset="{{ filename }}.webp"
+            srcset="{{ webp }}"
             alt="{{ alt }}"
             type="image/webp"
         > 
         <img 
-            src="{{ filename }}.{{ extension }}"
+            src="{{ path }}"
             alt="{{ alt }}"
         >
         <noscript>
             <img 
-                src="{{ filename }}.{{ extension }}" 
+                src="{{ path }}" 
                 alt="{{ alt }}"
             >
-
         </noscript>
     </picture>
 {% endif %}
