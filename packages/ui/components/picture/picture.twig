@@ -1,5 +1,5 @@
-{% set path = component.path|default(null) %}
-{% set sources = component.sources|default(null) %}
+{% set path = component.path|default(false) %}
+{% set sources = component.sources|default([]) %}
 {% set class = component.class|default('') %}
 {% set alt = component.alt|default('') %}
 {% set attr = component.attr|default('') %}
@@ -10,16 +10,16 @@
             class="{{ class }}"
         {% endif %}
         title="{{ alt }}"
-        {{ attr ? attr|raw }}
+        {{ attr|raw }}
     >
         {% for source in sources|filter(source => source.path is defined) %}
-            <source 
+            <source
                 srcset="{{ source.path }}"
                 {% if source.media %}
                     media="(max-width: {{ source.media }}px)"
                 {% endif %}
                 type="{{ source.type ? source.type : 'image/webp' }}"
-            >            
+            >
         {% endfor %}
         <img src="{{ path }}" alt="{{ alt }}">
         <noscript>
