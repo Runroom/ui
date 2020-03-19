@@ -1,22 +1,38 @@
-{% set defaultPath = '/assets/img/' %} {# Setear con el path por defecto del proyecto, o si hay una variable global concatenarla en el condicional #}
-
-{% if component.path|split('/')|length == 1 %} {# Esto facilita el añadido de assets locales si apuntan directamente a defaultPath #}
-    {% set path = defaultPath ~ component.path %}
-{% else %}
-    {% set path = component.path %}
-{% endif %}
-
-{% set splittedPath = path|split('.')|default('') %} {# Esto permite añadir como un sólo parámetro el nombre y extensión del archivo, sin tener que separarlo en dos variables manualmente #}
-{% set filename = splittedPath|slice(0, splittedPath|length - 1)|join('.')|default(null) %}
-{% set extension = path|split('.')|last|default('jpg') %}
+{% set path = component.path|default(null) %}
+{% set class = component.class|default('') %}
 {% set alt = component.alt|default('') %}
 
-{% if filename %}
-    <picture {% if class %}class="{{ class }}"{% endif %}>
-        <source srcset="{{ filename }}.webp" type="image/webp">
-        <img src="{{ filename }}.{{ extension }}" {% if alt %}alt="{{alt}}" {{ alt ? 'alt="' ~ alt ~ '"' }}>
+{# Automatismo opcional - Valorar utilidad #}
+{# Esto nos evita tener que pasar dos variables separadas (una para el nombre de archivo, y otra para la extensión), 
+pero da problemas si apuntamos a un servicio web como picsum (por que la imagen es una url sin extensión).
+Por ejemplo, sin esto deberíamos pasarle al componente filename(foo) y extension(jpg), mientras que con esto se setean automáticamente(foo.jpg).
+Esto sólo tiene sentido si se acuerda que la imagen en webp y en su formato fallback tengan el mismo nombre.
+
+Opción B es pasar de este autimatismo y pasarle dos variables al componente, una con el path del webp, y otra para el formato fallback #}
+{% set getFilename = path|split('.')|default('') %}
+{% set filename = getFilename|slice(0, getFilename|length - 1)|join('.')|default('') %}
+{% set extension = path|split('.')|last|default('') %}
+{# Fin automatismo #}
+
+{% if path %}
+    <picture
+        {{ class ? 'class=' ~ class }}
+    >
+        <source 
+            srcset="{{ filename }}.webp"
+            alt="{{ alt }}"
+            type="image/webp"
+        > 
+        <img 
+            src="{{ filename }}.{{ extension }}"
+            alt="{{ alt }}"
+        >
         <noscript>
-            <img src="{{ filename }}.{{ extension }}" {{ alt ? 'alt="' ~ alt ~ '"' }}>
+            <img 
+                src="{{ filename }}.{{ extension }}" 
+                alt="{{ alt }}"
+            >
+
         </noscript>
     </picture>
 {% endif %}
