@@ -5,6 +5,10 @@ const structure = [
       {
         name: 'Button',
         slug: '/button'
+      },
+      {
+        name: 'Picture',
+        slug: '/picture'
       }
     ]
   },
