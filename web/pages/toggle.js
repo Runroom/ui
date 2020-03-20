@@ -1,17 +1,17 @@
 import React from 'react';
-import Head from 'next/head';
 
-import Code from '../components/Code';
+import Page, { Wrapper } from '../components/Page';
+import Iframe from '../components/Iframe';
+
+const pageTitle = "Toggle component";
 
 const Toggle = () => (
-  <>
-    <Head>
-      <title>Component Toggle</title>
-    </Head>
-
-    <h1>Component Toggle</h1>
-    <Code component='toggle' />
-  </>
+  <Page title={pageTitle}>
+    <Wrapper>
+      <h1>{pageTitle}</h1>
+      <Iframe component='toggle' />
+    </Wrapper>
+  </Page>
 );
 
 export default Toggle;
