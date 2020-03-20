@@ -1,14 +1,9 @@
 {% set content = component.content|default('') %}
-{% set id = component.id|default('') %}
-{% set title = component.title|default('') %}
-{% set titleWrapper = component.titleWrapper|default('') %}
-{% set titleWrapperClass = component.titleWrapperClass|default('') %}
+{% set id = component.id|default('toggle') %}
 
-{% if title and id %}
+{% if title and content %}
     <div class="toggle">
-        {% if titleWrapper %}<{{ titleWrapper }} class="toggle__title {{ titleWrapperClass }}">{% endif %}
         <button class="js-toggle toggle__trigger" aria-controls="{{ id }}" aria-expanded="false">{{ title|raw }}</button>
-        {% if titleWrapper %}</{{ titleWrapper }}>{% endif %}
         {% if content %}
             <div id="{{ id }}" class="toggle__content" hidden>{{ content|raw }}</div>
         {% endif %}

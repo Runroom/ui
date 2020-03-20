@@ -16,7 +16,7 @@ const toggle = () => {
     };
 
     for (i = 0; i < toggles.length; i++ ) {
-        var toggle = toggles[i];
+        let toggle = toggles[i];
 
         toggle.addEventListener('click', () => {
             const target = toggle.getAttribute('aria-controls');
