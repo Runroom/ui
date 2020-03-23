@@ -9,6 +9,10 @@ const structure = [
       {
         name: 'Picture',
         slug: '/picture'
+      },
+      {
+        name: 'Video',
+        slug: '/video'
       }
     ]
   },

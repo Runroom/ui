@@ -1,0 +1,21 @@
+{% set class = component.class|default('') %}
+{% set poster = component.poster|default(false) %}
+{% set mp4 = component.mp4|default(null) %}
+{% set webm = component.webm|default(null) %}
+{% set attr = component.attr|default('') %}
+
+{% if mp4 or webm %}
+    <video
+      class="video {{ class }}"
+      {% if poster %}poster="{{ poster }}"{% endif %}
+      {{ attr|raw }}
+    >
+        {% if mp4 %}
+            <source src="{{ mp4 }}" type="video/mp4">
+        {% endif %}
+        {% if webm %}
+            <source src="{{ webm }}" type="video/webm">
+        {% endif %}
+        This browser doesn't support the video tag.
+    </video>
+{% endif %}
