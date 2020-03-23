@@ -1,17 +1,17 @@
 import React from 'react';
-import Head from 'next/head';
 
-import Code from '../components/Code';
+import Page, { Wrapper } from '../components/Page';
+import Iframe from '../components/Iframe';
 
-const Checkbox = () => (
-  <>
-    <Head>
-      <title>Component Responsive Table</title>
-    </Head>
+const pageTitle = "Responsive Table component";
 
-    <h1>Responsive Table component</h1>
-    <Code component='responsiveTable' />
-  </>
+const ResponsiveTable = () => (
+  <Page title={pageTitle}>
+    <Wrapper>
+      <h1>{pageTitle}</h1>
+      <Iframe component='responsiveTable' />
+    </Wrapper>
+  </Page>
 );
 
-export default Checkbox;
+export default ResponsiveTable;
