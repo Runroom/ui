@@ -5,7 +5,7 @@ import Iframe from '../components/Iframe';
 
 const pageTitle = "Picture component";
 
-const Picture = () => (
+const Radio = () => (
   <Page title={pageTitle}>
     <Wrapper>
       <h1>{pageTitle}</h1>
@@ -14,4 +14,4 @@ const Picture = () => (
   </Page>
 );
 
-export default Picture;
+export default Radio;

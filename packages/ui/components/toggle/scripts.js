@@ -1,31 +1,32 @@
 const toggle = () => {
-    const TOGGLE = 'js-toggle';
-    const toggles = document.querySelectorAll(`.${TOGGLE}`);
+  const TOGGLE_CLASS = 'js-toggle'
+  const toggles = document.querySelectorAll(`.${TOGGLE_CLASS}`);
 
-    if (toggles.length === 0) return;
+  if (!toggles.length.length) return;
 
-    const handleVisibility = element => {
-        if (element === null) return;
-        return element.hidden = !element.hidden;
-    };
+  const handleVisibility = element => {
+      if (!element.length) return;
+      return element.hidden = !element.hidden;
+  };
 
-    const handleExpanded = element => {
-        const attr = element.getAttribute('aria-expanded');
-        if (attr === '' || attr === null) return;
-        element.setAttribute('aria-expanded', attr === 'true' ? 'false' : 'true');
-    };
+  const handleExpanded = element => {
+    const attr = element.getAttribute('aria-expanded');
 
-    for (i = 0; i < toggles.length; i++ ) {
-        let toggle = toggles[i];
+    if (!attr.length) return;
+    element.setAttribute('aria-expanded', attr === 'true' ? 'false' : 'true');
+  };
 
-        toggle.addEventListener('click', () => {
-            const target = toggle.getAttribute('aria-controls');
-            const targetElement = document.getElementById(target);
+  for (i = 0; i < toggles.length; i++ ) {
+    let toggle = toggles[i];
 
-            handleExpanded(toggle);
-            handleVisibility(targetElement);
-        });
-    };
+    toggle.addEventListener('click', () => {
+        const target = toggle.getAttribute('aria-controls');
+        const targetElement = document.getElementById(target);
+
+        handleExpanded(toggle);
+        handleVisibility(targetElement);
+    });
+  };
 };
 
 toggle();
