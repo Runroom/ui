@@ -32,7 +32,9 @@ The basic use of this component in *twig* is as follows:
 ```
 
 ## Dependencies
-This component uses as a dependency the vanillajs library for animating the scroll position [purejs](https://github.com/Runroom/purejs)
+This component uses as a dependency the vanillajs library [purejs](https://github.com/Runroom/purejs):
+* Animating the scroll position
+* Calculating scroll distance to page top
 
 ### HTML content inside the button
 ```twig

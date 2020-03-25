@@ -1,4 +1,5 @@
 import animateTo from '@runroom/purejs/lib/animateTo';
+import safeScrollTop from '@runroom/purejs/lib/safeScrollTop';
 
 const ELEMENT_ID = 'scroll-top';
 const scrollTopBtn = document.getElementById(ELEMENT_ID);
@@ -7,12 +8,6 @@ let opts = {
     scrollOffset: 0,
     speed: 300
 }
-
-const safeScrollTop = () => {
-    return window.pageYOffset !== undefined
-        ? window.pageYOffset
-        : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-};
 
 const hideShowButton = () => {
     const shouldBeVisible = safeScrollTop() > opts.showOffset;
