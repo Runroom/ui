@@ -13,7 +13,7 @@ The basic use of this component in *twig* is as follows:
 ```
 
 ## Options (Twig)
-+ `text` - *Optional*: Button content. It accepts html characters as it's parsed as raw.
++ `text` - *Optional*: Defaults to Top. Button content. It accepts html characters as it's parsed as raw.
 + `class` - *Optional*: Allows the addition of custom classes.
 
 ## Options (JS)
@@ -24,11 +24,7 @@ The basic use of this component in *twig* is as follows:
 ## Examples
 ### Basic example
 ```twig
-{% include 'components/scrollTop/scrollTop.twig' with {
-  component: {
-      text: 'Top'
-  }
-} %}
+{% include 'components/scrollTop/scrollTop.twig' %}
 ```
 
 ## Dependencies
