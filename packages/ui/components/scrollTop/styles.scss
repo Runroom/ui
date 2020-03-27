@@ -1,15 +1,14 @@
 .scroll-top {
-  align-items: center;
   background-color: #000;
   bottom: 20px;
   color: #fff;
   display: none;
   height: 48px;
-  justify-content: center;
   position: fixed;
   right: 20px;
+  text-align: center;
   width: 48px;
   z-index: 9;
 
-  &.is-active { display: flex; }
+  &.is-active { display: block; }
 }
