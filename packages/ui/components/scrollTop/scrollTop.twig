@@ -1,0 +1,10 @@
+{% set class = component.class|default('') %} {% set text =
+component.text|default('') %}
+
+<button
+    id="scroll-top"
+    class="scroll-top {{ class }}"
+    aria-hidden="true"
+>
+  {{ text|raw }}
+</button>

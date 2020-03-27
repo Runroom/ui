@@ -12,6 +12,10 @@ const structure = [
       {
         name: 'Picture',
         slug: '/picture'
+      },
+      {
+        name: 'Scroll top',
+        slug: '/scroll-top'
       }
     ]
   },

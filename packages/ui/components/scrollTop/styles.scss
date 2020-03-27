@@ -1,0 +1,15 @@
+.scroll-top {
+  align-items: center;
+  background-color: #000;
+  bottom: 40px;
+  color: #fff;
+  display: none;
+  height: 48px;
+  justify-content: center;
+  position: fixed;
+  right: 40px;
+  width: 48px;
+  z-index: 9;
+
+  &.active { display: flex; }
+}
