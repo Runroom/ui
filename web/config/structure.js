@@ -1,3 +1,5 @@
+import toggleImage from '../assets/img/toggle.png';
+
 const structure = [
   {
     name: 'elements',
@@ -12,7 +14,8 @@ const structure = [
       },
       {
         name: 'Toggle',
-        slug: '/toggle'
+        slug: '/toggle',
+        img: toggleImage
       }
     ]
   },
