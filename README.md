@@ -47,3 +47,9 @@ cd web
 yarn install
 yarn run dev
 ```
+
+### Dependencias
+[PureJS](https://github.com/Runroom/purejs) será una dependencia para los componentes que requieran alguna de las funcionalidades de soporte que se ofrecen en él.
+
+### Convenciones
+Hemos creado un [documento de convenciones](conventions.md) para el código de este proyecto.
