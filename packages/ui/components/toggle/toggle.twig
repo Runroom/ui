@@ -4,7 +4,7 @@
 
 {% if title and content %}
     <div class="toggle">
-        <button class="js-toggle toggle__trigger" aria-controls="{{ id }}" aria-expanded="false">{{ title|raw }}</button>
+        <button class="toggle__trigger js-toggle" aria-controls="{{ id }}" aria-expanded="false">{{ title|raw }}</button>
         {% if content %}
             <div id="{{ id }}" class="toggle__content" hidden>{{ content|raw }}</div>
         {% endif %}
