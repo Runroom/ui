@@ -30,7 +30,7 @@ Component's Style file
 ## When writting JS
 ### Naming and declaration convenitons
 * Use capital letter for `const` name declarations unless it stores an element.
-* Don't include `.` when stoying class names, instead use template literals when a dot is necessary.
+* Don't include `.` when storing class names, instead use template literals when a dot is necessary.
 `````
 const COMPONENT_CLASS = 'button';
 const component = document.querySelector(`.${COMPONENT_CLASS}`);
@@ -61,7 +61,7 @@ export default toggle;
 ````
 Import script file
 ````
-import toggle from toggle.js
+import toggle from 'toggle';
 toggle();
 ````
 
