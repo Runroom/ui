@@ -31,10 +31,10 @@ Component's Style file:
 ### Naming and declaration conventions
 * Use capital letter for `const` name declarations unless it stores an element.
 * Don't include `.` when storing class names, instead use template literals when a dot is necessary.
-````
+```
 const TOGGLE_CLASS = 'js-toggle';
 const toggle = document.querySelector(`.${TOGGLE_CLASS}`);
-````
+```
 
 ### Functions, declarations and exporting
 * If possible place `const` or `let` declarations outside functions.
