@@ -11,13 +11,8 @@ const structure = [
       {
         name: 'Picture',
         slug: '/picture'
-      },
-      {
-        name: 'Toggle',
-        slug: '/toggle',
-        img: toggleImage
       }
-    ]
+    ],
   },
   {
     name: 'structures',
@@ -59,6 +54,16 @@ const structure = [
       {
         name: 'Select',
         slug: '/select'
+      }
+    ]
+  },
+  {
+    name: 'Helpers',
+    components: [
+      {
+        name: 'Toggle',
+        slug: '/toggle',
+        img: toggleImage
       }
     ]
   }

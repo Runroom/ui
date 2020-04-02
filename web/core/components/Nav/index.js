@@ -51,7 +51,7 @@ const Nav = () => (
       </li>
       <li>
         <Link href='/toggle'>
-          <a>Component Toggle</a>
+          <a>Helpers Toggle</a>
         </Link>
       </li>
     </NavList>
