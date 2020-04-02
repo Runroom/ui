@@ -20,11 +20,11 @@ const toggle = () => {
 
   forEach(toggles, toggle => {
     toggle.addEventListener('click', () => {
-        const target = toggle.getAttribute('aria-controls');
-        const targetElement = document.getElementById(target);
+      const target = toggle.getAttribute('aria-controls');
+      const targetElement = document.getElementById(target);
 
-        handleExpanded(toggle);
-        handleVisibility(targetElement);
+      handleExpanded(toggle);
+      handleVisibility(targetElement);
     });
   });
 };

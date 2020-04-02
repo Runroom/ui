@@ -1,1 +1,0 @@
-.toggle__trigger::after{content:"+";display:inline-block;margin-left:6px}.toggle__trigger[aria-expanded=true]::after{content:"-"}
