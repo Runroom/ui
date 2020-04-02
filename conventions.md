@@ -43,7 +43,7 @@ const toggle = document.querySelector(`.${TOGGLE_CLASS}`);
 * Export component's function without executing it. Execute the function when importing.
 
 
-Component script file
+Component script file:
 ```
 const COMPONENT_CLASS = 'toggle';
 
@@ -59,7 +59,7 @@ const toggle = () => {
 
 export default toggle;
 ```
-Import script file
+Import script file:
 ```
 import toggle from toggle.js
 toggle();
