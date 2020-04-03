@@ -62,6 +62,7 @@ export default toggle;
 Import script file:
 ```
 import toggle from toggle.js
+
 toggle();
 ```
 
