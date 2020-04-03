@@ -29,4 +29,4 @@ const toggle = () => {
   });
 };
 
-toggle();
+export default toggle;
