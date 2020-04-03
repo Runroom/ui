@@ -2,7 +2,7 @@
 
 > UNDER DEVELOPMENT
 
-This is an _accessible_, _cross-browser_ and _tested_ integrated Component's library for building customized web interfaces quickly.
+This is an _accessible_, _cross-browser_ and _tested integrated_ Component's library for building customized web interfaces quickly.
 
 ---
 
