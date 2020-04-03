@@ -18,7 +18,7 @@ scroll-top__button-title
 
 Component file:
 ```
-'toggle.twig';
+toggle.twig
 ```
 Component's Style file:
 ```
