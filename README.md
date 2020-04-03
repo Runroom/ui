@@ -2,13 +2,13 @@
 
 > UNDER DEVELOPMENT
 
-Una librería de componentes accesibles, _cross-browser_ y con _testing_ integrado para generar interfaces personalizadas rapidamente.
+This is an _accessible_, _cross-browser_ and _tested integrated_ Component's library for building customized web interfaces quickly.
 
 ---
 
-## Estructura del proyecto
+## Project's structure
 
-Hay tres carpetas base:
+There's three main folders:
 
 ```
 .
@@ -20,18 +20,18 @@ Hay tres carpetas base:
 
 |  Directory  |  Description                                                   |
 |-------------|----------------------------------------------------------------|
-|  api        |  API con express que nos permite obtener los componentes del directorio `ui` hechos en Twig |
-|  packages   |  Estructura inicial para monorepos de lerna |
-|  ui         |  Librería de componentes basados en Twig |
-|  web        |  Web base para la visualización de los componentes, documentación, etc. Utiliza Next.js como framework de React |
+|  api        |  API with express allows us to obtain components from `ui` folder, done in _Twig_ |
+|  packages   |  Initial structure for lerna mono repositories |
+|  ui         |  Twig based component's library |
+|  web        |  Basic web to visualize components, documentation, etc. It uses Next.js as React's framework |
 
-## Instalación y uso
+## Installation and usage
 
-**Se debe ejecutar el API a la vez que la web.**
-Actualmente estamos en proceso de desarrollo y no tenemos una versión segura
+**API should be executed same time as WEB.**
+For now this is a work in progress and there's no stable version
 
 ### API
-El API se inicializará en el puerto 5000
+API initializes on port 5000
 
 ```
 cd api
@@ -40,10 +40,16 @@ yarn run server
 ```
 
 ### Web
-La web se inicializará en el puerto 3000 y tiene dependencia del puerto 5000 (API)
+WEB initializes on port 3000 and has port 5000 (API) dependency
 
 ```
 cd web
 yarn install
 yarn run dev
 ```
+
+### Dependencies
+[PureJS](https://github.com/Runroom/purejs) will be a dependency for components when they require any of the support functions available in the library.
+
+### Conventions
+We've created a [convention's document](conventions.md) for this project's code.
