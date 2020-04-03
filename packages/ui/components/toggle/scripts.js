@@ -1,4 +1,4 @@
-import toggle from '../../helpers/toggle/js-toggle';
+import toggle from '../../helpers/toggle';
 
 toggle();
 
