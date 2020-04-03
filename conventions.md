@@ -30,7 +30,7 @@ Component's Style file:
 ## When writing JS
 ### Naming and declaration conventions
 * Use capital letter for `const` name declarations unless it stores an element.
-* Don't include `.` when storing class names, instead use template literals when a dot is necessary.
+* Don't include markup (such as `.`) when storing DOM element selectors. Instead use template literals when they are necessary.
 ```
 const TOGGLE_CLASS = 'js-toggle';
 const toggle = document.querySelector(`.${TOGGLE_CLASS}`);
