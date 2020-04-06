@@ -2,18 +2,18 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "@babel/cli": "^7.7.0",
-    "@babel/core": "^7.7.0",
-    "@babel/preset-env": "^7.7.1",
-    "babel-loader": "^8.0.6",
-    "glob": "^7.1.5",
-    "lerna": "3.16.4",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "glob": "^7.1.6",
+    "lerna": "3.20.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "@runroom/purejs": "^3.0.1",
-    "sass": "1.23.3"
+    "sass": "1.26.3"
   },
   "scripts": {
     "clean:compiled": "rm -rf packages/ui/components/**/*.min.js packages/ui/components/**/*.css",
