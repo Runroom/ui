@@ -1,16 +1,15 @@
-# Componente Checkbox Switch
+# Componente Checkbox Switch
 El componente Checkbox Switch se usa para activar una de las dos opciones predefinidas. Comúnmente es utilizado como un botón de encendido / apagado.
 
 Etiqueta <label>:  nos permite asociar la casilla de verificación con todos los demás campos que estén dentro del alcance de la etiqueta. 
 
-## Uso
+## Uso
 Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
 ```
 {% include 'components/switch/switch.twig' %}
-
 ```
 
-## Opciones
+## Opciones
 Las opciones que se pueden pasar al componente son el texto previo y posterior al checkbox y los atributos, todos ellos son opcionales. Estas opciones se pasan de la siguiente manera: 
 ```
 {% include 'components/switch/switch.twig' with {
@@ -22,7 +21,6 @@ Las opciones que se pueden pasar al componente son el texto previo y posterior a
         value: ''
     }
 }%}
-
 ```
 La variable {{ preText }} almacena el valor para la opción izquierda o apagada.
 
@@ -34,8 +32,8 @@ La variable {{ name }} almacena el name del checkbox.
 
 La variable {{ class }} permite añadir otra clase que pudieramos necesitar para crear estilos o trabajar comportamientos.
 
-## Ejemplos
-### Input checkbox básico
+## Ejemplos
+### Input checkbox básico
 ```
 {% include 'components/switch/switch.twig' with {
     component: {
@@ -47,7 +45,7 @@ La variable {{ class }} permite añadir otra clase que pudieramos necesitar para
 }%}
 ```
 
-### Input checkbox con atributo checked
+### Input checkbox con atributo checked
 ```
 {% include 'components/switch/switch.twig' with { 
     component: {
@@ -60,7 +58,7 @@ La variable {{ class }} permite añadir otra clase que pudieramos necesitar para
 }%}
 ```
 
-### Input checkbox con atributo disabled
+### Input checkbox con atributo disabled
 ```
 {% include 'components/switch/switch.twig' with {
     component: {
@@ -73,7 +71,7 @@ La variable {{ class }} permite añadir otra clase que pudieramos necesitar para
 }%}
 ```
 
-### Input checkbox con atributo required
+### Input checkbox con atributo required
 ```
 {% include 'components/switch/switch.twig' with { 
     component: {
@@ -86,7 +84,7 @@ La variable {{ class }} permite añadir otra clase que pudieramos necesitar para
 }%}
 ```
 
-### Input checkbox con clase
+### Input checkbox con clase
 ```
 {% include 'components/switch/switch.twig' with { 
     component: {
