@@ -23,8 +23,11 @@ const toggle = () => {
       const target = toggle.getAttribute('aria-controls');
       const targetElement = document.getElementById(target);
 
-      handleExpanded(toggle);
+      if (targetElement == null) return;
+      if (toggle.getAttribute('aria-expanded') == null) return;
+
       handleVisibility(targetElement);
+      handleExpanded(targetElement);
     });
   });
 };
