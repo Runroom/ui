@@ -1,17 +1,24 @@
-{% set url = component.url|default('') %}
-{% set class = component.class|default('') %}
-{% set blank = component.blank|default(false) %}
-{% set label = component.label|default('') %}
-{% set content = component.content|default('') %}
 {% set attr = component.attr|default('') %}
+{% set blank = component.blank|default(false) %}
+{% set class = component.class|default('') %}
+{% set content = component.content|default('') %}
+{% set label = component.label|default('') %}
+{% set nofollow = component.nofollow|default(false) %}
+{% set url = component.url|default('') %}
+{% set rel = rel|default(false) %}
+
+{% if blank or nofollow %}
+    {% set rel = (blank ? 'noreferrer noopener ' : '') ~ (nofollow ? 'nofollow' : '') %}
+{% endif %}
 
 {% if url %}
-    <a 
-        href="{{ url }}" 
-        class="link {{ class }}" 
-        {% if blank %}target="_blank" rel="noreferrer noopener"{% endif %} 
+    <a
+        href="{{ url }}"
+        class="link {{ class }}"
+        {% if blank %}target="_blank"{% endif %}
+        {% if rel %}rel="{{ rel }}"{% endif %}
         {% if label %}aria-label="{{ label }}"{% endif %}
-        {{ attr|raw }} 
+        {{ attr|raw }}
     >
             {{ content|raw }}
     </a>
