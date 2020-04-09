@@ -9,15 +9,15 @@ const toggleExpanded = element => element.setAttribute('aria-expanded', attr ===
 const toggle = () => {
   if (!toggles.length) return;
 
-  forEach(toggles, toggle => {
-    toggle.addEventListener('click', () => {
-      const target = toggle.getAttribute('aria-controls');
+  forEach(toggles, element => {
+    element.addEventListener('click', () => {
+      const target = element.getAttribute('aria-controls');
       const targetElement = document.getElementById(target);
 
-      if (targetElement === null || toggle.getAttribute('aria-expanded') === null) return;
+      if (targetElement === null || element.getAttribute('aria-expanded') === null) return;
 
       toggleVisibility(targetElement);
-      toggleExpanded(toggle);
+      toggleExpanded(element);
     });
   });
 };
