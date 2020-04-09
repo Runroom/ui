@@ -17,7 +17,6 @@ const toggle = () => {
       if (targetElement === null || toggle.getAttribute('aria-expanded') === null) return;
 
       toggleVisibility(targetElement);
-
       toggleExpanded(toggle);
     });
   });
