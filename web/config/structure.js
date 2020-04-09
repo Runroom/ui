@@ -12,7 +12,7 @@ const structure = [
         name: 'Picture',
         slug: '/picture'
       }
-    ],
+    ]
   },
   {
     name: 'structures',
