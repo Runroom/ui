@@ -1,19 +1,19 @@
 {% set class = component.class|default('') %}
-{% set preText = component.preText|default('') %}
-{% set postText = component.postText|default('') %}
+{% set prepend = component.prepend|default('') %}
+{% set append = component.append|default('') %}
 {% set name = component.name|default('') %}
 {% set value = component.value|default('') %}
 {% set attr = component.attr|default('') %}
 
 <div class="switch {{ class }}">
-    {% if preText %}
-        <span class="switch__preText">{{ preText }}</span>
+    {% if prepend %}
+        <span class="switch__prepend">{{ prepend }}</span>
     {% endif %}
     <label class="switch__label">
         <input type="checkbox" name="{{ name }}" value="{{ value }}" {{ attr|raw }}>
         <span class="switch__slide"></span>
     </label>
-    {% if postText %}
-        <span class="switch__postText">{{ postText }}</span>
+    {% if append %}
+        <span class="switch__append">{{ append }}</span>
     {% endif %}
 </div>

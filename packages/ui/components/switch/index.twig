@@ -2,8 +2,8 @@
 
 {% include 'components/switch/switch.twig' with {
     component: {
-        preText: 'Off'|upper,
-        postText: 'On'|upper,
+        prepend: 'Off'|upper,
+        append: 'On'|upper,
         name: 'name1',
         value: 'value1'
     }
@@ -11,8 +11,8 @@
 
 {% include 'components/switch/switch.twig' with {
     component: {
-        preText: '',
-        postText: 'Ok',
+        prepend: '',
+        append: 'Ok',
         attr: 'checked',
         name: 'name2',
         value: 'value2'
@@ -21,8 +21,8 @@
 
 {% include 'components/switch/switch.twig' with {
     component: {
-        preText: 'Disagree',
-        postText: 'Agree',
+        prepend: 'Disagree',
+        append: 'Agree',
         attr: 'disabled',
         name: 'name3',
         value: 'value3'
@@ -31,8 +31,8 @@
 
 {% include 'components/switch/switch.twig' with {
     component: {
-        preText: 'No'|upper,
-        postText: 'Yes'|upper,
+        prepend: 'No'|upper,
+        append: 'Yes'|upper,
         attr: 'required',
         name: 'name4',
         value: 'value4'
