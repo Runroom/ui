@@ -1,5 +1,6 @@
 ## Componente Link
-Este componente se usa para mostrar un enlace, por eso el mínimo contenido que necesita es `url`.
+
+Este componente se usa para mostrar un enlace, por eso el mínimo contenido que necesita es una `url` y el `content`.
 
 El contenido del mismo puede ser una línea de texto u otra información html, como por ejemplo una imagen. Así hemos decido que la variable se llame `content` y no label.
 
@@ -10,7 +11,9 @@ Se puede incluir cualquier atributo usando la variable `attr`.
 Se puede incluir cualquier clase usando la variable `class`.
 
 ### Uso
+
 Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
+
 ```
     {% include 'components/link/link.twig' with {
         component: {
@@ -24,10 +27,14 @@ Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
 ```
 
 ### Opciones
-`blank`: indicar `true|false` para incluir el atributo `target="_blank"`. Por defecto es `false`.
+
+`blank`: indicar `false|true` para incluir el atributo `target="_blank"`. Por defecto es `false`.
+`nofollow`: indicar `false|true` para incluir el atributo `rel="nofollow"`. Por defecto es `false`.
 
 ### Ejemplos
+
 #### Enlace con texto y url
+
 ```
     {% include 'components/link/link.twig' with {
         component: {
@@ -38,6 +45,7 @@ Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
 ```
 
 #### Enlace con texto, imagen y url
+
 ```
     {% include 'components/link/link.twig' with {
         component: {
@@ -48,6 +56,7 @@ Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
 ```
 
 #### Enlace con imagen, label y url
+
 ```
     {% include 'components/link/link.twig' with {
         component: {
@@ -58,17 +67,8 @@ Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
     } %}
 ```
 
-#### Enlace con imagen, texto de soporte y url
-```
-    {% include 'components/link/link.twig' with {
-        component: {
-            content: '<img src="https://picsum.photos/id/184/100/100" alt=""><span class="u-sr-only">Haz click aquí para descargar el informe de previsión de ventas para el año 2019</span>',
-            url: 'https://example.com'
-        }
-    } %}
-```
-
 #### Enlace download: con texto, url y atributos
+
 ```
     {% include 'components/link/link.twig' with {
         component: {
