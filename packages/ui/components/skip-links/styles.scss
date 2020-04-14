@@ -1,0 +1,23 @@
+.skip-links {
+    position: relative;
+
+    &__link,
+    &__title {
+        border: 0;
+        height: 1px;
+        left: -999px;
+        overflow: hidden;
+        position: absolute;
+        top: auto;
+        width: 1px;
+    }
+
+    &__link:focus {
+        background-color: #fff;
+        height: auto;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: auto;
+    }
+}
