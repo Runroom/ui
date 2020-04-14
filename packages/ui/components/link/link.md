@@ -1,81 +1,99 @@
-## Componente Link
+## Component Link
 
-Este componente se usa para mostrar un enlace, por eso el mínimo contenido que necesita es una `url` y el `content`.
+Use link component to show a link in your app, therefore *mandatory* configuration is:
 
-El contenido del mismo puede ser una línea de texto u otra información html, como por ejemplo una imagen. Así hemos decido que la variable se llame `content` y no label.
+`url` [String] Address where the link points to.
 
-Es recomendable que el [contenido del enlace tenga sentido propio aún sacándolo de contexto](https://www.un.org/en/webaccessibility/navigation.shtml#Links). En el caso de que esto no sea así se puede complementar la información que muestre el enlace con `label` de manera que el enlace se pueda leer de forma accesible.
+`content` [String] Content so the link can be shown in the interface.
 
-Se puede incluir cualquier atributo usando la variable `attr`.
+Please note:
+* `content` can be either one string of text or any other _html_ content such as an image o more complex markup.
+* Is recommended that [link's content has to be meaningful by its own even removing it from its context](https://www.un.org/en/webaccessibility/navigation.shtml#Links).
 
-Se puede incluir cualquier clase usando la variable `class`.
+### Use
 
-### Uso
+Include this component via _twig_ to use it as follows:
 
-Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
-
-```
-    {% include 'components/link/link.twig' with {
-        component: {
-            content: '',
-            url: 'https://example.com'
-            class: '',
-            label: '',
-            attr: '',
-        }
-    } %}
-```
-
-### Opciones
-
-`blank`: indicar `false|true` para incluir el atributo `target="_blank"`. Por defecto es `false`.
-
-`nofollow`: indicar `false|true` para incluir el atributo `rel="nofollow"`. Por defecto es `false`.
-
-### Ejemplos
-
-#### Enlace con texto y url
-
-```
-    {% include 'components/link/link.twig' with {
-        component: {
-            content: 'Haz click aquí para descargar el informe de previsión de ventas para el año 2019',
-            url: 'https://example.com'
-        }
-    } %}
+```twig
+{% include 'components/link/link.twig' with {
+    component: {
+        content: 'Show me an example',
+        url: 'https://example.com'
+        class: '',
+        label: '',
+        attr: '',
+        nofollow: '',
+        blank: '',
+    }
+} %}
 ```
 
-#### Enlace con texto, imagen y url
+### Options
+Following variables are all optional:
 
-```
-    {% include 'components/link/link.twig' with {
-        component: {
-            content: '<img src="https://picsum.photos/id/184/100/100" alt=""> Haz click aquí para descargar el informe de previsión de ventas para el año 2019',
-            url: 'https://example.com'
-        }
-    } %}
+* `attr` [String] Use it to include any other html attribute element.
+* `blank` [Boolean] Default is _false_.  Use it to include _target="blank"_ and _rel="noopoener noreferrer"_ so link will open in a new window.
+* `class` [String] Use it to include any class.
+* `label` Use it to add additional text information to ensure link is accessible to all users, specially when content is not meaningful by its own.
+* `nofollow` [Boolean] Default is _false_. Use it to add _rel="nofollow"_ to link so search engines won't follow it.
+
+### Examples
+
+#### Basic usage
+
+```twig
+{% include 'components/link/link.twig' with {
+    component: {
+        content: 'Show me an example',
+        url: 'https://example.com'
+    }
+} %}
 ```
 
-#### Enlace con imagen, label y url
+#### Link with text, image and url
 
-```
-    {% include 'components/link/link.twig' with {
-        component: {
-            label: 'Haz click aquí para descargar el informe de previsión de ventas para el año 2019',
-            content: '<img src="https://picsum.photos/id/184/100/100" alt="">',
-            url: 'https://example.com'
-        }
-    } %}
+```twig
+{% include 'components/link/link.twig' with {
+    component: {
+        content: '<img src="https://picsum.photos/id/184/100/100" alt=""> Show me an example',
+        url: 'https://example.com'
+    }
+} %}
 ```
 
-#### Enlace download: con texto, url y atributos
+#### Link with decoration image as content, url and label to make it readable by screen readers
 
+```twig
+{% include 'components/link/link.twig' with {
+    component: {
+        label: 'Show me an example',
+        content: '<img src="https://picsum.photos/id/184/100/100" alt="">',
+        url: 'https://example.com'
+    }
+} %}
 ```
-    {% include 'components/link/link.twig' with {
-        component: {
-            attr: 'hreflang="en" download',
-            content: 'Haz click aquí para descargar el informe de previsión de ventas para el año 2019',
-            url: 'https://informe-en.pdf'
-        }
-    } %}
+
+#### Download link with text, url and specific attribute
+
+```twig
+{% include 'components/link/link.twig' with {
+    component: {
+        attr: 'hreflang="en" download',
+        content: 'Show me and example',
+        url: 'https://example.com/example.pdf'
+    }
+} %}
+```
+
+#### Target blank link with _nofollow_ attribute
+
+```twig
+{% include 'components/link/link.twig' with {
+    component: {
+        content: 'Show me and example',
+        url: 'https://example.com/',
+        blank: true,
+        nofollow: true
+    }
+} %}
 ```
