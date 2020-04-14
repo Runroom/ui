@@ -1,1 +1,1 @@
-.skip-links__link{height:1px;left:-999px;position:absolute;top:auto;width:1px}.skip-links__link:focus{display:inline-block;height:auto;margin:auto;position:static;width:auto}
+.skip-links{position:relative}.skip-links__link,.skip-links__title{border:0;height:1px;left:-999px;overflow:hidden;position:absolute;top:auto;width:1px}.skip-links__link:focus{background-color:#fff;height:auto;left:0;position:absolute;top:0;width:auto}

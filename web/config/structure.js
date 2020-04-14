@@ -54,7 +54,11 @@ const structure = [
       {
         name: 'Select',
         slug: '/select'
-      }
+      },
+      {
+        name: 'Switch',
+        slug: '/switch'
+      },
     ]
   },
   {
