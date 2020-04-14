@@ -1,4 +1,5 @@
 import toggleImage from '../assets/img/toggle.png';
+import switchImage from '../assets/img/switch.png';
 
 const structure = [
   {
@@ -54,7 +55,12 @@ const structure = [
       {
         name: 'Select',
         slug: '/select'
-      }
+      },
+      {
+        name: 'Switch',
+        slug: '/switch',
+        img: switchImage
+      },
     ]
   },
   {
