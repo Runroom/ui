@@ -11,23 +11,23 @@ Cada elemento del array contiene un texto y un ancla que enlaza con una sección
 ## Uso
 Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
 
-```html
-    {% include 'components/skip-links.twig' with {
-        component: {
-            links: [
-            {
-                anchor: '',
-                text: '',
-            },
-            {
-                anchor: '',
-                text: '',
-            },
-            ],
-            class: '',
-            title: ''
-        }
-    } %}
+```twig
+{% include 'components/skip-links.twig' with {
+    component: {
+        links: [
+        {
+            anchor: '',
+            text: '',
+        },
+        {
+            anchor: '',
+            text: '',
+        },
+        ],
+        class: '',
+        title: ''
+    }
+} %}
 ```
 ## Opciones
 
@@ -38,23 +38,22 @@ El lector de pantalla utiliza los encabezados de nivel 2 para identificar las pr
 
 Las diferentes anclas que enlazan a diferentes partes de el contenido irán dentro de una lista no ordenada. Esta lista tendrá el atributo 'aria-labelledby' que asocia la lista al texto del h2, haciendo que el lector de pantalla lea el texto del h2 al pasar por la lista.
 
-### Ejemplos
+### Ejemplos
+```twig
+{% include 'components/skip-links.twig' with {
+    component: {
+        links: [
+            {
+                anchor: '#nav',
+                text: 'Skip to main navigation',
+            },
+            {
+                anchor: '#content',
+                text: 'Skip to main content',
+            }
+        ],
+        class: 'extra-class',
+        title: 'Skip links navigation'
+    }
+} %}
 ```
-    {% include 'components/skip-links.twig' with {
-        component: {
-            links: [
-                {
-                    anchor: '#nav',
-                    text: 'Skip to main navigation',
-                },
-                {
-                    anchor: '#content',
-                    text: 'Skip to main content',
-                }
-            ],
-            class: 'extra-class',
-            title: 'Skip links navigation'
-        }
-    } %}
-```
-
