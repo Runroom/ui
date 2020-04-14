@@ -3,15 +3,15 @@ import React from 'react';
 import Page, { Wrapper } from '../components/Page';
 import Iframe from '../components/Iframe';
 
-const pageTitle = "Picture component";
+const pageTitle = "Toggle component";
 
-const Radio = () => (
+const Toggle = () => (
   <Page title={pageTitle}>
     <Wrapper>
       <h1>{pageTitle}</h1>
-      <Iframe component='picture' />
+      <Iframe component='toggle' />
     </Wrapper>
   </Page>
 );
 
-export default Radio;
+export default Toggle;

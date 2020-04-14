@@ -1,3 +1,5 @@
+import toggleImage from '../assets/img/toggle.png';
+
 const structure = [
   {
     name: 'elements',
@@ -52,6 +54,16 @@ const structure = [
       {
         name: 'Select',
         slug: '/select'
+      }
+    ]
+  },
+  {
+    name: 'Helpers',
+    components: [
+      {
+        name: 'Toggle',
+        slug: '/toggle',
+        img: toggleImage
       }
     ]
   }
