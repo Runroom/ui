@@ -14,7 +14,8 @@ Para usar el componente se tiene que incluir con /twig/ de la siguie
 ## Opciones
 
 Las opciones que se pueden pasar al componente son el texto previo y posterior al checkbox y los atributos, todos ellos son opcionales. Estas opciones se pasan de la siguiente manera:
-```
+
+```twig
 {% include 'components/switch/switch.twig' with {
     component: {
         prepend: '',
@@ -25,6 +26,7 @@ Las opciones que se pueden pasar al componente son el texto previo y posterior a
     }
 }%}
 ```
+
 La variable `prepend` almacena el valor para la opción izquierda o apagada.
 
 La variable `append` almacena el valor para la opción derecha o encendida.
@@ -39,7 +41,7 @@ La variable `class` permite añadir otra clase que pudieramos necesitar para cre
 
 ### Input checkbox básico
 
-```
+```twig
 {% include 'components/switch/switch.twig' with {
     component: {
         prepend: 'Off'|upper,
@@ -52,7 +54,7 @@ La variable `class` permite añadir otra clase que pudieramos necesitar para cre
 
 ### Input checkbox con atributo checked
 
-```
+```twig
 {% include 'components/switch/switch.twig' with {
     component: {
         prepend: '',
@@ -66,7 +68,7 @@ La variable `class` permite añadir otra clase que pudieramos necesitar para cre
 
 ### Input checkbox con atributo disabled
 
-```
+```twig
 {% include 'components/switch/switch.twig' with {
     component: {
         prepend: "Don't agree ",
@@ -80,7 +82,7 @@ La variable `class` permite añadir otra clase que pudieramos necesitar para cre
 
 ### Input checkbox con atributo required
 
-```
+```twig
 {% include 'components/switch/switch.twig' with {
     component: {
         prepend: 'No'|upper,
@@ -94,7 +96,7 @@ La variable `class` permite añadir otra clase que pudieramos necesitar para cre
 
 ### Input checkbox con clase
 
-```
+```twig
 {% include 'components/switch/switch.twig' with {
     component: {
         name: 'name5',
