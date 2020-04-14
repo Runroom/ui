@@ -1,16 +1,15 @@
 {% include 'components/link/link.twig' with {
     component: {
-        content: 'Link básico',
+        content: 'Basic Link example',
         url: 'https://example.com',
     }
 } %}
 
 {% include 'components/link/link.twig' with {
     component: {
-        content: 'Link con estilos básicos',
+        content: 'Download link as an example',
         url: 'https://example.com',
         blank: true,
-        class: 'link__example',
         label: 'link text - new window',
         attr: 'hreflang="en" download',
     }
@@ -18,22 +17,24 @@
 
 {% include 'components/link/link.twig' with {
     component: {
-        content: '<img src="https://picsum.photos/id/184/100/100" alt=""> Imagen link',
+        content: '<img src="https://picsum.photos/id/184/100/100" alt=""> Imagen link as content',
         url: 'https://example.com'
     }
 } %}
 
 {% include 'components/link/link.twig' with {
     component: {
-        label: 'Imagen link con label',
-        content: '<img src="https://picsum.photos/id/184/100/100" alt="">Imagen link con label',
+        label: 'Image as link with label text',
+        content: '<img src="https://picsum.photos/id/184/100/100" alt="">',
         url: 'https://example.com'
     }
 } %}
 
 {% include 'components/link/link.twig' with {
     component: {
-        content: '<img src="https://picsum.photos/id/184/100/100" alt=""><span class="u-sr-only">Imagen link con texto de soporte</span>',
-        url: 'https://example.com'
+        content: 'Target blank and nofollow link',
+        url: 'https://example.com',
+        blank: true,
+        nofollow: true
     }
 } %}
