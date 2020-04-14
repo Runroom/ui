@@ -1,0 +1,36 @@
+.incremental {
+  align-items: center;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  max-width: 150px;
+
+  &__button {
+      align-items: center;
+      background-color: #ddd;
+      border: 1px solid #888;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      height: 40px;
+      justify-content: center;
+      min-width: 40px;
+      padding: 8px;
+
+      &[disabled] {
+        cursor: default;
+        opacity: .3;
+      }
+
+      * { pointer-events: none; }
+  }
+
+  &__input {
+      border: 0;
+      cursor: default;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      width: 60px;
+  }
+}

@@ -1,0 +1,15 @@
+.breadcrumbs {
+    &__item {
+        display: inline-block;
+    }
+
+    &__item:not(:last-child)::after {
+        content: "/";
+    }
+
+    &__item:last-child a {
+        cursor: default;
+        pointer-events: none;
+        text-decoration: none;
+    }
+}
