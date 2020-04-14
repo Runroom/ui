@@ -29,6 +29,7 @@ Para usar el componente se tiene que incluir con /twig/ de la siguiente forma:
 ### Opciones
 
 `blank`: indicar `false|true` para incluir el atributo `target="_blank"`. Por defecto es `false`.
+
 `nofollow`: indicar `false|true` para incluir el atributo `rel="nofollow"`. Por defecto es `false`.
 
 ### Ejemplos
