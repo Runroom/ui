@@ -1,18 +1,15 @@
 {% set links = component.links|default([]) %}
 {% set class = component.class|default('') %}
-{% set title = component.title|default('navegación') %}
+{% set title = component.title|default('Enlaces para saltar dentro del contenido') %}
 
 {% if links|length > 0 %}
-    <section>
-        <div class="skip-links {{ class }}">
-            <h2 class="skip-links__title" id="skip-links-list">{{ title }}</h2>
-            <ul aria-labelledby="skip-links-list">
-                {% for link in links %}
-                    <li>
-                        <a class="skip-links__link" href="{{ link.anchor }}">{{ link.text }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </section>
+    <nav class="skip-links {{ class }}">
+        <ul aria-label="{{ title }}">
+            {% for link in links %}
+                <li>
+                    <a class="skip-links__link" href="{{ link.anchor }}">{{ link.text }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
 {% endif %}
