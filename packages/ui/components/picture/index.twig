@@ -1,0 +1,19 @@
+{% include 'components/picture/picture.twig' with {
+    component: {
+        path: 'https://picsum.photos/id/203/1024.jpg',
+        alt: 'I show different images depending on screen width',
+        sources: [
+            {
+                path: 'https://picsum.photos/id/201/480.webp',
+                media: 480
+            },
+            {
+                path: 'https://picsum.photos/id/202/960.webp',
+                media: 960
+            },
+            {
+                path: 'https://picsum.photos/id/203/1280.webp'
+            }
+        ]
+    }
+} %}

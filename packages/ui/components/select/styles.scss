@@ -1,0 +1,39 @@
+.select {
+    margin: 20px;
+    position: relative;
+    width: 200px;     
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: white;
+        border: 1px solid #ccc;
+        box-shadow: none;
+        padding: 5px 8px;
+        width: 100%;
+
+        &:disabled {
+            background-color: #eaeaea;
+            color: #ccc;
+        }
+    }
+
+    &::after {
+        border-color: #ccc transparent transparent transparent;
+        border-style: solid;
+        border-width: 7px 5px 0 5px;
+        bottom: 10px;
+        content: '';
+        height: 0;
+        right: 10px;
+        position: absolute;
+        width: 0;
+        z-index: 5;
+    }
+}

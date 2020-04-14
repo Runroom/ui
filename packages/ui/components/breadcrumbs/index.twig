@@ -1,0 +1,31 @@
+{% set breadcrumbsArray = [
+    {
+        "label": "Home",
+        "url": "#"
+    },
+    {
+        "label": "Breadcrumb 1",
+        "url": "#"
+    },
+    {
+        "label": "Breadcrumb 2",
+        "url": "#",
+    },
+    {
+        "label": "Breadcrumb 3",
+        "url": "#"
+    }
+]%}
+
+{% include 'components/breadcrumbs/breadcrumbs.twig' with {
+    component: {
+        breadcrumbs: breadcrumbsArray,
+        ariaLabel: 'migas de pan'
+    }
+} %}
+
+{% include 'components/breadcrumbs/breadcrumbs-microdata.twig' with {
+    component: {
+        breadcrumbs: breadcrumbsArray
+    }
+} %}

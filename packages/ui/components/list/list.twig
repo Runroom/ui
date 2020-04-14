@@ -1,0 +1,18 @@
+{% macro list(type = '', items = [], class = '') %}
+    {% set allowedTypes = ['ol', 'ul'] %}
+
+    {% import _self as lists %}
+
+    {% if items|length > 0 and type in allowedTypes %}
+        <{{ type }} class="{{ class }}">
+            {% for item in items %}
+                <li class="{{ item.class }}">
+                    {{ item.content|raw }}
+                    {% if item.children %}
+                        {{ lists.list(item.children.type, item.children.items, item.children.class) }}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </{{ type }}>
+    {% endif %}
+{% endmacro %}

@@ -1,0 +1,31 @@
+{% set heading = [
+    'Heading 1',
+    'Heading 2',
+    'Heading 3'
+] %}
+
+{% set body = [
+    [
+        'Body 1.1',
+        'Body 1.2',
+        'Body 1.3'
+    ],
+    [
+        'Body 2.1',
+        'Body 2.2',
+        'Body 2.3'
+    ],
+    [
+        'Body 3.1',
+        'Body 3.2',
+        'Body 3.3'
+    ]
+] %}
+
+{% include 'components/responsiveTable/responsiveTable.twig' with {
+    component: {
+        heading: heading,
+        body: body,
+        class: 'exampleClass'
+    }
+} %}

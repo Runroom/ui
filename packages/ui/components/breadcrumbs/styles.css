@@ -1,0 +1,1 @@
+.breadcrumbs__item{display:inline-block}.breadcrumbs__item:not(:last-child)::after{content:"/"}.breadcrumbs__item:last-child a{cursor:default;pointer-events:none;text-decoration:none}
