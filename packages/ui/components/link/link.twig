@@ -1,18 +1,21 @@
 {% set url = component.url|default('') %}
 {% set class = component.class|default('') %}
 {% set blank = component.blank|default(false) %}
+{% set nofollow = component.nofollow|default(false) %}
 {% set label = component.label|default('') %}
 {% set content = component.content|default('') %}
 {% set attr = component.attr|default('') %}
+{% set rel = (blank ? 'noreferrer noopener ' : '') ~ (nofollow ? 'nofollow' : '') %}
 
-{% if url %}
+{% if url %}{% apply spaceless %}
     <a 
         href="{{ url }}" 
-        class="link {{ class }}" 
-        {% if blank %}target="_blank" rel="noreferrer noopener"{% endif %} 
+        class="link {{ class }}"
+        {% if blank %}target="_blank"{% endif %}
+        {% if rel %}rel="{{ rel|trim }}"{% endif %}
         {% if label %}aria-label="{{ label }}"{% endif %}
         {{ attr|raw }} 
     >
             {{ content|raw }}
     </a>
-{% endif %}
+{% endapply %}{% endif %}
