@@ -8,20 +8,20 @@ class ScrollTop {
     this.scrollOffset = scrollOffset;
     this.speed = speed;
 
-    this._init();
+    this.init();
   }
 
-  _hideShowButton() {
+  toggleButtonVisibility() {
     const shouldBeVisible = safeScrollTop() > this.showOffset;
     this.scrollTopBtn.classList[shouldBeVisible ? 'add' : 'remove']('is-active');
   }
 
-  _init() {
+  init() {
     if (this.scrollTopBtn) {
-      this._hideShowButton();
+      this.toggleButtonVisibility();
 
       this.scrollTopBtn.addEventListener('click', () => animateTo({ element: this.scrollOffset, speed: this.speed }));
-      window.addEventListener('scroll', () => this._hideShowButton());
+      window.addEventListener('scroll', () => this.toggleButtonVisibility());
     }
   }
 }
