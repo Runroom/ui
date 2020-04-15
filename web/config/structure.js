@@ -23,7 +23,7 @@ const structure = [
       },
       {
         name: 'Skip links',
-        slug: '/skil-links',
+        slug: '/skip-links',
       }
     ]
   },
