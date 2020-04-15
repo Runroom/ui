@@ -1,17 +1,17 @@
 import React from 'react';
-import Head from 'next/head';
 
-import Code from '../components/Code';
+import Page, { Wrapper } from '../components/Page';
+import Iframe from '../components/Iframe';
+
+const pageTitle = "Skip-links component";
 
 const Skiplinks = () => (
-  <>
-    <Head>
-      <title>Component Skip-links</title>
-    </Head>
-
-    <h1>Skip-links component</h1>
-    <Code component='skip-links' />
-  </>
+  <Page title={pageTitle}>
+    <Wrapper>
+      <h1>{pageTitle}</h1>
+      <Iframe component='skip-links' />
+    </Wrapper>
+  </Page>
 );
 
 export default Skiplinks;

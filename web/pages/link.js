@@ -1,17 +1,17 @@
 import React from 'react';
-import Head from 'next/head';
 
-import Code from '../components/Code';
+import Page, { Wrapper } from '../components/Page';
+import Iframe from '../components/Iframe';
+
+const pageTitle = "Link component";
 
 const Link = () => (
-  <>
-    <Head>
-      <title>Component Link</title>
-    </Head>
-
-    <h1>Link component</h1>
-    <Code component='link' />
-  </>
+  <Page title={pageTitle}>
+    <Wrapper>
+      <h1>{pageTitle}</h1>
+      <Iframe component='link' />
+    </Wrapper>
+  </Page>
 );
 
 export default Link;
