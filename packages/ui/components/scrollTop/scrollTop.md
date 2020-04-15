@@ -17,6 +17,7 @@ The basic use of this component in *twig* is as follows:
 + `class` - *Optional*: Allows the addition of custom classes.
 
 ## Options (JS)
++ `selector` - *Optional*: Defaults to `#scroll-top`. Offset from which the button will be toggled visible / not visible.
 + `showOffset` - *Optional*: Defaults to 0. Offset from which the button will be toggled visible / not visible.
 + `scrollOffset` - *Optional*: Defaults to 0. Offset added to the scrolling top position.
 + `speed` - *Optional*: Defaults to 300. Time in _milliseconds_ to perform the animation.
