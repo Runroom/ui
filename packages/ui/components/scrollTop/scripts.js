@@ -17,10 +17,12 @@ class ScrollTop {
   }
 
   _init() {
-    this._hideShowButton();
+    if (this.scrollTopBtn) {
+      this._hideShowButton();
 
-    this.scrollTopBtn.addEventListener('click', () => animateTo({ element: this.scrollOffset, speed: this.speed }));
-    window.addEventListener('scroll', () => this._hideShowButton());
+      this.scrollTopBtn.addEventListener('click', () => animateTo({ element: this.scrollOffset, speed: this.speed }));
+      window.addEventListener('scroll', () => this._hideShowButton());
+    }
   }
 }
 
