@@ -1,8 +1,13 @@
 .skip-links {
     position: relative;
 
-    &__link,
-    &__title {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__link {
         border: 0;
         height: 1px;
         left: -999px;

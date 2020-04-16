@@ -1,8 +1,9 @@
 {% set attr = component.attr|default('') %}
 {% set blank = component.blank|default(false) %}
-{% set nofollow = component.nofollow|default(false) %}
-{% set label = component.label|default('') %}
 {% set content = component.content|default('') %}
+{% set label = component.label|default('') %}
+{% set nofollow = component.nofollow|default(false) %}
+{% set url = component.url|default('') %}
 {% set rel = (blank ? 'noreferrer noopener ' : '') ~ (nofollow ? 'nofollow' : '') %}
 
 {% if url %}{% apply spaceless %}
