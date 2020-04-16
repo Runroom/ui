@@ -16,6 +16,14 @@ const structure = [
       {
         name: 'Scroll top',
         slug: '/scroll-top'
+      },
+      {
+        name: 'Link',
+        slug: '/link',
+      },
+      {
+        name: 'Skip links',
+        slug: '/skil-links',
       }
     ]
   },
@@ -64,7 +72,7 @@ const structure = [
         name: 'Switch',
         slug: '/switch',
         img: switchImage
-      },
+      }
     ]
   },
   {
