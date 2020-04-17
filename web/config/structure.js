@@ -4,11 +4,11 @@ const structure = [
     components: [
       {
         name: 'Button',
-        slug: '/button'
+        slug: '/components/button'
       },
       {
         name: 'Picture',
-        slug: '/picture'
+        slug: '/components/picture'
       }
     ]
   },
@@ -17,11 +17,11 @@ const structure = [
     components: [
       {
         name: 'List',
-        slug: '/list'
+        slug: '/components/list'
       },
       {
         name: 'Responsive table',
-        slug: '/responsive-table'
+        slug: '/components/responsive-table'
       }
     ]
   },
@@ -30,7 +30,7 @@ const structure = [
     components: [
       {
         name: 'Breadcrumbs',
-        slug: '/breadcrumbs'
+        slug: '/components/breadcrumbs'
       }
     ]
   },
@@ -39,19 +39,19 @@ const structure = [
     components: [
       {
         name: 'Checkbox',
-        slug: '/checkbox'
+        slug: '/components/checkbox'
       },
       {
         name: 'Radio',
-        slug: '/radio'
+        slug: '/components/radio'
       },
       {
         name: 'Incremental input',
-        slug: '/incremental-input'
+        slug: '/components/incremental-input'
       },
       {
         name: 'Select',
-        slug: '/select'
+        slug: '/components/select'
       }
     ]
   }
