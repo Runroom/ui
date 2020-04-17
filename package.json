@@ -1,5 +1,6 @@
 {
-  "name": "root",
+  "name": "api",
+  "version": "0.1.0",
   "private": true,
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -7,19 +8,24 @@
     "@babel/preset-env": "^7.9.5",
     "babel-loader": "^8.1.0",
     "glob": "^7.1.6",
-    "lerna": "3.20.2",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "@runroom/purejs": "^3.1.0",
-    "sass": "1.26.3"
+    "sass": "1.26.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3",
+    "twing": "^4.0.3"
   },
   "scripts": {
     "clean:compiled": "rm -rf packages/ui/components/**/*.min.js packages/ui/components/**/*.css",
     "sass:build": "sass packages/ui/components:packages/ui/components --no-source-map --style=compressed",
     "js:build": "webpack --config webpack.config.js",
-    "build": "yarn sass:build && yarn js:build"
+    "build": "yarn sass:build && yarn js:build",
+    "start": "node server",
+    "server": "nodemon server"
   },
   "resolutions": {
     "minimist": "1.2.5"

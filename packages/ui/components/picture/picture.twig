@@ -12,7 +12,12 @@
         title="{{ alt }}"
         {{ attr|raw }}
     >
-        {% for source in sources|filter(source => source.path is defined) %}
+        {#
+            Remove filter because of the following issue
+            https://github.com/NightlyCommit/twing/issues/483
+        #}
+        {# {% for source in sources|filter(source => source.path is defined) %} #}
+        {% for source in sources %}
             <source
                 srcset="{{ source.path }}"
                 {% if source.media %}
