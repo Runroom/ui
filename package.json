@@ -4,7 +4,7 @@
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
     "babel-loader": "^8.1.0",
     "glob": "^7.1.6",
     "lerna": "3.20.2",
@@ -12,7 +12,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "@runroom/purejs": "^3.0.1",
+    "@runroom/purejs": "^3.1.0",
     "sass": "1.26.3"
   },
   "scripts": {
@@ -20,5 +20,8 @@
     "sass:build": "sass packages/ui/components:packages/ui/components --no-source-map --style=compressed",
     "js:build": "webpack --config webpack.config.js",
     "build": "yarn sass:build && yarn js:build"
+  },
+  "resolutions": {
+    "minimist": "1.2.5"
   }
 }
