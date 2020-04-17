@@ -1,3 +1,6 @@
+import toggleImage from '../assets/img/toggle.png';
+import switchImage from '../assets/img/switch.png';
+
 const structure = [
   {
     name: 'elements',
@@ -9,6 +12,18 @@ const structure = [
       {
         name: 'Picture',
         slug: '/components/picture'
+      },
+      {
+        name: 'Scroll top',
+        slug: '/components/scroll-top'
+      },
+      {
+        name: 'Link',
+        slug: '/components/link'
+      },
+      {
+        name: 'Skip links',
+        slug: '/components/skip-links'
       }
     ]
   },
@@ -52,6 +67,21 @@ const structure = [
       {
         name: 'Select',
         slug: '/components/select'
+      },
+      {
+        name: 'Switch',
+        slug: '/components/switch',
+        img: switchImage
+      }
+    ]
+  },
+  {
+    name: 'Helpers',
+    components: [
+      {
+        name: 'Toggle',
+        slug: '/components/toggle',
+        img: toggleImage
       }
     ]
   }
