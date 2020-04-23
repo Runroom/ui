@@ -6,7 +6,7 @@ module.exports = {
   context: __dirname,
   devtool: false,
   entry: glob
-    .sync('./packages/ui/components/**/scripts.js')
+    .sync('./ui/components/**/scripts.js')
     .reduce(
       (entries, entry) => Object.assign(entries, { [entry.replace('/scripts.js', '')]: entry }),
       {}

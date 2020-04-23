@@ -20,8 +20,8 @@
     "twing": "^4.0.3"
   },
   "scripts": {
-    "clean:compiled": "rm -rf packages/ui/components/**/*.min.js packages/ui/components/**/*.css",
-    "sass:build": "sass packages/ui/components:packages/ui/components --no-source-map --style=compressed",
+    "clean:compiled": "rm -rf ui/components/**/*.min.js ui/components/**/*.css",
+    "sass:build": "sass ui/components:ui/components --no-source-map --style=compressed",
     "js:build": "webpack --config webpack.config.js",
     "build": "yarn sass:build && yarn js:build",
     "start": "node server",
