@@ -6,7 +6,7 @@
 
 {% if mp4 or webm %}
     <video
-      class="video {{ class }}"
+      class="lazyload {{ class }}"
       {% if poster %}poster="{{ poster }}"{% endif %}
       {{ attr|raw }}
     >
