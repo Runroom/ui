@@ -1,0 +1,19 @@
+{% set class = component.class|default('') %}
+{% set label = component.label|default(false) %}
+{% set name = component.name|default('') %}
+{% set id = component.id|default('') %}
+{% set attributes = component.attributes|default('') %}
+{% set options = component.options|default([]) %}
+
+{% if options is not empty %}
+    <div class="select {{ class }}">
+        {% if label %}
+            <label for="{{ id }}">{{ label }}</label>
+        {% endif %}
+        <select name="{{ name }}" id="{{ id }}" {{ attributes }}>
+            {% for option in options %}
+                <option {% if option.selected %}{{ option.selected }}{% endif %} value="{{ option.value }}">{{ option.text }}</option>
+            {% endfor %}
+        </select>
+    </div>
+{% endif %}

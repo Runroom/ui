@@ -1,0 +1,25 @@
+{% set breadcrumbs = component.breadcrumbs|default([]) %}
+
+{% if breadcrumbs is defined and breadcrumbs is iterable %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {% for breadcrumb in breadcrumbs %}
+                {% if breadcrumb.url and breadcrumb.label %}
+                    {
+                        "@type": "ListItem",
+                        "position": {{ loop.index }},
+                        "item": {
+                        "@id": "{{ breadcrumb.url }}",
+                        "name": "{{ breadcrumb.label }}"
+                        }
+                    }
+                    {% if not loop.last %},{% endif %}
+                {% endif %}
+            {% endfor %}
+        ]
+    }
+    </script>
+{% endif %}

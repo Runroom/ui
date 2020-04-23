@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head></head>
+<body>
+  {% include 'components/' ~ component ~ '/index.twig' %}
+  {%- if styles -%}
+  <style>
+    {{- styles|raw -}}
+  </style>
+  {%- endif -%}
+  {%- if scripts -%}
+  <script>{{- scripts|raw -}}</script>
+  {%- endif -%}
+</body>
+</html>
