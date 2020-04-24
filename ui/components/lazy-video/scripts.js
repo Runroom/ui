@@ -16,7 +16,6 @@ const loadVideo = video => {
   });
 
   video.load();
-
   video.addEventListener('canplaythrough', () => {
     video.classList.add(HANDLED_CLASS);
 
@@ -26,6 +25,6 @@ const loadVideo = video => {
   }, false);
 };
 
-intersectionObserver(CONFIG, video => {
-  loadVideo(video);
-});
+const lazyLoadVideo = () => intersectionObserver(CONFIG, loadVideo);
+
+lazyLoadVideo();
