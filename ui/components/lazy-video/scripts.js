@@ -20,9 +20,9 @@ const loadVideo = video => {
   video.addEventListener('canplaythrough', () => {
     video.classList.add(HANDLED_CLASS);
 
-    // if (video.getAttribute('autoplay')) {
-    //   video.play();
-    // }
+    if (video.getAttribute('autoplay')) {
+      video.play();
+    }
   }, false);
 };
 
