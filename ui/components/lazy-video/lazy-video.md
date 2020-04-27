@@ -3,6 +3,8 @@ Use the `video` component when you want to add a video element in the document.
 
 Accepts both `.mp4` and `.webm` video formats and has a fallback message for browsers no supporting video.
 
+This component is associated with the javascript helper `lazyLoadVideo`.
+
 ## Use
 The basic use of this component in *twig* is as follows:
 ```twig
