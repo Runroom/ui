@@ -4,7 +4,7 @@ This helper works properly with the combination of a `Lazy Video` component.
 
 ## Options
 + `lazyload`: Target class for loading video elements.
-+ `lazyload`: Loaded class added once the video is lazyloaded
++ `lazyloaded`: Loaded class added once the video is lazyloaded
 
 ## Dependencies
 This component uses as a dependency the vanillajs library [purejs](https://github.com/Runroom/purejs):
