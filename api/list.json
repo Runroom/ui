@@ -1,0 +1,74 @@
+{
+  "elements": [
+    {
+      "name": "Button",
+      "slug": "/components/button"
+    },
+    {
+      "name": "Picture",
+      "slug": "/components/picture"
+    },
+    {
+      "name": "Scroll top",
+      "slug": "/components/scroll-top"
+    },
+    {
+      "name": "Link",
+      "slug": "/components/link"
+    },
+    {
+      "name": "Skip links",
+      "slug": "/components/skip-links"
+    },
+    {
+      "name": "Lazy video",
+      "slug": "/components/lazy-video"
+    }
+  ],
+  "structures": [
+    {
+      "name": "List",
+      "slug": "/components/list"
+    },
+    {
+      "name": "Responsive table",
+      "slug": "/components/responsive-table"
+    }
+  ],
+  "navigation": [
+    {
+      "name": "Breadcrumbs",
+      "slug": "/components/breadcrumbs"
+    }
+  ],
+  "form": [
+    {
+      "name": "Checkbox",
+      "slug": "/components/checkbox"
+    },
+    {
+      "name": "Radio",
+      "slug": "/components/radio"
+    },
+    {
+      "name": "Incremental input",
+      "slug": "/components/incremental-input"
+    },
+    {
+      "name": "Select",
+      "slug": "/components/select"
+    },
+    {
+      "name": "Switch",
+      "slug": "/components/switch",
+      "img": "images/switch.jpg"
+    }
+  ],
+  "helpers": [
+    {
+      "name": "Toggle",
+      "slug": "/components/toggle",
+      "img": "images/toggle.jpg"
+    }
+  ]
+}
