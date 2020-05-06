@@ -29,6 +29,7 @@ app.use(express.static("./api/public"));
 app.use(cors(corsOptions));
 
 app.get("/", (req, res) => res.send("API running"));
+app.get("/api/list", (req, res) => res.json(require("./api/list.json")));
 app.use("/api/ui", require("./api/routes/ui"));
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

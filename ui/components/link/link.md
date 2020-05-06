@@ -9,6 +9,9 @@ Use link component to show a link in your app, therefore *mandatory* configurati
 Please note:
 * `content` can be either one string of text or any other _html_ content such as an image o more complex markup.
 * Is recommended that [link's content has to be meaningful by its own even removing it from its context](https://www.un.org/en/webaccessibility/navigation.shtml#Links).
+* If `target="_blank"` is used to reference an external page (not same domain) the attributes `rel="noreferrer noopener"` must be added.
+* Links to non indexable pages (or not willing to track) must have the attribute `rel="nofollow"`
+
 
 ### Use
 
