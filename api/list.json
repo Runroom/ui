@@ -61,14 +61,14 @@
     {
       "name": "Switch",
       "slug": "/components/switch",
-      "img": "images/switch.png"
+      "img": "images/switch.jpg"
     }
   ],
   "helpers": [
     {
       "name": "Toggle",
       "slug": "/components/toggle",
-      "img": "images/toggle.png"
+      "img": "images/toggle.jpg"
     }
   ]
 }
