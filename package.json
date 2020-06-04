@@ -16,7 +16,9 @@
     "sass": "1.26.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "netlify-lambda": "^1.6.3",
     "nodemon": "^2.0.3",
+    "serverless-http": "^2.3.0",
     "twing": "^4.0.3"
   },
   "scripts": {
@@ -27,6 +29,9 @@
     "start": "node server",
     "server": "nodemon server"
   },
+  "keywords": [
+    "express.js"
+  ],
   "resolutions": {
     "minimist": "1.2.5"
   }
