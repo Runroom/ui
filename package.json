@@ -25,9 +25,9 @@
     "clean:compiled": "rm -rf ui/components/**/*.min.js ui/components/**/*.css",
     "sass:build": "sass ui/components:ui/components --no-source-map --style=compressed",
     "js:build": "webpack --config webpack.config.js",
-    "build": "yarn sass:build && yarn js:build",
-    "start": "node server",
-    "server": "nodemon server"
+    "build-assets": "yarn sass:build && yarn js:build",
+    "build": "netlify-lambda build express",
+    "start": "nodemon server"
   },
   "keywords": [
     "express.js"
