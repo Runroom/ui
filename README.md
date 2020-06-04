@@ -1,5 +1,7 @@
 # Runroom UI
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/81968905-ee26-4bdf-832a-58992927ac69/deploy-status)](https://app.netlify.com/sites/runroom-ui/deploys)
+
 > UNDER DEVELOPMENT
 
 This is an _accessible_, _cross-browser_ and _tested integrated_ Component's library for building customized web interfaces quickly.
