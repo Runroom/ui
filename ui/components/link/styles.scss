@@ -1,0 +1,13 @@
+$linkBase: #0000e0;
+$linkHover: #000060;
+$linkActive: #b50000;
+$linkVisited: #7600a8;
+
+.link {
+  color: $linkBase;
+
+  &:active { color: $linkActive; }
+  &:focus { outline: 1px dashed $linkBase; }
+  &:hover { color: $linkHover; }
+  &:visited { color: $linkVisited; }
+}

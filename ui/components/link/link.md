@@ -8,9 +8,22 @@ Use link component to show a link in your app, therefore *mandatory* configurati
 
 Please note:
 * `content` can be either one string of text or any other _html_ content such as an image o more complex markup.
-* Is recommended that [link's content has to be meaningful by its own even removing it from its context](https://www.un.org/en/webaccessibility/navigation.shtml#Links).
+* [Link's content has to be meaningful by its own even removing it from its context](https://www.un.org/en/webaccessibility/navigation.shtml#Links).
 * If `target="_blank"` is used to reference an external page (not same domain) the attributes `rel="noreferrer noopener"` must be added.
 * Links to non indexable pages (or not willing to track) must have the attribute `rel="nofollow"`
+
+### Accesibility
+In order to keep WCAG guidelines and accessibility best practices we have added styles for this component.
+Please keep in mind all link states should have its own and unique styles for the following reasons:
+
+* `focus` This style helps users that rely on it to navigate throught links in your website/application.
+* `underline` Blue is the standard link color for all browsers. If you don't see the color blue you can distinguish a link by its underline.
+* `active` Link should have active state to indicate that it's functional. This style is ideal for slow connection scenarios where it might take some time to deliver the requested link.
+* `outline` Showing an outline when focusing a link identifies the link we want to activate. Not all browsers do accurate styles for outlines so we want to ensure this is correct from the beggining.
+
+Also we want to make sure all mentioned styles are different one from each other because they reflect different states and functionalities.
+
+> Good UX meet people where they are, not where we hope they will be. - <cite>[Eric Bailey](https://twitter.com/ericwbailey)</cite>
 
 
 ### Use
