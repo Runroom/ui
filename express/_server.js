@@ -1,10 +1,5 @@
 'use strict';
 
-// const express = require("express");
-// const cors = require("cors");
-
-// const app = express();
-
 // const whitelist = [
 //   "http://127.0.0.1:3000",
 //   "http://localhost:3000",
@@ -26,8 +21,9 @@
 
 // // Middleware
 // app.use(express.json({ extended: false }));
-// app.use(express.static("../api/public"));
+// app.use(express.static("./api/public"));
 // app.use(cors(corsOptions));
 
 // app.get("/", (req, res) => res.send("API running"));
-// app.use("/api/ui", require("../api/routes/ui"));
+// app.get("/api/list", (req, res) => res.json(require("./api/list.json")));
+// app.use("/api/ui", require("./api/routes/ui"));

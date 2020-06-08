@@ -5,8 +5,8 @@
   "main": "functions/server.js",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "babel-loader": "^8.1.0",
     "@runroom/purejs": "^3.1.0",
     "glob": "^7.1.6",
@@ -24,7 +24,7 @@
     "serverless-http": "^2.3.0"
   },
   "scripts": {
-    "clean:compiled": "rm -rf ui/components/**/*.min.js ui/components/**/*.css",
+    "clean:compiled": "rm -rf ui/components/**/*.min.js ui/components/**/*.css api/public/images",
     "sass:build": "sass ui/components:ui/components --no-source-map --style=compressed",
     "js:build": "webpack --config webpack.config.js",
     "build-assets": "yarn sass:build && yarn js:build",
