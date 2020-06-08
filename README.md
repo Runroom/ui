@@ -6,6 +6,8 @@
 
 This is an _accessible_, _cross-browser_ and _tested integrated_ Component's library for building customized web interfaces quickly.
 
+This components are shown on this other project called [ui-app](https://github.com/Runroom/ui-app)
+
 ---
 
 ## Project's structure
