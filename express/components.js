@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const { TwingEnvironment, TwingLoaderFilesystem } = require("twing");
 
-const UI_PATH = `${__dirname}/../../ui`;
+const UI_PATH = `${__dirname}/../ui`;
 const loader = new TwingLoaderFilesystem(UI_PATH);
 const twing = new TwingEnvironment(loader);
 

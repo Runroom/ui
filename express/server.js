@@ -32,7 +32,7 @@ router.get('/', (req, res) => {
   res.end();
 });
 router.get('/list', (req, res) => res.json(require('./list.json')));
-router.use('/components', require('./components'));
+router.get('/components', require('./components'));
 
 app.use(express.static('./public'));
 app.use(express.json({ extended: false }));
