@@ -29,7 +29,8 @@
     "js:build": "webpack --config webpack.config.js",
     "build-assets": "yarn sass:build && yarn js:build",
     "build": "netlify-lambda build express",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "server": "yarn build && yarn start"
   },
   "keywords": [
     "express.js"
