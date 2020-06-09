@@ -7,19 +7,19 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const whitelist = [
-  "http://127.0.0.1:3000",
-  "http://localhost:3000",
-  "https://localhost:3000",
-  "http://localhost:5000",
-  "https://localhost:5000",
-  "https://runroom-ui-app.netlify.app",
+  'http://127.0.0.1:3000',
+  'http://localhost:3000',
+  'https://localhost:3000',
+  'http://localhost:5000',
+  'https://localhost:5000',
+  'https://runroom-ui-app.netlify.app',
 ];
 const corsOptions = {
   origin: (origin, callback) => {
     if (!origin || whitelist.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
-      callback(new Error("Not allowed by CORS"));
+      callback(new Error('Not allowed by CORS'));
     }
   },
   optionsSuccessStatus: 200,
@@ -31,9 +31,10 @@ router.get('/', (req, res) => {
   res.write('<h1>Hello from UI!</h1>');
   res.end();
 });
-router.get('/list', (req, res) => res.json(require("../api/list.json")));
+router.get('/list', (req, res) => res.json(require('./list.json')));
+router.use('/components', require('./components'));
 
-app.use(express.static("./api/public"));
+app.use(express.static('./public'));
 app.use(express.json({ extended: false }));
 app.use(cors(corsOptions));
 app.use('/.netlify/functions/server', router);  // path must route to lambda
