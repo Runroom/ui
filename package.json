@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "main": "functions/server.js",
+  "engine": {
+    "node": "^14"
+  },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.6",
