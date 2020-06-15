@@ -1,6 +1,4 @@
 const fs = require("fs");
-const express = require("express");
-const router = express.Router();
 const { TwingEnvironment, TwingLoaderFilesystem } = require("twing");
 
 const UI_PATH = `${__dirname}/../ui`;

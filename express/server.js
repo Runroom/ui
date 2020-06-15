@@ -3,7 +3,6 @@ const express = require('express');
 const path = require('path');
 const serverless = require('serverless-http');
 const app = express();
-const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const whitelist = [
@@ -12,7 +11,7 @@ const whitelist = [
   'https://localhost:3000',
   'http://localhost:5000',
   'https://localhost:5000',
-  'https://runroom-ui-app.netlify.app',
+  'https://runroom-ui-app.netlify.app/',
 ];
 const corsOptions = {
   origin: (origin, callback) => {
