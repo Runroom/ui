@@ -10,7 +10,7 @@ const twing = new TwingEnvironment(loader);
 // @route   GET api/ui
 // @desc    Get component by directory name
 // @access  Public
-router.get("/:component", async (req, res) => {
+const component = async (req, res) => {
   const component = req.params.component;
   const stylesFilePath = `${UI_PATH}/components/${component}/styles.css`;
   const scriptsFilePath = `${UI_PATH}/components/${component}/scripts.min.js`;
@@ -47,6 +47,6 @@ router.get("/:component", async (req, res) => {
   } catch (err) {
     console.log(err.message);
   }
-});
+};
 
-module.exports = router;
+module.exports = component;
