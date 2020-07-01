@@ -1,7 +1,8 @@
 const fs = require("fs");
 const { TwingEnvironment, TwingLoaderFilesystem } = require("twing");
 
-const UI_PATH = `${__dirname}/../ui`;
+console.log(__dirname);
+const UI_PATH = `${__dirname}/../../../ui`;
 const loader = new TwingLoaderFilesystem(UI_PATH);
 const twing = new TwingEnvironment(loader);
 

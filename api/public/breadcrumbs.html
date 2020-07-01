@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head></head>
+<body>
+  
+
+    <nav class="breadcrumbs " aria-label="migas de pan">
+        <ol>
+                                                <li class="breadcrumbs__item">
+                        <a href="#" >Home</a>
+                    </li>
+                                                                <li class="breadcrumbs__item">
+                        <a href="#" >Breadcrumb 1</a>
+                    </li>
+                                                                <li class="breadcrumbs__item">
+                        <a href="#" >Breadcrumb 2</a>
+                    </li>
+                                                                <li class="breadcrumbs__item">
+                        <a href="#" aria-current="page">Breadcrumb 3</a>
+                    </li>
+                                    </ol>
+    </nav>
+
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+                                                {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                        "@id": "#",
+                        "name": "Home"
+                        }
+                    }
+                    ,                                                                {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                        "@id": "#",
+                        "name": "Breadcrumb 1"
+                        }
+                    }
+                    ,                                                                {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                        "@id": "#",
+                        "name": "Breadcrumb 2"
+                        }
+                    }
+                    ,                                                                {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                        "@id": "#",
+                        "name": "Breadcrumb 3"
+                        }
+                    }
+                                                        ]
+    }
+    </script>
+<style>.breadcrumbs__item{display:inline-block}.breadcrumbs__item:not(:last-child)::after{content:"/"}.breadcrumbs__item:last-child a{cursor:default;pointer-events:none;text-decoration:none}
+</style></body>
+</html>
