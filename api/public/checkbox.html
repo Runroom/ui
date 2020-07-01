@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head></head>
+<body>
+  
+<div class="checkbox ">
+    <input type="checkbox" id="idCheckbox1" name="name1" value="valueCheckbox1" >
+    <label for="idCheckbox1">Option1</label>
+</div>
+
+
+<div class="checkbox ">
+    <input type="checkbox" id="idCheckbox2" name="name2" value="valueCheckbox2" checked>
+    <label for="idCheckbox2">Option2-checked</label>
+</div>
+
+
+<div class="checkbox ">
+    <input type="checkbox" id="idCheckbox3" name="name3" value="valueCheckbox3" disabled>
+    <label for="idCheckbox3">Option3-disabled</label>
+</div>
+
+
+<div class="checkbox ">
+    <input type="checkbox" id="idCheckbox4" name="name4" value="valueCheckbox4" required>
+    <label for="idCheckbox4">Option4-required</label>
+</div>
+<style>.checkbox input[type=checkbox]{display:none}.checkbox input[type=checkbox]+label{cursor:pointer;margin-left:10px}.checkbox input[type=checkbox]+label::before{background-color:#fff;border:1px solid #000;border-radius:20%;content:"";display:block;float:left;height:15px;margin-left:20px;text-align:center;width:15px}.checkbox input[type=checkbox]:checked+label::before{background-color:#000;box-shadow:inset 0 0 0 3px #fff}.checkbox input[type=checkbox]:disabled+label{color:#d3d3d3;pointer-events:none}.checkbox input[type=checkbox]:disabled+label::before{border:1px solid #d3d3d3;pointer-events:none}
+</style></body>
+</html>
