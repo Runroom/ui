@@ -1,7 +1,7 @@
-const fs = require("fs");
-const { TwingEnvironment, TwingLoaderFilesystem } = require("twing");
+const fs = require('fs');
+const { TwingEnvironment, TwingLoaderFilesystem } = require('twing');
 
-console.log("dirname", __dirname);
+console.log('dirname', __dirname);
 const UI_PATH = `${__dirname}/../../../ui`;
 const loader = new TwingLoaderFilesystem(UI_PATH);
 const twing = new TwingEnvironment(loader);
@@ -32,13 +32,13 @@ const component = async (req, res) => {
   }
 
   try {
-    const output = await twing.render("/layouts/sandbox.twig", {
+    const output = await twing.render('/layouts/sandbox.twig', {
       component,
       styles,
-      scripts,
+      scripts
     });
 
-    fs.writeFile(`${__dirname}/../public/${component}.html`, output, (err) => {
+    fs.writeFile(`${__dirname}/../public/${component}.html`, output, err => {
       if (err) throw err;
     });
 
