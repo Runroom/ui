@@ -9,8 +9,6 @@ const whitelist = [
   'http://127.0.0.1:3000',
   'http://localhost:3000',
   'https://localhost:3000',
-  'http://localhost:5000',
-  'https://localhost:5000',
   'https://runroom-ui-app.netlify.app/'
 ];
 const corsOptions = {
@@ -21,6 +19,7 @@ const corsOptions = {
       callback(new Error('Not allowed by CORS'));
     }
   },
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
   optionsSuccessStatus: 200
 };
 
@@ -32,11 +31,11 @@ router.get('/', (req, res) => {
 });
 router.get('/list', (req, res) => res.json(require('./list.json')));
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://runroom-ui-app.netlify.app');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', 'https://runroom-ui-app.netlify.app');
+//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//   next();
+// });
 app.use(express.static('./public'));
 app.use(express.static('./ui'));
 app.use(express.json({ extended: false }));
