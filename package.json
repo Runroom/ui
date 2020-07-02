@@ -31,7 +31,7 @@
     "sass:build": "sass ui/components:ui/components --no-source-map --style=compressed",
     "js:build": "webpack --config webpack.config.js",
     "build-assets": "yarn sass:build && yarn js:build",
-    "build": "netlify-lambda build express",
+    "build": "netlify-lambda build server",
     "start": "nodemon server.js",
     "server": "yarn build && yarn start"
   },

@@ -31,7 +31,6 @@ router.get('/', (req, res) => {
   res.end();
 });
 router.get('/list', (req, res) => res.json(require('./list.json')));
-// router.get("/components/:component", require("./components"));
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://runroom-ui-app.netlify.app');
