@@ -1,3 +1,10 @@
 [build]
   command = "npm install && npm run build"
   functions = "functions"
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "https://runroom-ui-app.netlify.app/"
+    Access-Control-Allow-Headers = "Origin, X-Requested-With, Content-Type, Accept"

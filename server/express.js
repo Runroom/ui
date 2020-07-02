@@ -24,18 +24,20 @@ const corsOptions = {
 };
 
 const router = express.Router();
-router.get('/', cors(corsOptions), (req, res) => {
+router.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write('<h1>Hello from UI!</h1>');
   res.end();
 });
-router.get('/list', cors(corsOptions), (req, res) => res.json(require('./list.json')));
+router.get('/list', (req, res) => res.json(require('./list.json')));
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://runroom-ui-app.netlify.app/');
-  res.header('Access-Control-Allow-Headers', headers.join(', '));
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log(headers.join(', '));
+
+//   res.header('Access-Control-Allow-Origin', 'https://runroom-ui-app.netlify.app/');
+//   res.header('Access-Control-Allow-Headers', headers.join(', '));
+//   next();
+// });
 app.use(express.static('./public'));
 app.use(express.static('./ui'));
 app.use(express.json({ extended: false }));
