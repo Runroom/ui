@@ -40,8 +40,8 @@ router.get('/list', (req, res) => res.json(require('./list.json')));
 app.use(express.static('./public'));
 app.use(express.static('./ui'));
 app.use(express.json({ extended: false }));
-app.use(cors(corsOptions));
-app.use('/.netlify/functions/server', router); // path must route to lambda
+// app.use(cors(corsOptions));
+app.use('/.netlify/functions/server', cors(corsOptions), router); // path must route to lambda
 app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
 module.exports = app;
