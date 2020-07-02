@@ -44,10 +44,8 @@ const component = async (name) => {
         reject();
         throw new Error(err.message);
       }
-      console.log(`Component: ${component} compiled`);
       resolve();
     });
-    console.log('After writefile');
   });
 };
 
