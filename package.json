@@ -32,7 +32,7 @@
     "js:build": "webpack --config webpack.config.js",
     "build-assets": "yarn sass:build && yarn js:build",
     "netlify:build": "netlify-lambda build express",
-    "netlify:start": "netlify-lambda serve server",
+    "netlify:start": "netlify-lambda serve express",
     "start": "nodemon server.js",
     "server": "yarn netlify:build && yarn netlify:start"
   },
