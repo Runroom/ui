@@ -40,8 +40,8 @@ router.get('/', (req, res) => {
 router.get('/list', (req, res) => res.json(require('./list.json')));
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', whitelist);
-  res.header('Access-Control-Allow-Headers', headers);
+  res.header('Access-Control-Allow-Origin', whitelist.join(', '));
+  res.header('Access-Control-Allow-Headers', headers.join(', '));
   next();
 });
 app.use(express.static('./public'));
