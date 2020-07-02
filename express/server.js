@@ -32,8 +32,8 @@ router.get('/', (req, res) => {
 router.get('/list', (req, res) => res.json(require('./list.json')));
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://runroom-ui-app.netlify.app/');
-  res.header('Access-Control-Allow-Headers', headers.join(', '));
+  res.header('Access-Control-Allow-Origin', 'https://runroom-ui-app.netlify.app');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 app.use(express.static('./public'));
