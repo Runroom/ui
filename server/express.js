@@ -11,9 +11,15 @@ const whitelist = [
   'https://localhost:3000',
   'https://runroom-ui-app.netlify.app/'
 ];
+const headers = [
+  'Origin',
+  'X-Requested-With',
+  'Content-Type',
+  'Accept'
+];
 const corsOptions = {
   origin: whitelist,
-  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
+  allowedHeaders: headers,
   optionsSuccessStatus: 200
 };
 
@@ -25,15 +31,15 @@ router.get('/', cors(corsOptions), (req, res) => {
 });
 router.get('/list', cors(corsOptions), (req, res) => res.json(require('./list.json')));
 
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Origin', 'https://runroom-ui-app.netlify.app/');
-//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-//   next();
-// });
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://runroom-ui-app.netlify.app/');
+  res.header('Access-Control-Allow-Headers', headers.join(', '));
+  next();
+});
 app.use(express.static('./public'));
 app.use(express.static('./ui'));
 app.use(express.json({ extended: false }));
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 app.use('/.netlify/functions/server', router); // path must route to lambda
 app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
