@@ -31,13 +31,11 @@ router.get('/', (req, res) => {
 });
 router.get('/list', (req, res) => res.json(require('./list.json')));
 
-// app.use((req, res, next) => {
-//   console.log(headers.join(', '));
-
-//   res.header('Access-Control-Allow-Origin', 'https://runroom-ui-app.netlify.app/');
-//   res.header('Access-Control-Allow-Headers', headers.join(', '));
-//   next();
-// });
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://runroom-ui-app.netlify.app/');
+  res.header('Access-Control-Allow-Headers', headers.join(', '));
+  next();
+});
 app.use(express.static('./public'));
 app.use(express.static('./ui'));
 app.use(express.json({ extended: false }));
