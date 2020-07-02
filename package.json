@@ -27,10 +27,11 @@
     "serverless-http": "^2.3.0"
   },
   "scripts": {
-    "clean:compiled": "rm -rf ui/components/**/*.min.js ui/components/**/*.css api/public/images",
+    "clean": "rm -rf ui/components/**/*.min.js ui/components/**/*.css public",
     "sass:build": "sass ui/components:ui/components --no-source-map --style=compressed",
     "js:build": "webpack --config webpack.config.js",
-    "build-assets": "yarn sass:build && yarn js:build",
+    "markup:build": "node bin/markup.js",
+    "build-assets": "yarn sass:build && yarn js:build && yarn markup:build",
     "netlify:build": "netlify-lambda build express",
     "start": "nodemon server.js",
     "server": "yarn netlify:build && yarn start"
