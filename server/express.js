@@ -12,13 +12,14 @@ const whitelist = [
   'https://runroom-ui-app.netlify.app/'
 ];
 const corsOptions = {
-  origin: (origin, callback) => {
-    if (!origin || whitelist.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  // origin: (origin, callback) => {
+  //   if (!origin || whitelist.indexOf(origin) !== -1) {
+  //     callback(null, true);
+  //   } else {
+  //     callback(new Error('Not allowed by CORS'));
+  //   }
+  // },
+  origin: whitelist,
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
   optionsSuccessStatus: 200
 };
