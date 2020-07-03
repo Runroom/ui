@@ -10,37 +10,31 @@ const copyImage = async name => {
   const imagesPath = `${UI_PATH}/components/${name}/${name}.jpg`;
   const imagesNewPath = `${IMAGES_PATH}/${name}.jpg`;
 
-  // try {
-  //   await fs.existsSync(stylesFilePath)
-  // } catch {
-  //   return false;
-  // }
-
   if (!fs.existsSync(IMAGES_PATH)) {
     fs.mkdirSync(IMAGES_PATH);
   }
 
-  return new Promise((resolve, reject) => {
-    fs.copyFile(imagesPath, imagesNewPath, err => {
-      if (err) {
-        reject();
-        throw new Error(err.message);
-      }
-      resolve();
+  if (await fs.existsSync(imagesPath)) {
+    return new Promise((resolve, reject) => {
+      fs.copyFile(imagesPath, imagesNewPath, err => {
+        if (err) {
+          reject();
+          throw new Error(err.message);
+        }
+        resolve();
+      });
     });
-  });
+  }
 };
 
-const promises = [
-  copyImage('switch')
-];
+const promises = [];
 
-// Object.keys(componentList).map(key => {
-//   componentList[key].map(component => {
-//     const name = component.name.toLowerCase().replace(' ', '-');
-//     promises.push(copyImage(name));
-//   });
-// });
+Object.keys(componentList).map(key => {
+  componentList[key].map(component => {
+    const name = component.name.toLowerCase().replace(' ', '-');
+    promises.push(copyImage(name));
+  });
+});
 
 Promise.all(promises)
   .then(() => {
