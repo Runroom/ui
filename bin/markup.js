@@ -2,15 +2,13 @@
 
 const fs = require('fs');
 const { TwingEnvironment, TwingLoaderFilesystem } = require('twing');
+const componentList = require('../express/list.json');
 
 const UI_PATH = `${__dirname}/../ui`;
 const loader = new TwingLoaderFilesystem(UI_PATH);
 const twing = new TwingEnvironment(loader);
 
-// @route   GET api/ui
-// @desc    Get component by directory name
-// @access  Public
-const component = async (name) => {
+const generateMarkup = async (name) => {
   const component = name;
   const stylesFilePath = `${UI_PATH}/components/${component}/styles.css`;
   const scriptsFilePath = `${UI_PATH}/components/${component}/scripts.min.js`;
@@ -49,10 +47,18 @@ const component = async (name) => {
   });
 };
 
-Promise.all([
-  component('button')
-]).then(() => {
-  console.log('Markup files compiled.');
-}).catch(err => {
-  console.error(err);
+const promises = [];
+
+Object.keys(componentList).map(key => {
+  componentList[key].map(component => {
+    const name = component.name.toLowerCase().replace(' ', '-');
+    promises.push(generateMarkup(name));
+  });
 });
+
+Promise.all(promises)
+  .then(() => {
+    console.log('Markup files compiled.');
+  }).catch(err => {
+    console.error(err);
+  });
