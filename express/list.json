@@ -2,68 +2,68 @@
   "elements": [
     {
       "name": "Button",
-      "slug": "/components/button"
+      "slug": "button"
     },
     {
       "name": "Picture",
-      "slug": "/components/picture"
+      "slug": "picture"
     },
     {
       "name": "Scroll top",
-      "slug": "/components/scroll-top"
+      "slug": "scroll-top"
     },
     {
       "name": "Link",
-      "slug": "/components/link"
+      "slug": "link"
     },
     {
       "name": "Skip links",
-      "slug": "/components/skip-links"
+      "slug": "skip-links"
     }
   ],
   "structures": [
     {
       "name": "List",
-      "slug": "/components/list"
+      "slug": "list"
     },
     {
       "name": "Responsive table",
-      "slug": "/components/responsive-table"
+      "slug": "responsive-table"
     }
   ],
   "navigation": [
     {
       "name": "Breadcrumbs",
-      "slug": "/components/breadcrumbs"
+      "slug": "breadcrumbs"
     }
   ],
   "form": [
     {
       "name": "Checkbox",
-      "slug": "/components/checkbox"
+      "slug": "checkbox"
     },
     {
       "name": "Radio",
-      "slug": "/components/radio"
+      "slug": "radio"
     },
     {
       "name": "Incremental input",
-      "slug": "/components/incremental-input"
+      "slug": "incremental-input"
     },
     {
       "name": "Select",
-      "slug": "/components/select"
+      "slug": "select"
     },
     {
       "name": "Switch",
-      "slug": "/components/switch",
+      "slug": "switch",
       "img": "images/switch.jpg"
     }
   ],
   "helpers": [
     {
       "name": "Toggle",
-      "slug": "/components/toggle",
+      "slug": "toggle",
       "img": "images/toggle.jpg"
     }
   ]
