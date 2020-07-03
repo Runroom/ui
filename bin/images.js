@@ -2,13 +2,23 @@
 
 const fs = require('fs');
 const componentList = require('../express/list.json');
-const { resolve } = require('path');
+
 const UI_PATH = `${__dirname}/../ui`;
-const PUBLIC_PATH = `${__dirname}/../public`;
+const IMAGES_PATH = `${__dirname}/../public/images`;
 
 const copyImage = async name => {
-  const imagesPath = `${UI_PATH}/components/${name}.jpg`;
-  const imagesNewPath = `${PUBLIC_PATH}/images/${name}.jpg`;
+  const imagesPath = `${UI_PATH}/components/${name}/${name}.jpg`;
+  const imagesNewPath = `${IMAGES_PATH}/${name}.jpg`;
+
+  // try {
+  //   await fs.existsSync(stylesFilePath)
+  // } catch {
+  //   return false;
+  // }
+
+  if (!fs.existsSync(IMAGES_PATH)) {
+    fs.mkdirSync(IMAGES_PATH);
+  }
 
   return new Promise((resolve, reject) => {
     fs.copyFile(imagesPath, imagesNewPath, err => {
@@ -21,14 +31,16 @@ const copyImage = async name => {
   });
 };
 
-const promises = [];
+const promises = [
+  copyImage('switch')
+];
 
-Object.keys(componentList).map(key => {
-  componentList[key].map(component => {
-    const name = component.name.toLowerCase().replace(' ', '-');
-    promises.push(copyImage(name));
-  });
-});
+// Object.keys(componentList).map(key => {
+//   componentList[key].map(component => {
+//     const name = component.name.toLowerCase().replace(' ', '-');
+//     promises.push(copyImage(name));
+//   });
+// });
 
 Promise.all(promises)
   .then(() => {
