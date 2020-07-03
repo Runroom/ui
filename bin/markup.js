@@ -3,12 +3,12 @@
 const fs = require('fs');
 const { TwingEnvironment, TwingLoaderFilesystem } = require('twing');
 const componentList = require('../express/list.json');
-
 const UI_PATH = `${__dirname}/../ui`;
+const PUBLIC_PATH = `${__dirname}/../public`;
 const loader = new TwingLoaderFilesystem(UI_PATH);
 const twing = new TwingEnvironment(loader);
 
-const generateMarkup = async (name) => {
+const generateMarkup = async name => {
   const component = name;
   const stylesFilePath = `${UI_PATH}/components/${component}/styles.css`;
   const scriptsFilePath = `${UI_PATH}/components/${component}/scripts.min.js`;
@@ -37,7 +37,7 @@ const generateMarkup = async (name) => {
   });
 
   return new Promise((resolve, reject) => {
-    fs.writeFile(`${__dirname}/../public/${component}.html`, output, err => {
+    fs.writeFile(`${PUBLIC_PATH}/${component}.html`, output, err => {
       if (err) {
         reject();
         throw new Error(err.message);
