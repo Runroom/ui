@@ -4790,9 +4790,9 @@ twig-lexer@^0.7.2:
   dependencies:
     "@types/node" "^12.0.8"
 
-twing@^4.0.3:
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/twing/-/twing-4.0.6.tgz#2dd7e9a514b4bb2a67bdaf585895c35f84fdb086"
+twing@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/twing/-/twing-5.0.1.tgz#8bedac6c0f2afce87608f6a8fe2327207da40727"
   dependencies:
     "@types/luxon" "^1.4.0"
     camelcase "^4.1.0"
