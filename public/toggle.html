@@ -1,0 +1,23 @@
+<article>
+  <h1>Toggle Helper</h1>
+  <section>
+    <h2>Basic usage</h2>
+    <button class="js-toggle" aria-controls="information" aria-expanded="false">Toggle Me</button>
+    <div id="information" hidden>
+      Some information here
+    </div>
+  </section>
+  <section>
+    <h2>Basic usage with multiple toggles in same section</h2>
+    <button class="js-toggle" aria-controls="information2" aria-expanded="false">Toggle Me</button>
+    <div id="information2" hidden>
+      Some information here
+    </div>
+    <button class="js-toggle" aria-controls="information3" aria-expanded="false">Toggle Me</button>
+    <div id="information3" hidden>
+      Some information here
+    </div>
+  </section>
+</article>
+<script>!function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=6)}({2:function(e,t,n){window,e.exports=function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=8)}({8:function(e,t,n){"use strict";n.r(t),t.default=function(e,t,n){if("[object Object]"===Object.prototype.toString.call(e))for(var r=Object.keys(e),o=0,u=r.length;o<u;o+=1)Object.prototype.hasOwnProperty.call(r,o)&&t.call(n,e[r[o]],r[o],e);else for(o=0,u=e.length;o<u;o+=1)t.call(n,e[o],o,e)}}})},6:function(e,t,n){"use strict";n.r(t);var r=n(2),o=n.n(r),u=document.querySelectorAll(".".concat("js-toggle"));(function(){u.length&&o()(u,(function(e){e.addEventListener("click",(function(){var t=e.getAttribute("aria-controls"),n=document.getElementById(t);null!==n&&null!==e.getAttribute("aria-expanded")&&(function(e){e.hidden=!e.hidden}(n),function(e){e.setAttribute("aria-expanded","true"===attr?"false":"true")}(e))}))}))})()}});</script></body>
+</html>
