@@ -8,8 +8,7 @@ const PUBLIC_PATH = `${__dirname}/../public`;
 const loader = new TwingLoaderFilesystem(UI_PATH);
 const twing = new TwingEnvironment(loader);
 
-const generateMarkup = async name => {
-  const component = name;
+const generateMarkup = async component => {
   const stylesFilePath = `${UI_PATH}/components/${component}/styles.css`;
   const scriptsFilePath = `${UI_PATH}/components/${component}/scripts.min.js`;
 
