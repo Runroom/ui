@@ -24,7 +24,7 @@
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "netlify-lambda": "^1.6.3",
-    "nodemon": "^2.0.3",
+    "nodemon": "^2.0.12",
     "serverless-http": "^2.3.0"
   },
   "scripts": {
